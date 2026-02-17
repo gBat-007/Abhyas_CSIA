@@ -1,0 +1,1972 @@
+{
+    "subjects": [
+        {
+            "id": "COMPSCI_HL",
+            "name": "Computer Science HL",
+            "shortName": "CS HL",
+            "code": "COMPSCI_HL",
+            "level": "HL",
+            "totalTopics": 7,
+            "assessmentObjectives": [
+                "AO1: Knowledge and understanding",
+                "AO2: Application and use",
+                "AO3: Constructing, analysing, evaluating and formulating",
+                "AO4: Using skills for effective problem-solving"
+            ],
+            "topics": [
+                {
+                    "id": "CSHL_1.1",
+                    "number": "1.1",
+                    "title": "System fundamentals",
+                    "subjectCode": "CSHL",
+                    "syllabusDescription": "Basic concepts and issues related to the planning, development and maintenance of computer systems.",
+                    "teachingHours": 20,
+                    "subtopics": [
+                        {
+                            "id": "CSHL_1.1.1",
+                            "number": "1.1.1",
+                            "title": "Planning and system development",
+                            "subjectCode": "CSHL",
+                            "topicNumber": "1.1",
+                            "syllabusContent": "Identify the context for which a new system is planned. Describe the need for system change. Outline compatibility, usability and security considerations.",
+                            "syllabusGuidance": "Includes legacy systems, business mergers, and factors leading to the need for new systems such as organizational growth or regulatory change.",
+                            "keywords": [
+                                "system lifecycle",
+                                "legacy system",
+                                "change management",
+                                "stakeholder",
+                                "requirements",
+                                "migration"
+                            ],
+                            "coreConcepts": [
+                                "New systems arise from changing organizational needs or limitations of existing systems",
+                                "Different stakeholders may have conflicting requirements",
+                                "Legacy systems can constrain the design of new systems",
+                                "Planning must consider hardware, software, data, processes and people",
+                                "Poorly managed change can lead to system failure or user resistance"
+                            ],
+                            "commonMisconceptions": [
+                                "Assuming technical requirements are the only important factors",
+                                "Ignoring user training and documentation in planning",
+                                "Thinking replacing a system is purely a technical decision",
+                                "Underestimating the risks of large-scale system changes"
+                            ],
+                            "prerequisites": [],
+                            "relatedSubtopics": [
+                                "CSHL_1.1.2",
+                                "CSHL_1.1.4"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Identify",
+                                "Describe",
+                                "Explain",
+                                "Outline"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why involving end-users early in system planning is important.",
+                                    "Describe two reasons why an organization might choose to replace a legacy system."
+                                ],
+                                "examStyle": [
+                                    "A school is planning to replace its student information system. Identify two stakeholders and describe one possible requirement for each stakeholder. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CSHL_1.1.2",
+                            "number": "1.1.2",
+                            "title": "System installation and data migration",
+                            "subjectCode": "CSHL",
+                            "topicNumber": "1.1",
+                            "syllabusContent": "Methods of system installation and data migration, including direct changeover, parallel running, pilot running and phased implementation.",
+                            "syllabusGuidance": "Discuss advantages and disadvantages of each method in different organizational contexts.",
+                            "keywords": [
+                                "direct changeover",
+                                "parallel running",
+                                "pilot running",
+                                "phased implementation",
+                                "data migration",
+                                "testing"
+                            ],
+                            "coreConcepts": [
+                                "System installation methods balance cost, risk and complexity",
+                                "Direct changeover is fast but high risk if problems occur",
+                                "Parallel running is safer but more expensive and resource-intensive",
+                                "Pilot and phased implementations limit risk by restricting scope",
+                                "Data migration requires validation and testing to avoid data loss or corruption"
+                            ],
+                            "commonMisconceptions": [
+                                "Assuming direct changeover is always best because it is quickest",
+                                "Underestimating the time needed for parallel or phased approaches",
+                                "Thinking migration is just copying files without validation",
+                                "Ignoring backup strategies during migration"
+                            ],
+                            "prerequisites": [
+                                "CSHL_1.1.1"
+                            ],
+                            "relatedSubtopics": [
+                                "CSHL_1.1.3"
+                            ],
+                            "paperTypes": [
+                                "paper1"
+                            ],
+                            "typicalMarks": "4-6",
+                            "commandTerms": [
+                                "Compare",
+                                "Explain",
+                                "Discuss"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why an organization might choose parallel running instead of direct changeover.",
+                                    "Describe one risk associated with data migration and how it can be reduced."
+                                ],
+                                "examStyle": [
+                                    "Compare direct changeover and parallel running as methods for installing a new hospital information system. [6 marks]"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "CSHL_1.2",
+                    "number": "1.2",
+                    "title": "Computer organization",
+                    "subjectCode": "CSHL",
+                    "syllabusDescription": "Structure and function of computer hardware and low-level software.",
+                    "teachingHours": 6,
+                    "subtopics": [
+                        {
+                            "id": "CSHL_1.2.1",
+                            "number": "1.2.1",
+                            "title": "Hardware and primary memory",
+                            "subjectCode": "CSHL",
+                            "topicNumber": "1.2",
+                            "syllabusContent": "Identify the main components of the von Neumann architecture and describe the roles of RAM and ROM.",
+                            "syllabusGuidance": "Include CPU, ALU, control unit, registers, buses, and memory hierarchy at an overview level.",
+                            "keywords": [
+                                "CPU",
+                                "ALU",
+                                "control unit",
+                                "register",
+                                "RAM",
+                                "ROM",
+                                "bus",
+                                "von Neumann"
+                            ],
+                            "coreConcepts": [
+                                "The CPU executes instructions using the fetch–decode–execute cycle",
+                                "RAM is volatile memory that stores data and instructions currently in use",
+                                "ROM is non-volatile and used to store firmware such as the bootstrap program",
+                                "Buses transfer data, addresses and control signals between components",
+                                "Overall system performance depends on coordination between CPU and memory"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing RAM and secondary storage such as hard drives",
+                                "Thinking ROM cannot be updated under any circumstances",
+                                "Assuming CPU speed alone determines overall performance",
+                                "Using the term 'memory' for any type of storage without distinction"
+                            ],
+                            "prerequisites": [],
+                            "relatedSubtopics": [
+                                "CSHL_1.2.2"
+                            ],
+                            "paperTypes": [
+                                "paper1"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Identify",
+                                "Describe",
+                                "Explain"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between RAM and ROM in terms of volatility and typical use.",
+                                    "Describe the function of the control unit in the CPU."
+                                ],
+                                "examStyle": [
+                                    "Outline the steps in the fetch–decode–execute cycle. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CSHL_1.2.2",
+                            "number": "1.2.2",
+                            "title": "Secondary storage and input/output",
+                            "subjectCode": "CSHL",
+                            "topicNumber": "1.2",
+                            "syllabusContent": "Different types of secondary storage and input/output devices and their characteristics.",
+                            "syllabusGuidance": "Include optical, magnetic and solid-state storage; typical use cases and trade-offs between speed, capacity, and cost.",
+                            "keywords": [
+                                "secondary storage",
+                                "HDD",
+                                "SSD",
+                                "optical disk",
+                                "throughput",
+                                "latency",
+                                "input device",
+                                "output device"
+                            ],
+                            "coreConcepts": [
+                                "Secondary storage is non-volatile and used for long-term data storage",
+                                "Magnetic, optical and solid-state media differ in speed, durability and cost",
+                                "Choice of storage depends on capacity, speed, portability and reliability requirements",
+                                "Input/output devices interface between users and the system",
+                                "Performance bottlenecks often arise from storage and I/O limitations"
+                            ],
+                            "commonMisconceptions": [
+                                "Assuming SSDs are always better than HDDs in every respect",
+                                "Confusing storage capacity with memory size",
+                                "Ignoring reliability and write endurance when choosing storage",
+                                "Treating all I/O devices as interchangeable"
+                            ],
+                            "prerequisites": [
+                                "CSHL_1.2.1"
+                            ],
+                            "relatedSubtopics": [],
+                            "paperTypes": [
+                                "paper1"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Compare",
+                                "Describe",
+                                "Explain"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Compare solid-state drives and magnetic hard drives in terms of speed, durability and cost.",
+                                    "Explain why an organization might choose tape backup even when faster storage is available."
+                                ],
+                                "examStyle": [
+                                    "Describe two factors that influence the choice of secondary storage for a portable media player. [4 marks]"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "MATAA_HL",
+            "name": "Mathematics: Analysis and Approaches HL",
+            "shortName": "Math AA HL",
+            "code": "MATAA_HL",
+            "level": "HL",
+            "totalTopics": 5,
+            "assessmentObjectives": [
+                "AO1: Knowledge and understanding",
+                "AO2: Problem-solving",
+                "AO3: Communication and interpretation"
+            ],
+            "topics": [
+                {
+                    "id": "MATAA_HL_1",
+                    "number": "1",
+                    "title": "Number and algebra",
+                    "subjectCode": "MATAA_HL",
+                    "syllabusDescription": "This topic develops number skills, algebraic manipulation, and foundational results needed for further study in mathematics.",
+                    "teachingHours": 39,
+                    "subtopics": [
+                        {
+                            "id": "MATAA_HL_1.1",
+                            "number": "1.1",
+                            "title": "Scientific notation and estimation",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Scientific notation (standard form) for expressing very large and very small numbers. Use of appropriate accuracy, significant figures, and estimation in calculations.",
+                            "syllabusGuidance": "Standard form a × 10^k where 1 ≤ |a| < 10 and k ∈ ℤ. Use of significant figures in answers and intermediate steps. Order-of-magnitude estimates in context.",
+                            "keywords": [
+                                "scientific notation",
+                                "standard form",
+                                "powers of 10",
+                                "significant figures",
+                                "estimation",
+                                "order of magnitude",
+                                "rounding",
+                                "accuracy",
+                                "precision"
+                            ],
+                            "coreConcepts": [
+                                "Scientific notation (standard form) writes numbers as a × 10^k with 1 ≤ |a| < 10 and integer k",
+                                "Significant figures measure the precision of a number and guide rounding in answers",
+                                "Order-of-magnitude estimates use powers of 10 to approximate size",
+                                "Rounding must be consistent with the context and given data accuracy",
+                                "Small and large physical quantities are conveniently compared using powers of 10"
+                            ],
+                            "commonMisconceptions": [
+                                "Writing the coefficient a outside the range 1 ≤ |a| < 10",
+                                "Confusing decimal places with significant figures",
+                                "Rounding too early in multi-step calculations and losing accuracy",
+                                "Incorrectly handling negative powers of 10 for small numbers",
+                                "Dropping units when estimating or rounding"
+                            ],
+                            "prerequisites": [],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.5",
+                                "MATAA_HL_1.7"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "2-4",
+                            "commandTerms": [
+                                "Write down",
+                                "Express",
+                                "Estimate",
+                                "Round"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between significant figures and decimal places in a measurement.",
+                                    "Describe why scientific notation is useful when comparing the sizes of astronomical and subatomic quantities."
+                                ],
+                                "examStyle": [
+                                    "Write 0.000 045 3 in the form a × 10^k, where 1 ≤ a < 10 and k ∈ ℤ. [2 marks]",
+                                    "The population of a country is 3.2 × 10^8. Estimate the total number of people in 5 such countries, giving your answer to 2 significant figures. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.2",
+                            "number": "1.2",
+                            "title": "Arithmetic sequences and series",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Arithmetic sequences and series. Use of the formulae for the nth term and the sum of the first n terms of an arithmetic sequence.",
+                            "syllabusGuidance": "Use of sigma notation for sums of arithmetic sequences. Students should be familiar with the term “common difference” (d).",
+                            "keywords": [
+                                "arithmetic sequence",
+                                "arithmetic series",
+                                "common difference",
+                                "nth term",
+                                "sum formula",
+                                "sigma notation",
+                                "un",
+                                "Sn",
+                                "u1",
+                                "arithmetic progression",
+                                "AP"
+                            ],
+                            "coreConcepts": [
+                                "An arithmetic sequence has a constant common difference d between consecutive terms",
+                                "The nth term formula: un = u1 + (n − 1)d",
+                                "The sum of the first n terms: Sn = n/2 [2u1 + (n − 1)d]",
+                                "Alternative sum formula: Sn = n/2 (u1 + un)",
+                                "Sigma notation compactly represents the sum of sequence terms"
+                            ],
+                            "commonMisconceptions": [
+                                "Using un = u1 + nd instead of u1 + (n − 1)d",
+                                "Confusing arithmetic sequences with geometric sequences",
+                                "Forgetting that (n − 1) represents the number of steps from the first term",
+                                "Mixing up the two sum formulae when different information is given"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.1"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.3"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-8",
+                            "commandTerms": [
+                                "Find",
+                                "Determine",
+                                "Calculate",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why the nth term formula contains (n − 1)d rather than nd.",
+                                    "Describe how the sum formula Sn = n/2 (u1 + un) is related to the concept of averaging."
+                                ],
+                                "examStyle": [
+                                    "The third term of an arithmetic sequence is 11 and the seventh term is 23. Find the first term and the common difference. [4 marks]",
+                                    "An arithmetic series has first term 5 and common difference 3. Find the smallest value of n for which the sum exceeds 500. [5 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.3",
+                            "number": "1.3",
+                            "title": "Geometric sequences and series",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Geometric sequences and series. Use of the formulae for the nth term and the sum of the first n terms of a geometric sequence.",
+                            "syllabusGuidance": "Use of sigma notation for sums of geometric sequences. The sum to infinity of a convergent geometric sequence. Students should be familiar with the term “common ratio” (r).",
+                            "keywords": [
+                                "geometric sequence",
+                                "geometric series",
+                                "common ratio",
+                                "nth term",
+                                "sum formula",
+                                "sigma notation",
+                                "un",
+                                "Sn",
+                                "convergent series",
+                                "sum to infinity",
+                                "GP"
+                            ],
+                            "coreConcepts": [
+                                "A geometric sequence has a constant common ratio r between consecutive terms",
+                                "The nth term formula: un = u1 × r^(n − 1)",
+                                "The sum of the first n terms: Sn = u1 (1 − r^n) / (1 − r) for r ≠ 1",
+                                "For |r| < 1, the sum to infinity: S∞ = u1 / (1 − r)",
+                                "A geometric series converges only when |r| < 1"
+                            ],
+                            "commonMisconceptions": [
+                                "Using un = u1 × r^n instead of r^(n − 1)",
+                                "Confusing geometric and arithmetic sequences",
+                                "Ignoring the convergence condition |r| < 1 for infinite sums",
+                                "Applying the sum-to-infinity formula when |r| ≥ 1",
+                                "Mishandling negative common ratios"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.2"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.2",
+                                "MATAA_HL_1.4"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-10",
+                            "commandTerms": [
+                                "Find",
+                                "Determine",
+                                "Calculate",
+                                "Prove",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 4,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why the sum to infinity of a geometric series only exists when |r| < 1.",
+                                    "Compare the growth of arithmetic and geometric sequences using an example."
+                                ],
+                                "examStyle": [
+                                    "A geometric sequence has u1 = 3 and r = 2. Find the 8th term and the sum of the first 8 terms. [5 marks]",
+                                    "The sum to infinity of a geometric series is 12 and the first term is 4. Find the common ratio. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.4",
+                            "number": "1.4",
+                            "title": "Sigma notation",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Sigma notation. Analysis of arithmetic and geometric series using sigma notation.",
+                            "syllabusGuidance": "Including applications in compound interest and population growth. Use of technology to calculate series.",
+                            "keywords": [
+                                "sigma notation",
+                                "summation",
+                                "series",
+                                "sum notation",
+                                "index notation",
+                                "Σ",
+                                "upper limit",
+                                "lower limit",
+                                "compound interest",
+                                "population growth"
+                            ],
+                            "coreConcepts": [
+                                "Sigma notation Σ represents the sum of a sequence of terms",
+                                "The expression Σ(i = a to b) f(i) means add f(i) from i = a to i = b",
+                                "The index is a dummy variable that can be renamed without changing the sum",
+                                "Linear properties: Σ(a + b) = Σa + Σb and Σ(k a) = k Σa for constant k",
+                                "Sigma notation can represent both arithmetic and geometric series"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing the index variable with the terms themselves",
+                                "Incorrectly using or swapping upper and lower limits",
+                                "Forgetting to substitute the index correctly into the general term",
+                                "Misapplying summation properties when expressions are not like terms",
+                                "Treating the index as a fixed value instead of varying through the sum"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.2",
+                                "MATAA_HL_1.3"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.2",
+                                "MATAA_HL_1.3",
+                                "MATAA_HL_1.8"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Write",
+                                "Express",
+                                "Evaluate",
+                                "Find"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain what the index i represents in Σ(i = 1 to n) ai and why changing i to k does not change the sum.",
+                                    "Describe how sigma notation simplifies the representation of long series."
+                                ],
+                                "examStyle": [
+                                    "Express the sum 2 + 5 + 8 + 11 + … + 32 using sigma notation. [3 marks]",
+                                    "Evaluate Σ(k = 1 to 10) (3k − 1). [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.5",
+                            "number": "1.5",
+                            "title": "Financial applications of geometric sequences",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Financial applications of geometric sequences and series: compound interest, annual depreciation.",
+                            "syllabusGuidance": "Calculate the real value of an investment with an interest rate and an inflation rate. Compound interest may be calculated yearly, half-yearly, quarterly or monthly. Students are not required to derive the formulas.",
+                            "keywords": [
+                                "compound interest",
+                                "depreciation",
+                                "annual depreciation",
+                                "investment",
+                                "inflation rate",
+                                "real value",
+                                "geometric growth",
+                                "financial mathematics",
+                                "principal",
+                                "interest rate"
+                            ],
+                            "coreConcepts": [
+                                "Compound interest follows a geometric sequence with ratio (1 + r/n) for n compounding periods per year",
+                                "Compound interest formula: A = P (1 + r/n)^(nt)",
+                                "Depreciation can be modelled by V = V0 (1 − r)^t",
+                                "Real value of money accounts for inflation over time",
+                                "Different compounding frequencies change the effective growth rate"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing compound interest with simple interest",
+                                "Using yearly interest rate directly for monthly or quarterly compounding",
+                                "Not converting percentages to decimals in formulas",
+                                "Ignoring inflation when a question asks for real value",
+                                "Using the wrong sign of r for appreciation vs depreciation"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.3"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.3"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Calculate",
+                                "Find",
+                                "Determine",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why more frequent compounding (for example monthly instead of yearly) yields a higher final amount.",
+                                    "Describe how geometric growth models both compound interest and inflation."
+                                ],
+                                "examStyle": [
+                                    "€5000 is invested at 4% per annum compounded yearly. Calculate its value after 6 years. [4 marks]",
+                                    "A machine costing $25 000 depreciates at 15% per annum. Find its value after 5 years. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.6",
+                            "number": "1.6",
+                            "title": "Laws of exponents and logarithms (basic)",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Laws of exponents with integer exponents. Introduction to logarithms with base 10 and base e. Numerical evaluation of logarithms using technology.",
+                            "syllabusGuidance": "Awareness that a^x = b is equivalent to log_a(b) = x, that b > 0, and that log_e(x) is written ln x.",
+                            "keywords": [
+                                "exponents",
+                                "powers",
+                                "logarithms",
+                                "base 10",
+                                "natural logarithm",
+                                "ln",
+                                "log",
+                                "exponential form",
+                                "logarithmic form",
+                                "e"
+                            ],
+                            "coreConcepts": [
+                                "Integer exponent laws: a^m × a^n = a^(m + n), a^m ÷ a^n = a^(m − n), (a^m)^n = a^(mn)",
+                                "a^x = b is equivalent to log_a(b) = x with b > 0 and a > 0, a ≠ 1",
+                                "The natural logarithm ln x is log_e x where e is an important mathematical constant",
+                                "Common logarithm log x usually means log_10 x",
+                                "Logarithms are only defined for positive real arguments"
+                            ],
+                            "commonMisconceptions": [
+                                "Writing a^m + a^n = a^(m + n) instead of a^m × a^n",
+                                "Confusing log and ln or treating them as interchangeable bases",
+                                "Trying to take logarithms of zero or negative numbers",
+                                "Forgetting that log_a(1) = 0 and log_a(a) = 1",
+                                "Misidentifying which number is the base in log_a(b)"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.1"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.7"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "2-5",
+                            "commandTerms": [
+                                "Calculate",
+                                "Evaluate",
+                                "Find",
+                                "Write"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why log_a(1) = 0 for any valid base a.",
+                                    "Describe the relationship between exponential form a^x = b and logarithmic form log_a(b) = x."
+                                ],
+                                "examStyle": [
+                                    "Write 2^5 = 32 in logarithmic form. [2 marks]",
+                                    "Calculate log_10(1000) without using technology. [2 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.7",
+                            "number": "1.7",
+                            "title": "Proof (simple deductive)",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Simple deductive proof, numerical and algebraic. Layout of left-hand-side (LHS) to right-hand-side (RHS) proofs. Symbols and notation for equality and identity.",
+                            "syllabusGuidance": "Students should be able to set out a clear sequence of algebraic steps transforming one side of an identity into the other, and know how to check results.",
+                            "keywords": [
+                                "proof",
+                                "deductive proof",
+                                "LHS",
+                                "RHS",
+                                "identity",
+                                "equality",
+                                "algebraic manipulation",
+                                "verification",
+                                "reasoning"
+                            ],
+                            "coreConcepts": [
+                                "A mathematical proof is a logical argument demonstrating that a statement is always true",
+                                "In LHS = RHS proofs, work from one side to transform it into the other using valid steps",
+                                "Each algebraic step must follow from previous ones using known rules",
+                                "The identity symbol (≡) indicates the statement is true for all allowed values",
+                                "An equation with = may hold only for specific solutions"
+                            ],
+                            "commonMisconceptions": [
+                                "Working on both sides at the same time in an identity proof",
+                                "Assuming what must be proved and using it as a step",
+                                "Skipping logical steps or not showing sufficient working",
+                                "Confusing equality (=) with identity (≡)",
+                                "Failing to verify a result with substitution"
+                            ],
+                            "prerequisites": [],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.15"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Show that",
+                                "Prove",
+                                "Verify"
+                            ],
+                            "bloomLevel": 4,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between an identity and an equation with specific solutions.",
+                                    "Describe why each step in an algebraic proof must be justified."
+                                ],
+                                "examStyle": [
+                                    "Show that (x + 3)^2 − 5 ≡ x^2 + 6x + 4. [3 marks]",
+                                    "Verify that x = 2 is a solution of the equation x^3 − 3x^2 − 4x + 12 = 0. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.8",
+                            "number": "1.8",
+                            "title": "Laws of exponents and logarithms (extended)",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Laws of exponents with rational exponents. Laws of logarithms. Change of base of a logarithm. Solving exponential equations, including using logarithms.",
+                            "syllabusGuidance": "Students should know that a^(1/m) = mth root of a (positive root for even m). Laws include log_a(xy) = log_a x + log_a y, log_a(x/y) = log_a x − log_a y, log_a(x^m) = m log_a x, log_a(a) = 1, log_a(1) = 0, and change of base log_a x = log_b x / log_b a.",
+                            "keywords": [
+                                "rational exponents",
+                                "fractional indices",
+                                "logarithm laws",
+                                "product rule",
+                                "quotient rule",
+                                "power rule",
+                                "change of base",
+                                "exponential equation",
+                                "solving exponentials"
+                            ],
+                            "coreConcepts": [
+                                "Rational exponents: a^(m/n) = (n√a)^m = n√(a^m) for a > 0",
+                                "Product rule: log_a(xy) = log_a x + log_a y",
+                                "Quotient rule: log_a(x/y) = log_a x − log_a y",
+                                "Power rule: log_a(x^m) = m log_a x",
+                                "Change of base: log_a x = ln x / ln a or log_b x / log_b a"
+                            ],
+                            "commonMisconceptions": [
+                                "Writing log(x + y) = log x + log y instead of log(xy)",
+                                "Assuming log(x − y) = log x − log y",
+                                "Misapplying the power rule to (log x)^m instead of log(x^m)",
+                                "Failing to take logarithms of both sides consistently when solving exponential equations",
+                                "Using negative or zero bases in expressions with rational exponents"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.6"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.6",
+                                "MATAA_HL_2.9"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Solve",
+                                "Find",
+                                "Show that",
+                                "Simplify"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 4,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain, using an example, why log_a(x + y) is not equal to log_a x + log_a y.",
+                                    "Describe how the change of base formula allows any logarithm to be evaluated on a calculator."
+                                ],
+                                "examStyle": [
+                                    "Solve 2^x = 10, giving your answer correct to three significant figures. [4 marks]",
+                                    "Show that log_2(125) = 3 log_2 5. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.9",
+                            "number": "1.9",
+                            "title": "Sum of infinite convergent geometric sequences",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Sum of infinite convergent geometric sequences. Use of the condition |r| < 1 and modulus notation.",
+                            "syllabusGuidance": "Students should recognize when an infinite geometric series converges and apply S∞ = u1 / (1 − r) when |r| < 1.",
+                            "keywords": [
+                                "infinite series",
+                                "convergent series",
+                                "sum to infinity",
+                                "geometric series",
+                                "convergence",
+                                "modulus",
+                                "absolute value",
+                                "common ratio",
+                                "divergence"
+                            ],
+                            "coreConcepts": [
+                                "An infinite geometric series converges only when |r| < 1",
+                                "For a convergent geometric series, S∞ = u1 / (1 − r)",
+                                "When |r| ≥ 1, the series diverges and has no finite sum",
+                                "The modulus |r| denotes the absolute value of r",
+                                "If |r| < 1, then r^n → 0 as n → ∞, which underpins the sum formula"
+                            ],
+                            "commonMisconceptions": [
+                                "Using the sum-to-infinity formula when |r| ≥ 1",
+                                "Ignoring negative ratios that still satisfy |r| < 1",
+                                "Confusing the condition |r| < 1 with r < 1 only",
+                                "Using the finite sum formula Sn instead of the infinite sum formula S∞",
+                                "Not recognizing that some series given in context are geometric"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.3"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.3",
+                                "MATAA_HL_5.12"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-7",
+                            "commandTerms": [
+                                "Find",
+                                "Determine",
+                                "Show that",
+                                "Explain"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why an infinite geometric series with |r| ≥ 1 cannot have a finite sum.",
+                                    "Describe what happens to the terms of a geometric sequence when |r| < 1."
+                                ],
+                                "examStyle": [
+                                    "Find the sum to infinity of the series 12 + 6 + 3 + 1.5 + … . [4 marks]",
+                                    "A geometric series has first term 8 and sum to infinity 32. Find the common ratio r. [5 marks]"
+                                ]
+                            }
+                        },
+                        
+                        {
+                            "id": "MATAA_HL_1.10",
+                            "number": "1.10",
+                            "title": "Permutations and combinations",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Permutations and combinations. Use of nPr and nCr in counting and probability problems.",
+                            "syllabusGuidance": "Factorial notation n!. Distinguish between ordered and unordered selections. Simple applications to probability.",
+                            "keywords": [
+                                "counting",
+                                "factorial",
+                                "permutation",
+                                "combination",
+                                "nPr",
+                                "nCr",
+                                "ordered selection",
+                                "unordered selection"
+                            ],
+                            "coreConcepts": [
+                                "n! = n × (n − 1) × … × 2 × 1 for positive integers n",
+                                "Permutations count ordered arrangements; combinations count unordered selections",
+                                "Number of r-permutations: nPr = n! / (n − r)!",
+                                "Number of r-combinations: nCr = n! / (r! (n − r)!)",
+                                "Permutations and combinations underpin many probability models"
+                            ],
+                            "commonMisconceptions": [
+                                "Using nCr when the order of objects matters",
+                                "Using nPr when the order is irrelevant",
+                                "Including 0 in factorial products incorrectly",
+                                "Confusing nCr with rCn",
+                                "Assuming nPr = nCr"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.1",
+                                "MATAA_HL_1.2"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.9",
+                                "MATAA_HL_5.6"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Calculate",
+                                "Determine",
+                                "Find",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between permutations and combinations using a concrete example.",
+                                    "Describe why nCr = nC(n − r) using a combinatorial argument."
+                                ],
+                                "examStyle": [
+                                    "How many different 5-digit codes can be formed from the digits 1, 2, 3, 4, 5, 6 if no digit is repeated? [4 marks]",
+                                    "A committee of 3 students is to be chosen from a group of 8. Determine the number of different committees that can be formed. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.11",
+                            "number": "1.11",
+                            "title": "Partial fractions",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Decomposition of rational functions into partial fractions with linear factors in the denominator.",
+                            "syllabusGuidance": "Limited to denominators that factor into distinct or repeated linear factors over ℝ. Use in integration appears later.",
+                            "keywords": [
+                                "partial fractions",
+                                "rational function",
+                                "linear factors",
+                                "algebraic manipulation"
+                            ],
+                            "coreConcepts": [
+                                "A rational function can often be expressed as a sum of simpler fractions",
+                                "For distinct linear factors, write A/(x − a) + B/(x − b) etc.",
+                                "Equating coefficients or substituting suitable x-values determines the constants",
+                                "For repeated linear factors, include terms like A/(x − a) + B/(x − a)^2",
+                                "Partial fractions simplify later calculus and integration problems"
+                            ],
+                            "commonMisconceptions": [
+                                "Forgetting to include terms for repeated factors",
+                                "Incorrect expansion when equating coefficients",
+                                "Cancelling factors before decomposing when it is not appropriate",
+                                "Mixing up constants between different terms"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.6",
+                                "MATAA_HL_2.6"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_5.2"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-7",
+                            "commandTerms": [
+                                "Express",
+                                "Find",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why writing a rational function as a sum of partial fractions can make integration easier.",
+                                    "Describe when repeated linear factors must be used in a partial fraction decomposition."
+                                ],
+                                "examStyle": [
+                                    "Express (5x + 3) / (x^2 − x − 2) in partial fractions. [5 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.12",
+                            "number": "1.12",
+                            "title": "Complex numbers (algebraic form)",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Introduction to complex numbers in the form a + bi. Real and imaginary parts. Complex conjugate. Modulus and argument (informal).",
+                            "syllabusGuidance": "Include addition, subtraction, multiplication, division, and representation in the Argand diagram. Quadratic equations with complex roots.",
+                            "keywords": [
+                                "complex number",
+                                "imaginary unit",
+                                "real part",
+                                "imaginary part",
+                                "conjugate",
+                                "modulus",
+                                "argument",
+                                "Argand diagram"
+                            ],
+                            "coreConcepts": [
+                                "The imaginary unit i satisfies i^2 = −1",
+                                "Any complex number can be written as a + bi with a, b ∈ ℝ",
+                                "Conjugate of a + bi is a − bi; conjugates are symmetric about the real axis",
+                                "Modulus |z| represents distance from the origin in the Argand plane",
+                                "Non-real roots of polynomials occur in conjugate pairs when coefficients are real"
+                            ],
+                            "commonMisconceptions": [
+                                "Treating i as an unknown variable instead of a defined number",
+                                "Forgetting that i^2 = −1 and hence i^4 = 1, etc.",
+                                "Incorrectly adding or multiplying complex numbers (mixing real and imaginary parts)",
+                                "Thinking complex roots contradict the equation having real coefficients"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.6",
+                                "MATAA_HL_2.7"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.13",
+                                "MATAA_HL_1.14"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Solve",
+                                "Find",
+                                "Show that",
+                                "Sketch"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 4,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why complex roots of a quadratic with real coefficients must occur in conjugate pairs.",
+                                    "Describe how a complex number can be represented as a point in the Argand diagram."
+                                ],
+                                "examStyle": [
+                                    "Solve the equation x^2 + 4x + 13 = 0, giving your answers in the form a + bi. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.13",
+                            "number": "1.13",
+                            "title": "Complex numbers (polar form)",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Polar (modulus–argument) form of complex numbers. Multiplication and division in polar form.",
+                            "syllabusGuidance": "Use z = r (cos θ + i sin θ). Simple applications of De Moivre’s theorem for integer powers and roots.",
+                            "keywords": [
+                                "polar form",
+                                "modulus-argument form",
+                                "De Moivre",
+                                "cis notation",
+                                "complex plane"
+                            ],
+                            "coreConcepts": [
+                                "Any non-zero complex number can be written as z = r (cos θ + i sin θ)",
+                                "r = |z| and θ is an argument of z",
+                                "Multiplication and division correspond to adding and subtracting arguments, multiplying and dividing moduli",
+                                "De Moivre’s theorem: [r (cos θ + i sin θ)]^n = r^n (cos nθ + i sin nθ) for integer n",
+                                "Polar form simplifies powers and roots of complex numbers"
+                            ],
+                            "commonMisconceptions": [
+                                "Using degrees and radians inconsistently for θ",
+                                "Ignoring the periodicity of arguments when finding all solutions",
+                                "Forgetting to multiply the modulus as well as the argument in powers",
+                                "Confusing argument with modulus"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.12"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.14"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Express",
+                                "Find",
+                                "Show that",
+                                "Solve"
+                            ],
+                            "bloomLevel": 4,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why multiplying two complex numbers in polar form corresponds to adding their arguments.",
+                                    "Describe how De Moivre’s theorem can be used to find multiple roots of a complex number."
+                                ],
+                                "examStyle": [
+                                    "Express z = 1 − i in the form r (cos θ + i sin θ). Hence find z^5 in the same form. [6 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.14",
+                            "number": "1.14",
+                            "title": "Polynomial equations and complex roots",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Fundamental theorem of algebra (informal). Relationship between polynomial coefficients and sums/products of roots. Conjugate root theorem.",
+                            "syllabusGuidance": "Focus on real-coefficient polynomials and simple applications linking roots and coefficients.",
+                            "keywords": [
+                                "polynomial",
+                                "root",
+                                "fundamental theorem of algebra",
+                                "conjugate root",
+                                "sum of roots",
+                                "product of roots"
+                            ],
+                            "coreConcepts": [
+                                "A polynomial of degree n has n complex roots, counting multiplicity",
+                                "If coefficients are real and a + bi is a root, then a − bi is also a root",
+                                "For quadratics ax^2 + bx + c, sum of roots = −b/a and product = c/a",
+                                "Similar relationships exist for higher-degree polynomials",
+                                "Root–coefficient relationships help in constructing or factoring polynomials"
+                            ],
+                            "commonMisconceptions": [
+                                "Thinking non-real roots occur alone for real-coefficient polynomials",
+                                "Misapplying sum/product formulas to polynomials not in standard form",
+                                "Confusing multiplicity of roots with distinct roots",
+                                "Assuming all polynomials factor nicely over the reals"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.12",
+                                "MATAA_HL_2.7"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_5.1"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-7",
+                            "commandTerms": [
+                                "Show that",
+                                "Find",
+                                "Determine"
+                            ],
+                            "bloomLevel": 4,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why a cubic polynomial with real coefficients and one non-real root must have exactly one other non-real root.",
+                                    "Describe how the sum and product of roots are related to the coefficients of a quadratic."
+                                ],
+                                "examStyle": [
+                                    "The quadratic equation x^2 − 4x + k = 0 has roots 2 ± i. Find the value of k. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.15",
+                            "number": "1.15",
+                            "title": "Proof by mathematical induction",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Simple proofs by mathematical induction for statements involving positive integers.",
+                            "syllabusGuidance": "Restricted to standard forms: sums of series, divisibility, and simple inequalities. Students should clearly identify base case and inductive step.",
+                            "keywords": [
+                                "mathematical induction",
+                                "base case",
+                                "inductive step",
+                                "recurrence",
+                                "integer proof"
+                            ],
+                            "coreConcepts": [
+                                "Induction proves a statement is true for all integers n ≥ n0",
+                                "Base case verifies the statement for the initial integer n0",
+                                "Inductive step assumes truth for n = k and proves it for n = k + 1",
+                                "Induction relies on the well-ordering of the positive integers",
+                                "Many identities and divisibility results can be shown using induction"
+                            ],
+                            "commonMisconceptions": [
+                                "Treating the inductive hypothesis as something to prove rather than assume",
+                                "Failing to complete the step from n = k to n = k + 1",
+                                "Not checking the base case explicitly",
+                                "Using circular reasoning (assuming the result for all n instead of just k)"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.7",
+                                "MATAA_HL_1.9"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.7",
+                                "MATAA_HL_5.3"
+                            ],
+                            "paperTypes": [
+                                "paper3"
+                            ],
+                            "typicalMarks": "5-10",
+                            "commandTerms": [
+                                "Prove",
+                                "Show that"
+                            ],
+                            "bloomLevel": 5,
+                            "teachingHours": 4,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why proving a statement for n = 1 and then proving that if it holds for n = k it holds for n = k + 1 shows it is true for all n ≥ 1.",
+                                    "Describe a situation outside mathematics where a similar inductive idea applies."
+                                ],
+                                "examStyle": [
+                                    "Prove by mathematical induction that 1 + 2 + 3 + … + n = n(n + 1)/2 for all positive integers n. [6 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_1.16",
+                            "number": "1.16",
+                            "title": "Systems of linear equations",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "1",
+                            "syllabusContent": "Solution of systems of linear equations in two or three unknowns using algebraic methods and technology. Conditions for unique, no, or infinitely many solutions.",
+                            "syllabusGuidance": "Link to matrix methods is made later in the course. Graphical interpretation in 2D and 3D.",
+                            "keywords": [
+                                "simultaneous equations",
+                                "system of equations",
+                                "consistent",
+                                "inconsistent",
+                                "unique solution",
+                                "infinitely many solutions"
+                            ],
+                            "coreConcepts": [
+                                "A system of linear equations may have one, none, or infinitely many solutions",
+                                "In two variables, equations represent lines; the solution corresponds to intersection points",
+                                "In three variables, equations represent planes and may intersect in a point, line, or not at all",
+                                "Algebraic elimination and substitution are standard solution methods",
+                                "Coefficient relationships indicate the nature of the solution set"
+                            ],
+                            "commonMisconceptions": [
+                                "Assuming every system has a unique solution",
+                                "Arithmetic mistakes in elimination leading to incorrect conclusions",
+                                "Confusing inconsistent systems with those having infinite solutions",
+                                "Not recognizing multiples of equations"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.1",
+                                "MATAA_HL_2.6"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_5.4"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-7",
+                            "commandTerms": [
+                                "Solve",
+                                "Determine",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain how you can tell from a pair of linear equations whether there will be no solution, one solution, or infinitely many solutions.",
+                                    "Describe the geometric meaning of a system of three linear equations in three unknowns."
+                                ],
+                                "examStyle": [
+                                    "Solve the system 2x + 3y − z = 1, x − y + 2z = 4, 3x + 2y + z = 7. [6 marks]"
+                                ]
+                            }
+                        }
+                        
+                        
+                    ]
+                },
+                {
+                    "id": "MATAA_HL_2",
+                    "number": "2",
+                    "title": "Functions",
+                    "subjectCode": "MATAA_HL",
+                    "syllabusDescription": "This topic develops understanding of functions as mathematical models and explores their algebraic and graphical representations.",
+                    "teachingHours": 32,
+                    "subtopics": [
+                        {
+                            "id": "MATAA_HL_2.1",
+                            "number": "2.1",
+                            "title": "Straight lines",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Different forms of the equation of a straight line. Gradient and intercepts. Parallel and perpendicular lines.",
+                            "syllabusGuidance": "Forms include y = mx + c, ax + by + d = 0, and point–gradient form y − y1 = m(x − x1). Parallel lines have equal gradients; perpendicular lines satisfy m1 m2 = −1.",
+                            "keywords": [
+                                "straight line",
+                                "linear function",
+                                "gradient",
+                                "slope",
+                                "y-intercept",
+                                "x-intercept",
+                                "parallel lines",
+                                "perpendicular lines",
+                                "point-slope form",
+                                "general form"
+                            ],
+                            "coreConcepts": [
+                                "Gradient m represents the rate of change of y with respect to x",
+                                "The y-intercept is the point where the line crosses the y-axis (x = 0)",
+                                "Parallel lines have equal gradients",
+                                "Perpendicular lines have gradients whose product is −1",
+                                "Different algebraic forms can represent the same line"
+                            ],
+                            "commonMisconceptions": [
+                                "Mixing up x and y when computing gradient",
+                                "Thinking perpendicular gradients add to zero instead of multiplying to −1",
+                                "Forgetting that vertical lines have undefined gradient",
+                                "Errors when rearranging between different line forms",
+                                "Assuming any two distinct lines are either parallel or perpendicular"
+                            ],
+                            "prerequisites": [],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.2",
+                                "MATAA_HL_3.12"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Find",
+                                "Write",
+                                "Show that",
+                                "Calculate"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why parallel lines must have the same gradient.",
+                                    "Describe algebraically the relationship between the gradients of perpendicular lines."
+                                ],
+                                "examStyle": [
+                                    "Find the equation of the line passing through (2, 5) with gradient 3. [3 marks]",
+                                    "Show that the lines y = 2x + 1 and y = −0.5x + 4 are perpendicular. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.2",
+                            "number": "2.2",
+                            "title": "Concept of a function",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Concept of a function, domain, range and graph. Function notation f(x), v(t), C(n). Inverse function as reflection in y = x, notation f⁻¹(x).",
+                            "syllabusGuidance": "Informal idea that an inverse function “undoes” a function. Inverse functions exist only for one-to-one functions. The domain of f⁻¹ equals the range of f.",
+                            "keywords": [
+                                "function",
+                                "domain",
+                                "range",
+                                "codomain",
+                                "mapping",
+                                "function notation",
+                                "inverse function",
+                                "one-to-one",
+                                "f(x)",
+                                "f⁻¹(x)"
+                            ],
+                            "coreConcepts": [
+                                "A function assigns each element of its domain exactly one image in its range",
+                                "Domain is the set of allowable input values for the function",
+                                "Range is the set of actual output values",
+                                "An inverse function reverses the mapping of the original function",
+                                "The graph of an inverse function is a reflection of the original graph in the line y = x"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing f⁻¹(x) with 1 / f(x)",
+                                "Assuming every function has an inverse",
+                                "Confusing the range with the codomain",
+                                "Ignoring domain restrictions when defining an inverse",
+                                "Misusing the vertical line test and horizontal line test"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.1"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.5",
+                                "MATAA_HL_2.14"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Find",
+                                "State",
+                                "Sketch",
+                                "Determine"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why f(x) = x^2 does not have an inverse function on ℝ unless its domain is restricted.",
+                                    "Describe graphically the relationship between a function and its inverse."
+                                ],
+                                "examStyle": [
+                                    "For f(x) = 2x − 3, find f⁻¹(x). [3 marks]",
+                                    "State the domain and range of f(x) = √(x − 2). [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.3",
+                            "number": "2.3",
+                            "title": "Graphing functions",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "The graph of a function y = f(x). Sketching graphs from information given or context. Using technology to graph functions, including sums and differences.",
+                            "syllabusGuidance": "Students should distinguish between “sketch” and “draw”. Axes and key features must be labelled. Functions not explicitly listed in the syllabus may appear in graphs.",
+                            "keywords": [
+                                "graph",
+                                "sketch",
+                                "draw",
+                                "plot",
+                                "axes",
+                                "intercepts",
+                                "key features",
+                                "graphing technology",
+                                "Cartesian plane"
+                            ],
+                            "coreConcepts": [
+                                "A sketch shows the general shape and key features without precise scale",
+                                "A drawn graph is plotted accurately using a scale",
+                                "Key features include intercepts, turning points, asymptotes and end behavior",
+                                "Technology helps visualize complicated functions and combinations",
+                                "The graph of (f + g)(x) is obtained by adding function values f(x) + g(x)"
+                            ],
+                            "commonMisconceptions": [
+                                "Not labelling axes or important points",
+                                "Ignoring instructions to sketch versus draw",
+                                "Missing asymptotes, intercepts, or other key features",
+                                "Incorrectly estimating the shape between plotted points",
+                                "Using an inappropriate or inconsistent scale"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.2"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.4",
+                                "MATAA_HL_2.11"
+                            ],
+                            "paperTypes": [
+                                "paper2"
+                            ],
+                            "typicalMarks": "2-5",
+                            "commandTerms": [
+                                "Sketch",
+                                "Draw",
+                                "Plot",
+                                "Graph"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between sketching a graph and drawing a graph.",
+                                    "Describe which features must always appear on a sketch of a function."
+                                ],
+                                "examStyle": [
+                                    "Sketch the graph of f(x) = x^2 − 4, indicating all intercepts. [3 marks]",
+                                    "Use technology to graph f(x) = e^x and g(x) = ln x on the same set of axes and comment on their relationship. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.4",
+                            "number": "2.4",
+                            "title": "Key features of graphs",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Determining key features of graphs: maximum and minimum values, intercepts, symmetry, vertex, zeros/roots, vertical and horizontal asymptotes, and intersections.",
+                            "syllabusGuidance": "Technology may be needed to find features for complicated functions. Students should interpret these features in context where appropriate.",
+                            "keywords": [
+                                "maximum",
+                                "minimum",
+                                "turning point",
+                                "vertex",
+                                "zeros",
+                                "roots",
+                                "intercepts",
+                                "asymptotes",
+                                "symmetry",
+                                "intersection"
+                            ],
+                            "coreConcepts": [
+                                "Zeros or roots correspond to x-intercepts where f(x) = 0",
+                                "A local maximum (minimum) is the highest (lowest) point in a neighbourhood",
+                                "Vertical asymptotes arise where the function grows without bound near certain x-values",
+                                "Horizontal asymptotes describe the limiting value of a function as x → ±∞",
+                                "Symmetry (even/odd) can be recognized graphically and algebraically"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing local extrema with global extrema",
+                                "Believing a graph can never cross a horizontal asymptote",
+                                "Treating the y-intercept as a root of the function",
+                                "Missing multiple roots or repeated roots",
+                                "Confusing the vertex of a quadratic with any point of symmetry"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.3"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_5.8"
+                            ],
+                            "paperTypes": [
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Find",
+                                "Determine",
+                                "State",
+                                "Identify"
+                            ],
+                            "bloomLevel": 2,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between a local maximum and an absolute maximum.",
+                                    "Describe what a horizontal asymptote tells you about the long-term behaviour of a function."
+                                ],
+                                "examStyle": [
+                                    "Find the coordinates of the vertex of f(x) = 2(x − 3)^2 + 1. [2 marks]",
+                                    "Using technology, find all points of intersection of f(x) = x^3 − 2x and g(x) = x + 1. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.5",
+                            "number": "2.5",
+                            "title": "Composite and inverse functions",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Composite functions f ∘ g(x) = f(g(x)). Identity function. Finding inverse functions f⁻¹(x). Existence of inverses for one-to-one functions.",
+                            "syllabusGuidance": "Students should understand that f ∘ f⁻¹(x) = f⁻¹ ∘ f(x) = x on appropriate domains. Graphical link to reflection in y = x.",
+                            "keywords": [
+                                "composite function",
+                                "composition",
+                                "fog",
+                                "gof",
+                                "identity function",
+                                "inverse function",
+                                "one-to-one",
+                                "domain restriction"
+                            ],
+                            "coreConcepts": [
+                                "Composite function f ∘ g applies g first, then f to the result",
+                                "Composition is generally not commutative: f ∘ g ≠ g ∘ f",
+                                "The identity function I(x) = x leaves values unchanged",
+                                "An inverse reverses the effect of a function, satisfying f(f⁻¹(x)) = x where defined",
+                                "Only one-to-one functions admit global inverses over their domains"
+                            ],
+                            "commonMisconceptions": [
+                                "Treating f ∘ g as multiplication of functions rather than composition",
+                                "Reversing the order: thinking f ∘ g(x) = g(f(x))",
+                                "Ignoring domain and range when defining inverses",
+                                "Assuming every function has an inverse function",
+                                "Confusing f⁻¹(x) with [f(x)]⁻¹"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.2"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.2",
+                                "MATAA_HL_2.14"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-7",
+                            "commandTerms": [
+                                "Find",
+                                "Show that",
+                                "Determine",
+                                "State"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why f ∘ g is usually not equal to g ∘ f.",
+                                    "Describe what it means for a function to be one-to-one and why this matters for inverses."
+                                ],
+                                "examStyle": [
+                                    "Given f(x) = 2x + 1 and g(x) = x^2, find f ∘ g(x) and g ∘ f(x). [4 marks]",
+                                    "Find the inverse function of f(x) = (x − 3)/2, stating its domain. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.6",
+                            "number": "2.6",
+                            "title": "Quadratic functions",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Quadratic function f(x) = ax^2 + bx + c and its graph. Standard, factored, and vertex forms.",
+                            "syllabusGuidance": "Forms: f(x) = ax^2 + bx + c, f(x) = a(x − p)(x − q), f(x) = a(x − h)^2 + k. Students should convert between forms and relate them to graph features.",
+                            "keywords": [
+                                "quadratic function",
+                                "parabola",
+                                "vertex",
+                                "axis of symmetry",
+                                "standard form",
+                                "factored form",
+                                "vertex form",
+                                "completing the square",
+                                "roots",
+                                "intercepts"
+                            ],
+                            "coreConcepts": [
+                                "Standard form shows the y-intercept at (0, c)",
+                                "Factored form reveals real roots and x-intercepts (if they exist)",
+                                "Vertex form gives the vertex (h, k) directly",
+                                "Axis of symmetry is x = h or x = −b/(2a)",
+                                "The sign of a determines whether the parabola opens upwards or downwards"
+                            ],
+                            "commonMisconceptions": [
+                                "Assuming the vertex is always at the origin",
+                                "Sign errors when completing the square or converting forms",
+                                "Confusing h with −h in vertex form",
+                                "Expecting factored form even when roots are complex",
+                                "Misidentifying the axis of symmetry"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.2"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.7",
+                                "MATAA_HL_2.11"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Sketch",
+                                "Find",
+                                "Write",
+                                "Express"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why the vertex form immediately shows the maximum or minimum value of a quadratic.",
+                                    "Describe how the parameter a affects the shape and width of the parabola."
+                                ],
+                                "examStyle": [
+                                    "Express f(x) = x^2 + 6x + 5 in the form f(x) = (x − h)^2 + k. [3 marks]",
+                                    "A quadratic function has vertex (2, −3) and passes through (0, 5). Find its equation. [5 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.7",
+                            "number": "2.7",
+                            "title": "Solving quadratic equations",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Solution of quadratic equations and inequalities. Quadratic formula and discriminant Δ = b^2 − 4ac and the nature of roots.",
+                            "syllabusGuidance": "Methods include factorization, completing the square, and the quadratic formula. Discriminant: Δ > 0 two distinct real roots, Δ = 0 one repeated real root, Δ < 0 no real roots.",
+                            "keywords": [
+                                "quadratic equation",
+                                "quadratic formula",
+                                "discriminant",
+                                "roots",
+                                "solutions",
+                                "factorization",
+                                "completing the square",
+                                "repeated root"
+                            ],
+                            "coreConcepts": [
+                                "Quadratic formula: x = (−b ± √(b^2 − 4ac)) / (2a)",
+                                "The discriminant Δ = b^2 − 4ac determines the nature of the roots",
+                                "Δ > 0 gives two distinct real roots (the graph cuts the x-axis twice)",
+                                "Δ = 0 gives one repeated real root (the graph touches the x-axis)",
+                                "Δ < 0 gives no real roots (the graph does not intersect the x-axis)"
+                            ],
+                            "commonMisconceptions": [
+                                "Sign errors, particularly with −b in the quadratic formula",
+                                "Forgetting the ± sign and obtaining only one root",
+                                "Dividing only part of the numerator by 2a",
+                                "Misinterpreting Δ ≥ 0 vs Δ > 0",
+                                "Leaving surds unsimplified in exact answers"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.6"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.6",
+                                "MATAA_HL_2.12"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "4-8",
+                            "commandTerms": [
+                                "Solve",
+                                "Find",
+                                "Determine",
+                                "Show that"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain how the discriminant indicates the number of x-intercepts of the quadratic function.",
+                                    "Describe the graphical meaning of a repeated root."
+                                ],
+                                "examStyle": [
+                                    "Solve x^2 − 5x + 6 = 0. [3 marks]",
+                                    "Find the values of k for which kx^2 + 4x + k = 0 has two distinct real roots. [5 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.8",
+                            "number": "2.8",
+                            "title": "Rational functions (SL)",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Simple rational functions of the form f(x) = (ax + b)/(cx + d) and their graphs. Vertical and horizontal asymptotes, holes not required at SL.",
+                            "syllabusGuidance": "Students should identify asymptotes and intercepts and sketch graphs. Use technology where algebraic analysis is difficult.",
+                            "keywords": [
+                                "rational function",
+                                "asymptote",
+                                "vertical asymptote",
+                                "horizontal asymptote",
+                                "undefined",
+                                "hyperbola"
+                            ],
+                            "coreConcepts": [
+                                "A rational function is a quotient of polynomials",
+                                "Vertical asymptotes occur where the denominator is zero and the function is undefined",
+                                "Horizontal asymptotes give the end behaviour as x → ±∞",
+                                "Intercepts are found by setting x or y equal to zero",
+                                "Transformations can shift and stretch the basic 1/x graph"
+                            ],
+                            "commonMisconceptions": [
+                                "Thinking a function can never cross a horizontal asymptote",
+                                "Forgetting to exclude points where the denominator is zero",
+                                "Confusing vertical asymptotes with x-intercepts",
+                                "Incorrectly drawing the branches of the graph in wrong quadrants",
+                                "Assuming all rational functions look like 1/x"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.1",
+                                "MATAA_HL_2.4"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.11"
+                            ],
+                            "paperTypes": [
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Sketch",
+                                "Find",
+                                "Determine",
+                                "State"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain the difference between vertical and horizontal asymptotes for a rational function.",
+                                    "Describe how the graph of y = 1/x changes when it is transformed to y = 2/(x − 3) + 1."
+                                ],
+                                "examStyle": [
+                                    "Sketch the graph of f(x) = (2x + 1)/(x − 1), showing all asymptotes and intercepts. [5 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.9",
+                            "number": "2.9",
+                            "title": "Exponential functions",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Functions of the form f(x) = a^x and their graphs, for a > 0, a ≠ 1. Applications to growth and decay.",
+                            "syllabusGuidance": "Emphasis on shape of graphs, intercepts, and asymptotes. Link to logarithmic functions as inverses.",
+                            "keywords": [
+                                "exponential function",
+                                "growth",
+                                "decay",
+                                "a^x",
+                                "y-intercept",
+                                "horizontal asymptote"
+                            ],
+                            "coreConcepts": [
+                                "For a > 1, f(x) = a^x models exponential growth; for 0 < a < 1, exponential decay",
+                                "The graph passes through (0, 1) and has y = 0 as a horizontal asymptote",
+                                "The base a controls the rate of growth or decay",
+                                "Exponential functions are one-to-one and have inverses",
+                                "Many real-life processes can be approximated by exponential models"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing linear and exponential growth in word problems",
+                                "Thinking a^0 = 0 instead of 1",
+                                "Drawing the graph crossing the x-axis",
+                                "Using negative bases for real-valued exponential functions",
+                                "Not recognizing decay when 0 < a < 1"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_1.6",
+                                "MATAA_HL_2.2"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_1.8",
+                                "MATAA_HL_2.10"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Sketch",
+                                "Find",
+                                "Determine",
+                                "Model"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why an exponential function with base greater than 1 always increases.",
+                                    "Describe how the graph of y = 3^x differs from the graph of y = 2^x."
+                                ],
+                                "examStyle": [
+                                    "Sketch the graph of f(x) = 2^x, indicating the intercept with the y-axis and any asymptotes. [3 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.10",
+                            "number": "2.10",
+                            "title": "Solving equations graphically and with technology",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Solving equations of the form f(x) = g(x) using graphs and technology. Intersection points of curves.",
+                            "syllabusGuidance": "Students should interpret intersections in context. Technology may be required when algebraic solutions are difficult or impossible.",
+                            "keywords": [
+                                "equation solving",
+                                "graphical solution",
+                                "intersection",
+                                "numerical solution",
+                                "technology"
+                            ],
+                            "coreConcepts": [
+                                "Solutions of f(x) = g(x) correspond to intersection points of their graphs",
+                                "Graphical methods provide approximate solutions",
+                                "Technology can be used to find numerical solutions to complicated equations",
+                                "Different equations can have zero, one, or several real solutions",
+                                "Approximate solutions should be rounded appropriately and checked"
+                            ],
+                            "commonMisconceptions": [
+                                "Reading off approximate solutions too coarsely from a graph",
+                                "Forgetting that equations can have no real solutions",
+                                "Misinterpreting multiple intersections as a single solution",
+                                "Not verifying solutions by substitution",
+                                "Over-reliance on technology without understanding the graphs"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.3",
+                                "MATAA_HL_2.4"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.7"
+                            ],
+                            "paperTypes": [
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Solve",
+                                "Find",
+                                "Determine"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 2,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain why some equations can be solved algebraically while others require numerical or graphical methods.",
+                                    "Describe how you would use a graphing calculator to solve f(x) = g(x)."
+                                ],
+                                "examStyle": [
+                                    "Use technology to solve the equation e^x = x + 2, giving your answer to 3 significant figures. [4 marks]"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "MATAA_HL_2.11",
+                            "number": "2.11",
+                            "title": "Transformations of graphs",
+                            "subjectCode": "MATAA_HL",
+                            "topicNumber": "2",
+                            "syllabusContent": "Graphical effects of transformations of the form y = f(x) + a, y = f(x − a), y = k f(x), y = f(kx).",
+                            "syllabusGuidance": "Students should link algebraic changes in the function expression to vertical and horizontal shifts and stretches. Reflections may also be included.",
+                            "keywords": [
+                                "transformation",
+                                "translation",
+                                "vertical shift",
+                                "horizontal shift",
+                                "stretch",
+                                "compression",
+                                "reflection"
+                            ],
+                            "coreConcepts": [
+                                "y = f(x) + a translates the graph vertically by a units",
+                                "y = f(x − a) translates the graph horizontally by a units",
+                                "y = k f(x) scales the graph vertically by factor k",
+                                "y = f(kx) scales the graph horizontally by factor 1/k",
+                                "Reflections such as y = −f(x) and y = f(−x) flip the graph in the axes"
+                            ],
+                            "commonMisconceptions": [
+                                "Confusing inside and outside changes (x − a vs + a) in the function",
+                                "Reversing the direction of horizontal translations",
+                                "Misinterpreting horizontal stretches as vertical ones",
+                                "Forgetting that horizontal scaling uses reciprocal factors",
+                                "Applying transformations in the wrong order when multiple changes occur"
+                            ],
+                            "prerequisites": [
+                                "MATAA_HL_2.3"
+                            ],
+                            "relatedSubtopics": [
+                                "MATAA_HL_2.6"
+                            ],
+                            "paperTypes": [
+                                "paper1",
+                                "paper2"
+                            ],
+                            "typicalMarks": "3-6",
+                            "commandTerms": [
+                                "Sketch",
+                                "Draw",
+                                "Describe",
+                                "Write down"
+                            ],
+                            "bloomLevel": 3,
+                            "teachingHours": 3,
+                            "questionExamples": {
+                                "conceptual": [
+                                    "Explain how the graph of y = (x − 2)^2 + 3 is obtained from the graph of y = x^2.",
+                                    "Describe the effect on the graph of f of changing f(x) to −f(x) and to f(−x)."
+                                ],
+                                "examStyle": [
+                                    "The graph of y = f(x) is shown. Sketch the graphs of y = f(x − 2) and y = 2f(x) on the same axes. [4 marks]"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
