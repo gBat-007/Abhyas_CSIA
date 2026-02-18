@@ -1,11 +1,8 @@
 import SwiftUI
 
-import SwiftUI
-
 struct CheckInFlowView: View {
     @EnvironmentObject var appVM: AppViewModel
     @Environment(\.dismiss) var dismiss
-    
     @StateObject private var viewModel = CheckInFlowViewModel()
     
     var body: some View {
@@ -22,20 +19,38 @@ struct CheckInFlowView: View {
                         FollowUpQuestionsView(
                             subtopic: subtopic,
                             userExplanation: viewModel.userExplanation,
-                            onComplete: {
-                                viewModel.advanceFromFollowUp()
+                            onComplete: { followUpQAs in
+                                Task {
+                                    await viewModel.advanceFromFollowUp(with: followUpQAs)
+                                }
                             },
                             onSkip: {
-                                viewModel.advanceFromFollowUp()
+                                Task {
+                                    await viewModel.advanceFromFollowUp(with: [])
+                                }
                             }
                         )
                     } else {
                         Text("You must update to iOS 26.0.")
                     }
                 } else {
-                    // safety: if something goes wrong, end the flow
                     CompletionView()
                         .environmentObject(viewModel)
+                }
+            } else if viewModel.currentStep == .gapAnalysis {
+                if let subtopic = viewModel.currentSubtopic,
+                   let analysis = viewModel.gapAnalysisMap[subtopic.id] {
+                    NavigationStack {
+                        GapAnalysisResultView(
+                            subtopic: subtopic,
+                            analysis: analysis,
+                            onContinue: {
+                                viewModel.advanceFromGapAnalysis()
+                            }
+                        )
+                    }
+                } else {
+                    LoadingAnalysisView(currentText: "Loading analysis...")
                 }
             } else if viewModel.currentStep == .complete {
                 CompletionView()
@@ -54,7 +69,6 @@ struct CheckInFlowView: View {
         }
     }
 }
-
 
 struct CompletionView: View {
     @EnvironmentObject var viewModel: CheckInFlowViewModel

@@ -3,7 +3,7 @@ import SwiftUI
 struct FollowUpQuestionsView: View {
     let subtopic: Subtopic
     let userExplanation: String
-    let onComplete: () -> Void
+    let onComplete: ([FollowUpQA]) -> Void
     let onSkip: () -> Void
     
     @State private var viewModel = FollowUpQuestionsViewModel()
@@ -216,12 +216,27 @@ struct FollowUpQuestionsView: View {
                         print("📱 Generated Q\(viewModel.questions.count) → index \(currentQuestionIndex)")
                     }
                 } else {
-                    onComplete()
+                    // ✅ Finish: build FollowUpQA array and pass back
+                    let followUps: [FollowUpQA] = buildFollowUpQAs()
+                    onComplete(followUps)
                 }
             }
         }
 
-
+        private func buildFollowUpQAs() -> [FollowUpQA] {
+            let concept = subtopic.coreConcepts.first ?? ""
+            let topicCheckInID = UUID() // Placeholder until persisted session exists
+            let count = min(viewModel.questions.count, answers.count)
+            return (0..<count).map { idx in
+                FollowUpQA(
+                    topicCheckInID: topicCheckInID,
+                    questionNumber: idx + 1,
+                    question: viewModel.questions[idx],
+                    userResponse: answers[idx],
+                    conceptTested: concept
+                )
+            }
+        }
 
         private func ensureAnswerSlotExists() {
             let safeIndex = min(currentQuestionIndex, 100)  // Sanity cap
@@ -281,16 +296,16 @@ struct QuestionCard: View {
                             .frame(minHeight: 80)
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(isFocused ? Color.blue : Color.clear, lineWidth: 2)
+                                    .stroke(isFocused ? Color.accentColor : Color.accentColor.opacity(0.5), lineWidth: 2)
                             )
                         
-                        Button(action: toggleRecording) {
-                            Image(systemName: isRecording ? "stop.circle.fill" : "mic.circle.fill")
-                                .font(.system(size: 28))
-                                .foregroundStyle(isRecording ? .red : .blue)
-                        }
-                        .buttonStyle(.plain)
-                        .disabled(isTranscribing)  // ✅ Prevent spam
+//                        Button(action: toggleRecording) {
+//                            Image(systemName: isRecording ? "stop.circle.fill" : "mic.circle.fill")
+//                                .font(.system(size: 28))
+//                                .foregroundStyle(isRecording ? .red : .blue)
+//                        }
+//                        .buttonStyle(.plain)
+//                        .disabled(isTranscribing)  // ✅ Prevent spam
                     }
                 }
             }
@@ -401,5 +416,4 @@ private extension Array where Element == String {
         }
     }
 }
-
 
