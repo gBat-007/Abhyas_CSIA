@@ -1,11 +1,21 @@
 import Foundation
 import FoundationModels
 
+@available(iOS 26.0, *)
 @MainActor
 class GapDetectionViewModel: ObservableObject {
     @Published var isAnalyzing = false
     @Published var currentAnalyzingText = ""
     @Published var gapAnalysis: GapAnalysisResult?
+    
+    private var session: LanguageModelSession?
+    private let dataManager = DataManager()
+    
+    init() {
+        if #available(iOS 26.0, *) {
+            session = LanguageModelSession()
+        }
+    }
     
     func detectConceptualGaps(
         subtopic: Subtopic,
@@ -15,22 +25,49 @@ class GapDetectionViewModel: ObservableObject {
         isAnalyzing = true
         currentAnalyzingText = "Analyzing your understanding..."
         
+        // Step 1: Algorithmic baseline (fast)
+        var preliminaryResult = await performAlgorithmicAnalysis(
+            subtopic: subtopic,
+            userResponses: userResponses,
+            followUpQAs: followUpQAs
+        )
+        
+        // Step 2: AI refinement (shows loading until complete)
+        currentAnalyzingText = "Generating personalized feedback..."
+        
+        if #available(iOS 26.0, *), session != nil {
+            preliminaryResult = await refineAnalysisWithAI(
+                preliminaryResult: preliminaryResult,
+                subtopic: subtopic,
+                userResponses: userResponses,
+                followUpQAs: followUpQAs
+            )
+        }
+        
+        isAnalyzing = false
+        gapAnalysis = preliminaryResult
+        
+        return preliminaryResult
+    }
+    
+    private func performAlgorithmicAnalysis(
+        subtopic: Subtopic,
+        userResponses: [String],
+        followUpQAs: [FollowUpQA]
+    ) async -> GapAnalysisResult {
         var understoodConcepts: [String] = []
         var conceptualGaps: [String] = []
         var flaggedMisconceptions: [String] = []
         var missingPrerequisites: [String] = []
         
         let allText = userResponses.joined(separator: " ")
-        
         let responseKeywords = extractAndLemmatizeKeywords(from: allText)
         
         currentAnalyzingText = "Checking core concepts..."
         
         for concept in subtopic.coreConcepts {
             let conceptKeywords = extractAndLemmatizeKeywords(from: concept)
-            
             let matchCount = conceptKeywords.filter { responseKeywords.contains($0) }.count
-            
             let matchPercentage = conceptKeywords.isEmpty ? 0.0 : Double(matchCount) / Double(conceptKeywords.count)
             
             if matchPercentage >= 0.6 {
@@ -44,56 +81,201 @@ class GapDetectionViewModel: ObservableObject {
         
         if let misconceptions = subtopic.commonMisconceptions {
             for misconception in misconceptions {
-                let indicatorPhrases = getMisconceptionIndicators(for: misconception)
+                let misconceptionKeywords = extractAndLemmatizeKeywords(from: misconception)
+                let matchCount = misconceptionKeywords.filter { responseKeywords.contains($0) }.count
+                let matchPercentage = misconceptionKeywords.isEmpty ? 0.0 : Double(matchCount) / Double(misconceptionKeywords.count)
                 
-                for phrase in indicatorPhrases {
-                    if allText.lowercased().contains(phrase.lowercased()) {
-                        flaggedMisconceptions.append(misconception)
-                        
-                        let relatedConcept = getCorrectConcept(for: misconception, in: subtopic)
-                        
-                        if !conceptualGaps.contains(relatedConcept) && !understoodConcepts.contains(relatedConcept) {
-                            conceptualGaps.append(relatedConcept)
-                        }
-                        
-                        break
+                if matchPercentage >= 0.4 {
+                    flaggedMisconceptions.append(misconception)
+                    
+                    let relatedConcept = getCorrectConcept(for: misconception, in: subtopic)
+                    if !conceptualGaps.contains(relatedConcept) && !understoodConcepts.contains(relatedConcept) {
+                        conceptualGaps.append(relatedConcept)
                     }
                 }
             }
         }
         
         let totalConcepts = subtopic.coreConcepts.count
-        let gapsCount = conceptualGaps.count
-        let gapPercentage = totalConcepts > 0 ? Double(gapsCount) / Double(totalConcepts) : 0.0
+        let gapPercentage = totalConcepts > 0 ? Double(conceptualGaps.count) / Double(totalConcepts) : 0.0
         
         currentAnalyzingText = "Checking prerequisites..."
         
         if gapPercentage > 0.5 {
             for prereqID in subtopic.prerequisites {
                 let hasCompletedPrereq = await checkPrerequisiteCompletion(prereqID: prereqID)
-                
                 if !hasCompletedPrereq {
                     missingPrerequisites.append(prereqID)
                 }
             }
         }
         
-        let understoodCount = understoodConcepts.count
-        let understandingScore = totalConcepts > 0 ? Float((Double(understoodCount) / Double(totalConcepts)) * 100) : 0.0
+        let understandingScore = totalConcepts > 0 ? Float((Double(understoodConcepts.count) / Double(totalConcepts)) * 100) : 0.0
         
-        let result = GapAnalysisResult(
+        return GapAnalysisResult(
             understoodConcepts: understoodConcepts,
             conceptualGaps: conceptualGaps,
             flaggedMisconceptions: flaggedMisconceptions,
             missingPrerequisites: missingPrerequisites,
             understandingScore: understandingScore
         )
-        
-        isAnalyzing = false
-        gapAnalysis = result
-        
-        return result
     }
+    
+    @available(iOS 26.0, *)
+    private func refineAnalysisWithAI(
+        preliminaryResult: GapAnalysisResult,
+        subtopic: Subtopic,
+        userResponses: [String],
+        followUpQAs: [FollowUpQA]
+    ) async -> GapAnalysisResult {
+        guard let session = session else { return preliminaryResult }
+        
+        let prompt = buildRefinementPrompt(
+            preliminaryResult: preliminaryResult,
+            subtopic: subtopic,
+            userResponses: userResponses,
+            followUpQAs: followUpQAs
+        )
+        
+        do {
+            var refinedAnalysisText = ""
+            let stream = session.streamResponse(to: prompt)
+            
+            for try await response in stream {
+                currentAnalyzingText = "Analyzing your responses... \(response.content.prefix(50))..."
+                refinedAnalysisText = response.content
+            }
+            
+            currentAnalyzingText = "Finalizing analysis..."
+            
+            let refinedResult = parseRefinedAnalysis(
+                aiResponse: refinedAnalysisText,
+                preliminaryResult: preliminaryResult,
+                subtopic: subtopic
+            )
+            
+            return refinedResult
+            
+        } catch {
+            print("AI refinement error: \(error)")
+            currentAnalyzingText = "Analysis complete"
+            return preliminaryResult
+        }
+    }
+    
+    @available(iOS 26.0, *)
+    private func buildRefinementPrompt(
+        preliminaryResult: GapAnalysisResult,
+        subtopic: Subtopic,
+        userResponses: [String],
+        followUpQAs: [FollowUpQA]
+    ) -> String {
+        let allResponses = userResponses + followUpQAs.map { $0.userResponse }
+        
+        let qaContext = followUpQAs.enumerated().map { index, qa in
+            "Q\(index + 1): \(qa.question)\nA\(index + 1): \(qa.userResponse)"
+        }.joined(separator: "\n\n")
+        
+        let syllabusContext = """
+        Topic: \(subtopic.title)
+        Core concepts to assess: \(subtopic.coreConcepts.joined(separator: "; "))
+        Common misconceptions: \(subtopic.commonMisconceptions?.joined(separator: "; ") ?? "None listed")
+        """
+        
+        return """
+        Analyze this student's understanding of IB \(subtopic.subjectCode) \(subtopic.title).
+        
+        STUDENT RESPONSES:
+        \(allResponses.enumerated().map { "\($0.offset + 1). \($0.element)" }.joined(separator: "\n\n"))
+        
+        SYLLABUS CONTEXT:
+        \(syllabusContext)
+        
+        TASK: Identify specific gaps in the student's understanding based on their ACTUAL responses. Focus on:
+        1. Which core concepts they clearly understand vs. struggle with
+        2. Evidence of misconceptions in their wording
+        3. Prerequisite knowledge gaps only if their responses show fundamental confusion
+        
+        Output ONLY in this exact format:
+        
+        UNDERSTOOD: [list 2-3 concepts they clearly explained well, or "None clearly understood"]
+        GAPS: [list 2-4 specific gaps/missing understanding from their responses, or "No major gaps"]
+        MISCONCEPTIONS: [1-2 misconceptions if clearly present in wording, or "None detected"]
+        PREREQUISITES: [prereq subtopic IDs if responses show fundamental gaps, or "None needed"]
+        SCORE: [0-100, based on depth/accuracy of understanding]
+        
+        Base decisions on their actual responses, not just keyword matching.
+        Be specific about what they got wrong/right.
+        """
+    }
+    
+    @available(iOS 26.0, *)
+    private func parseRefinedAnalysis(
+        aiResponse: String,
+        preliminaryResult: GapAnalysisResult,
+        subtopic: Subtopic
+    ) -> GapAnalysisResult {
+        // Parse AI's free-form response into structured data
+        // Use the AI response as the source of truth for final analysis
+        let parsed = parseAIFreeformResponse(aiResponse, subtopic: subtopic)
+        
+        return GapAnalysisResult(
+            understoodConcepts: parsed.understoodConcepts,
+            conceptualGaps: parsed.conceptualGaps,
+            flaggedMisconceptions: parsed.misconceptions,
+            missingPrerequisites: parsed.prerequisites,
+            understandingScore: parsed.score
+        )
+    }
+    
+    private func parseAIFreeformResponse(_ response: String, subtopic: Subtopic) -> (understoodConcepts: [String], conceptualGaps: [String], misconceptions: [String], prerequisites: [String], score: Float) {
+        var understoodConcepts: [String] = []
+        var conceptualGaps: [String] = []
+        var misconceptions: [String] = []
+        var prerequisites: [String] = []
+        var score: Float = 50.0 // default
+        
+        let lines = response.components(separatedBy: .newlines)
+        
+        for line in lines {
+            let trimmed = line.trimmingCharacters(in: .whitespacesAndNewlines)
+            
+            if trimmed.hasPrefix("UNDERSTOOD:") {
+                let content = String(trimmed.dropFirst(11)).trimmingCharacters(in: .whitespaces)
+                understoodConcepts = splitConcepts(content)
+            } else if trimmed.hasPrefix("GAPS:") {
+                let content = String(trimmed.dropFirst(6)).trimmingCharacters(in: .whitespaces)
+                conceptualGaps = splitConcepts(content)
+            } else if trimmed.hasPrefix("MISCONCEPTIONS:") {
+                let content = String(trimmed.dropFirst(15)).trimmingCharacters(in: .whitespaces)
+                misconceptions = splitConcepts(content)
+            } else if trimmed.hasPrefix("PREREQUISITES:") {
+                let content = String(trimmed.dropFirst(14)).trimmingCharacters(in: .whitespaces)
+                prerequisites = content.components(separatedBy: ",").map { $0.trimmingCharacters(in: .whitespaces) }.filter { !$0.isEmpty }
+            } else if trimmed.hasPrefix("SCORE:") {
+                let content = String(trimmed.dropFirst(6)).trimmingCharacters(in: .whitespaces)
+                score = Float(content) ?? 50.0
+            }
+        }
+        
+        // Fallback to syllabus concepts if AI didn't specify enough
+        if understoodConcepts.count + conceptualGaps.count < 2 {
+            let allConcepts = subtopic.coreConcepts
+            let understoodCount = min(understoodConcepts.count + 1, allConcepts.count / 2)
+            understoodConcepts = Array(allConcepts.prefix(understoodCount))
+            conceptualGaps = Array(allConcepts.dropFirst(understoodCount))
+        }
+        
+        return (understoodConcepts, conceptualGaps, misconceptions, prerequisites, score)
+    }
+    
+    private func splitConcepts(_ text: String) -> [String] {
+        text.components(separatedBy: [";", ","])
+            .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+            .filter { !$0.isEmpty && $0.lowercased() != "none" && $0.lowercased() != "no major gaps" }
+    }
+    
+    // ... rest of helper methods remain the same (extractAndLemmatizeKeywords, lemmatize, etc.)
     
     private func extractAndLemmatizeKeywords(from text: String) -> [String] {
         let cleanText = text.lowercased()
@@ -130,59 +312,26 @@ class GapDetectionViewModel: ObservableObject {
         return word
     }
     
-    private func getMisconceptionIndicators(for misconception: String) -> [String] {
-        var indicators: [String] = []
-        
-        let lowercased = misconception.lowercased()
-        
-        if lowercased.contains("nd instead of (n-1)d") || lowercased.contains("using nd") {
-            indicators = ["nd", "n*d", "n times d", "multiply n"]
-        } else if lowercased.contains("confusing") && lowercased.contains("ram") && lowercased.contains("rom") {
-            indicators = ["ram is permanent", "rom is temporary", "ram stores firmware"]
-        } else if lowercased.contains("sum to infinity") && lowercased.contains("|r| ≥ 1") {
-            indicators = ["r = 1", "r > 1", "r greater than", "always converge"]
-        } else if lowercased.contains("direct changeover") && lowercased.contains("always best") {
-            indicators = ["direct is best", "fastest is best", "always use direct"]
-        } else if lowercased.contains("technical requirements") && lowercased.contains("only important") {
-            indicators = ["only technical", "just technical", "hardware and software only"]
-        } else if lowercased.contains("log") && lowercased.contains("ln") && lowercased.contains("interchangeable") {
-            indicators = ["log and ln same", "log equals ln", "log is ln"]
-        } else {
-            let words = misconception.components(separatedBy: .whitespaces)
-                .filter { $0.count > 3 }
-                .prefix(5)
-            indicators = Array(words)
-        }
-        
-        return indicators
-    }
-    
     private func getCorrectConcept(for misconception: String, in subtopic: Subtopic) -> String {
-        let lowercased = misconception.lowercased()
+        let misconceptionKeywords = extractAndLemmatizeKeywords(from: misconception)
+        
+        var bestMatch: (concept: String, matchCount: Int) = (subtopic.coreConcepts.first ?? "Core understanding of this topic", 0)
         
         for concept in subtopic.coreConcepts {
-            let conceptLower = concept.lowercased()
+            let conceptKeywords = extractAndLemmatizeKeywords(from: concept)
+            let matchCount = misconceptionKeywords.filter { conceptKeywords.contains($0) }.count
             
-            if lowercased.contains("nd") && conceptLower.contains("(n-1)") {
-                return concept
-            } else if lowercased.contains("ram") && conceptLower.contains("ram") {
-                return concept
-            } else if lowercased.contains("rom") && conceptLower.contains("rom") {
-                return concept
-            } else if lowercased.contains("|r|") && conceptLower.contains("|r|") {
-                return concept
-            } else if lowercased.contains("log") && conceptLower.contains("log") {
-                return concept
+            if matchCount > bestMatch.matchCount {
+                bestMatch = (concept, matchCount)
             }
         }
         
-        return subtopic.coreConcepts.first ?? "Core understanding of this topic"
+        return bestMatch.concept
     }
     
     private func checkPrerequisiteCompletion(prereqID: String) async -> Bool {
-        // Load user data safely; if it fails, assume not completed
-        let appData = (try? DataManager().loadUserData()) ?? AppData()
-        guard let _ = appData.userProfile else {
+        guard let appData = try? dataManager.loadUserData(),
+              let profile = appData.userProfile else {
             return false
         }
         

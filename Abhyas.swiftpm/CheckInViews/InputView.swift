@@ -2,6 +2,7 @@ import SwiftUI
 import VisionKit
 import Vision
 
+@available(iOS 26.0, *)
 struct InputView: View {
     @EnvironmentObject var viewModel: CheckInFlowViewModel
     @EnvironmentObject var appVM: AppViewModel
@@ -131,6 +132,7 @@ struct InputView: View {
 }
 
 // MARK: - Photo Capture with VisionKit OCR
+@available(iOS 26.0, *)
 struct PhotoCaptureView: View {
     @EnvironmentObject var viewModel: CheckInFlowViewModel
     @State private var showCamera = false

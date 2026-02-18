@@ -1965,6 +1965,2640 @@
                             }
                         }
                     ]
+                },
+                {
+                  "id": "MATAA_HL_3",
+                  "number": "3",
+                  "title": "Geometry and trigonometry",
+                  "subjectCode": "MATAA_HL",
+                  "syllabusDescription": "This topic develops geometrical reasoning, trigonometric skills, and spatial visualization, including mensuration, trigonometric functions and identities, equations, and vectors in two and three dimensions for modeling and problem-solving.",
+                  "teachingHours": 51,
+                  "subtopics": [
+                    {
+                      "id": "MATAA_HL_3.1",
+                      "number": "3.1",
+                      "title": "Mensuration in two and three dimensions",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Perimeter, area and volume for standard plane and solid figures, including rectangles, triangles, trapezoids, circles, prisms, pyramids, cones and spheres. Use of composite shapes and solids in problem-solving.",
+                      "syllabusGuidance": "Formulae for basic 2D and 3D figures are provided in the formula booklet. Problems may involve combining several shapes, interpreting diagrams, and working with exact values and approximations. Units and unit conversions should be emphasized.",
+                      "keywords": [
+                        "perimeter",
+                        "area",
+                        "volume",
+                        "surface area",
+                        "triangle",
+                        "trapezoid",
+                        "circle",
+                        "prism",
+                        "pyramid",
+                        "cone",
+                        "sphere",
+                        "composite figure",
+                        "nets",
+                        "units"
+                      ],
+                      "coreConcepts": [
+                        "Area and volume formulae model real measurements of two- and three-dimensional objects",
+                        "Decomposing complex shapes into simpler standard shapes simplifies area and volume calculations",
+                        "Consistency of units is essential when calculating and interpreting measurements",
+                        "Scaling linear dimensions affects area and volume by square and cube factors respectively",
+                        "Many real-life applications, such as packaging and construction, rely on geometric measurement"
+                      ],
+                      "commonMisconceptions": [
+                        "Using diameter instead of radius in circle formulae",
+                        "Confusing surface area with volume in word problems",
+                        "Forgetting to convert all lengths to the same units before calculation",
+                        "Assuming a direct linear relationship between changes in length and changes in area or volume",
+                        "Omitting hidden or interior faces when computing surface area of composite solids"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_1.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.2",
+                        "MATAA_HL_3.4"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-8",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Determine",
+                        "Show that"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how doubling the dimensions of a cube affects its surface area and its volume.",
+                          "Describe a strategy for finding the volume of a composite solid made of a cylinder and a cone."
+                        ],
+                        "examStyle": [
+                          "A solid is composed of a right circular cylinder of radius 4 cm and height 10 cm, with a hemisphere of the same radius attached to one end. Calculate the total volume of the solid, giving your answer to three significant figures. [6 marks]",
+                          "The base of a triangular prism is a right triangle with legs 5 cm and 12 cm. The length of the prism is 20 cm. Find the total surface area of the prism, excluding the base that rests on the ground. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.2",
+                      "number": "3.2",
+                      "title": "Sine rule, cosine rule and area of a triangle",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Sine rule, cosine rule, and area of a triangle \u00bdab sin C for any triangle. Use of these results in solving triangles, including applications in two and three dimensions.",
+                      "syllabusGuidance": "The sine rule should be applied in the forms a/sin A = b/sin B = c/sin C and sin A/a = sin B/b = sin C/c. The cosine rule may be used to find unknown sides or angles. Questions can involve bearings, angles of elevation and depression, and non-right-angled contexts.",
+                      "keywords": [
+                        "sine rule",
+                        "cosine rule",
+                        "law of sines",
+                        "law of cosines",
+                        "area of triangle",
+                        "non-right-angled triangle",
+                        "bearings",
+                        "elevation",
+                        "depression",
+                        "ambiguous case"
+                      ],
+                      "coreConcepts": [
+                        "The sine and cosine rules generalize Pythagoras' theorem to any triangle",
+                        "The formula area = \u00bdab sin C allows areas of non-right-angled triangles to be found using two sides and the included angle",
+                        "Trigonometric rules connect geometric measurements in navigation, surveying and physics",
+                        "Choosing the appropriate rule depends on the known combination of sides and angles",
+                        "The sine rule can yield the ambiguous case when solving for angles"
+                      ],
+                      "commonMisconceptions": [
+                        "Applying the sine rule when the cosine rule is required and vice versa",
+                        "Using the wrong angle in the area formula \u00bdab sin C (not the included angle)",
+                        "Ignoring the possibility of two solutions for an angle when using the sine rule",
+                        "Confusing side labels with angle labels in the sine and cosine rules",
+                        "Rounding intermediate values too early and causing inaccuracy in final answers"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_1.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.3",
+                        "MATAA_HL_3.4"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-10",
+                      "commandTerms": [
+                        "Solve",
+                        "Find",
+                        "Determine",
+                        "Calculate"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain when the sine rule leads to an ambiguous case and how this affects the solution of a triangle.",
+                          "Describe how the cosine rule can be viewed as a generalization of Pythagoras' theorem."
+                        ],
+                        "examStyle": [
+                          "Triangle ABC has sides AB = 7.6 cm, AC = 9.1 cm and angle BAC = 58\u00b0. Calculate the length of BC and the area of triangle ABC. [6 marks]",
+                          "From a point P, the bearing of a lighthouse L is 042\u00b0 and its distance is 12 km. From another point Q, 8 km due east of P, the bearing of the same lighthouse is 316\u00b0. Find the distance QL. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.3",
+                      "number": "3.3",
+                      "title": "Applications of right-angled and non-right-angled trigonometry",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Applications of trigonometry to model and solve problems in two and three dimensions, including angles of elevation and depression, navigation, kinematics and resultant forces.",
+                      "syllabusGuidance": "Problems may involve multiple steps, constructing diagrams from written descriptions, and interpreting solutions in context. Emphasis should be on selecting appropriate trigonometric methods and justifying reasoning.",
+                      "keywords": [
+                        "right-angled trigonometry",
+                        "non-right-angled trigonometry",
+                        "elevation",
+                        "depression",
+                        "navigation",
+                        "resultant force",
+                        "components",
+                        "vectors",
+                        "3D problems",
+                        "modelling"
+                      ],
+                      "coreConcepts": [
+                        "Trigonometric ratios and rules model real-world measurements and forces",
+                        "Constructing accurate diagrams from verbal descriptions is key to solving contextual problems",
+                        "Many 3D problems can be reduced to linked 2D trigonometric problems",
+                        "Resolving quantities into perpendicular components often simplifies complex situations",
+                        "Interpreting results requires attention to units, direction and physical plausibility"
+                      ],
+                      "commonMisconceptions": [
+                        "Drawing incorrect or incomplete diagrams that do not match the scenario",
+                        "Mixing up angles of elevation and depression",
+                        "Assuming all problems can be treated as right triangles when non-right-angled methods are needed",
+                        "Ignoring directions when combining forces or displacements",
+                        "Forgetting to convert between degrees and radians when required"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.2"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.4",
+                        "MATAA_HL_3.12"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-11",
+                      "commandTerms": [
+                        "Solve",
+                        "Calculate",
+                        "Determine",
+                        "Explain"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how resolving a vector into horizontal and vertical components can simplify the analysis of motion on an inclined plane.",
+                          "Describe how you would model the height of a building using an angle of elevation and a measured horizontal distance."
+                        ],
+                        "examStyle": [
+                          "A ship sails 40 km on a bearing of 060\u00b0 and then 25 km on a bearing of 135\u00b0. Find the ship's distance and bearing from its starting point, giving the bearing to the nearest degree. [8 marks]",
+                          "A ladder of length 4.5 m rests against a vertical wall with its foot 1.2 m from the wall. Find the angle the ladder makes with the ground and the height at which it touches the wall. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.4",
+                      "number": "3.4",
+                      "title": "Radian measure, arc length and area of a sector",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Radian measure of angles. Length of an arc and area of a sector of a circle. Relationship between degrees and radians.",
+                      "syllabusGuidance": "Use of formulas s = r\u03b8 and A = \u00bdr\u00b2\u03b8 where \u03b8 is in radians. Questions should involve conversion between degrees and radians and may require working with exact forms such as \u03c0/3 or 5\u03c0/4.",
+                      "keywords": [
+                        "radian measure",
+                        "degrees",
+                        "arc length",
+                        "sector area",
+                        "central angle",
+                        "circle",
+                        "s = r\u03b8",
+                        "A = \u00bdr\u00b2\u03b8"
+                      ],
+                      "coreConcepts": [
+                        "Radian measure defines angles in terms of arc length relative to radius",
+                        "There is a constant proportional relationship between degrees and radians",
+                        "Arc length and sector area are directly proportional to the central angle in radians",
+                        "Using radians simplifies many trigonometric and calculus relationships",
+                        "Exact radian measures often lead to exact values of trigonometric functions"
+                      ],
+                      "commonMisconceptions": [
+                        "Using degree measures directly in formulas that require radians",
+                        "Confusing arc length and chord length",
+                        "Incorrectly converting between degrees and radians",
+                        "Forgetting that 2\u03c0 radians corresponds to a full revolution",
+                        "Assuming sector area formulas work with any angle unit without adjustment"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_1.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.5",
+                        "MATAA_HL_5.1"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "Calculate",
+                        "Convert",
+                        "Find",
+                        "Determine"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why radian measure is particularly convenient when working with trigonometric functions in calculus.",
+                          "Describe how the formula for the area of a sector arises from the ratio of the central angle to 2\u03c0."
+                        ],
+                        "examStyle": [
+                          "Convert 135\u00b0 to radians and express your answer in terms of \u03c0. [2 marks]",
+                          "A circle has radius 6 cm. Find the length of the arc and the area of the sector subtended by a central angle of 2.4 radians. Give each answer to three significant figures. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.5",
+                      "number": "3.5",
+                      "title": "Trigonometric functions and the unit circle",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Definition of sine, cosine and tangent for all real numbers using the unit circle. Graphs of y = sin x, y = cos x and y = tan x, including domain, range, amplitude, period, symmetry and key points.",
+                      "syllabusGuidance": "Angles should be considered in radians. Emphasis on periodicity, symmetry (even and odd functions), and connections between the unit circle and graphs. Technology may be used to explore graphs and transformations.",
+                      "keywords": [
+                        "unit circle",
+                        "sine",
+                        "cosine",
+                        "tangent",
+                        "period",
+                        "amplitude",
+                        "phase",
+                        "domain",
+                        "range",
+                        "symmetry",
+                        "even function",
+                        "odd function",
+                        "graph"
+                      ],
+                      "coreConcepts": [
+                        "The unit circle provides a geometric definition of sine and cosine for all real angles",
+                        "Trigonometric functions are periodic and model repeating phenomena",
+                        "The graphs of sine, cosine and tangent reflect their definitions on the unit circle",
+                        "Symmetry properties classify cosine as even and sine and tangent as odd functions",
+                        "Key features such as amplitude, period and phase shift determine the shape and position of trig graphs"
+                      ],
+                      "commonMisconceptions": [
+                        "Restricting sine and cosine to acute angles instead of all real angles",
+                        "Confusing radians and degrees when interpreting graphs",
+                        "Misidentifying the period of the tangent function compared to sine and cosine",
+                        "Incorrectly locating zeros and maximum/minimum points",
+                        "Assuming amplitude applies to the tangent function in the same way as sine and cosine"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.4",
+                        "MATAA_HL_1.6"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.6",
+                        "MATAA_HL_3.7"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "Sketch",
+                        "Describe",
+                        "State",
+                        "Explain"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how the unit circle can be used to justify that sin(\u2212x) = \u2212sin x and cos(\u2212x) = cos x.",
+                          "Describe how the graph of y = sin(x) changes when it is transformed to y = 3 sin(x \u2212 \u03c0/4)."
+                        ],
+                        "examStyle": [
+                          "Sketch the graph of y = cos x for 0 \u2264 x \u2264 2\u03c0, indicating clearly all intercepts and key points where x is a multiple of \u03c0/2. [5 marks]",
+                          "The function f is defined by f(x) = 2 sin(3x) for x \u2208 [0, 2\u03c0]. State the amplitude and period of f, and sketch its graph on the given axes. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.6",
+                      "number": "3.6",
+                      "title": "Trigonometric identities",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Trigonometric identities including Pythagorean identities, compound angle formulas, double-angle and related identities. Use of identities to simplify expressions and solve equations.",
+                      "syllabusGuidance": "Students should be familiar with the identities sin\u00b2x + cos\u00b2x = 1, 1 + tan\u00b2x = sec\u00b2x, and 1 + cot\u00b2x = cosec\u00b2x, as well as compound angle formulae such as sin(A \u00b1 B) and cos(A \u00b1 B). Proof of standard identities is expected at HL.",
+                      "keywords": [
+                        "trigonometric identity",
+                        "Pythagorean identity",
+                        "compound angle",
+                        "double angle",
+                        "secant",
+                        "cosecant",
+                        "cotangent",
+                        "simplification",
+                        "proof"
+                      ],
+                      "coreConcepts": [
+                        "Trigonometric identities express fundamental relationships that hold for all values in their domains",
+                        "Pythagorean identities derive from the geometry of the unit circle",
+                        "Compound and double-angle identities allow transformation of trigonometric expressions",
+                        "Proving identities requires logical manipulation from one side to the other using known relationships",
+                        "Simplifying expressions using identities often makes equations easier to solve"
+                      ],
+                      "commonMisconceptions": [
+                        "Treating identities as equations to be solved for specific values of x instead of relationships valid for all x",
+                        "Attempting to manipulate both sides of an identity simultaneously in an unstructured way",
+                        "Incorrectly applying or memorizing compound angle formulas",
+                        "Dividing by expressions that may be zero, thus losing solutions",
+                        "Confusing identities with conditional equations that hold only for some values"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.5",
+                        "MATAA_HL_1.7"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.7",
+                        "MATAA_HL_3.8"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-9",
+                      "commandTerms": [
+                        "Show that",
+                        "Prove",
+                        "Simplify",
+                        "Hence"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the identity sin\u00b2x + cos\u00b2x = 1 holds for all real x using the unit circle.",
+                          "Describe a general strategy you would use to prove a trigonometric identity."
+                        ],
+                        "examStyle": [
+                          "Prove the identity sin(2x) = 2 sin x cos x. [4 marks]",
+                          "Show that 1 + tan\u00b2x = sec\u00b2x and hence solve the equation sec\u00b2x \u2212 5 tan x \u2212 6 = 0 for 0 \u2264 x < 2\u03c0. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.7",
+                      "number": "3.7",
+                      "title": "Trigonometric equations",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Solution of trigonometric equations in a given interval, including equations that can be reduced to quadratics in sin x, cos x or tan x. Use of trigonometric identities and graphs.",
+                      "syllabusGuidance": "Students should be able to solve equations of the form a sin x + b cos x = c and those involving multiple angles, using algebraic methods and technology for verification. Solutions should be given within a specified domain, often in radians.",
+                      "keywords": [
+                        "trigonometric equation",
+                        "quadratic in sin x",
+                        "quadratic in cos x",
+                        "solution in an interval",
+                        "multiple angle",
+                        "principal value",
+                        "general solution"
+                      ],
+                      "coreConcepts": [
+                        "Trigonometric equations often have multiple solutions within a given interval due to periodicity",
+                        "Transforming equations to quadratics in a single trig function can simplify solving",
+                        "Unit circle and graphs help visualize the location of solutions",
+                        "Restrictions on the domain must be applied carefully when listing solutions",
+                        "Using identities can reduce complex trig equations to more manageable forms"
+                      ],
+                      "commonMisconceptions": [
+                        "Giving only one solution where multiple solutions exist",
+                        "Ignoring the specified interval or mixing degree and radian solutions",
+                        "Treating sin\u00b2x or cos\u00b2x as sin x\u00b2 or cos x\u00b2 when rearranging equations",
+                        "Losing solutions when taking square roots or dividing by a trigonometric expression",
+                        "Failing to check solutions back in the original equation when identities are used"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.5",
+                        "MATAA_HL_3.6"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.8",
+                        "MATAA_HL_3.9"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-9",
+                      "commandTerms": [
+                        "Solve",
+                        "Find",
+                        "Determine"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the equation sin x = k can have two solutions between 0 and 2\u03c0 when \u22121 < k < 1.",
+                          "Describe how a trigonometric equation can be transformed into a quadratic equation and why this is useful."
+                        ],
+                        "examStyle": [
+                          "Solve the equation 2 sin\u00b2x + 3 sin x \u2212 2 = 0 for 0 \u2264 x < 2\u03c0. [6 marks]",
+                          "Solve the equation 3 cos x + 4 sin x = 2 for x \u2208 [0, 2\u03c0]. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.8",
+                      "number": "3.8",
+                      "title": "Reciprocal trigonometric functions and further identities (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Reciprocal trigonometric functions sec x, cosec x and cot x. Further identities and properties involving these functions, including relationships with sine, cosine and tangent.",
+                      "syllabusGuidance": "Students should use the relationships sec x = 1/cos x, cosec x = 1/sin x and cot x = 1/tan x, and understand their domains and ranges. Problems may involve graphing these functions and using identities to simplify expressions.",
+                      "keywords": [
+                        "secant",
+                        "cosecant",
+                        "cotangent",
+                        "reciprocal function",
+                        "domain",
+                        "range",
+                        "asymptote",
+                        "identity"
+                      ],
+                      "coreConcepts": [
+                        "Reciprocal trigonometric functions extend the trigonometric toolkit for modeling and analysis",
+                        "The domains of sec x, cosec x and cot x exclude values where the corresponding base functions are zero",
+                        "Graphs of reciprocal functions exhibit vertical asymptotes at the zeros of the original functions",
+                        "Identities with reciprocal functions derive from basic Pythagorean and quotient identities",
+                        "Understanding domains and asymptotes is crucial when solving equations involving reciprocal functions"
+                      ],
+                      "commonMisconceptions": [
+                        "Assuming reciprocal trig functions are always defined when sine or cosine is small but non-zero",
+                        "Ignoring asymptotes and domain restrictions when sketching graphs",
+                        "Confusing sec x with 1/cos x numerically when cos x is negative",
+                        "Treating cot x as cos x/sin x without considering domain issues",
+                        "Mixing degrees and radians when identifying key features on graphs"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.5",
+                        "MATAA_HL_3.6"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.6",
+                        "MATAA_HL_3.9"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "Sketch",
+                        "Describe",
+                        "Show that",
+                        "Simplify"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how the graph of y = sec x can be obtained from the graph of y = cos x.",
+                          "Describe the domain and range of the function y = cot x over one period."
+                        ],
+                        "examStyle": [
+                          "Sketch the graph of y = sec x for \u2212\u03c0 \u2264 x \u2264 \u03c0, indicating all asymptotes and intercepts. [6 marks]",
+                          "Show that 1 + cot\u00b2x = cosec\u00b2x and hence simplify the expression (1 + cot\u00b2x)/cosec x. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.9",
+                      "number": "3.9",
+                      "title": "Inverse trigonometric functions (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Definition and principal values of inverse trigonometric functions sin\u207b\u00b9x, cos\u207b\u00b9x and tan\u207b\u00b9x. Graphs and basic properties, including domains and ranges chosen to define inverses.",
+                      "syllabusGuidance": "Students should know the principal value ranges for inverse trigonometric functions and be able to evaluate simple expressions, sketch graphs and solve equations involving inverse functions. Composition with trigonometric functions should be interpreted carefully.",
+                      "keywords": [
+                        "inverse trigonometric function",
+                        "arcsin",
+                        "arccos",
+                        "arctan",
+                        "principal value",
+                        "domain",
+                        "range",
+                        "composition"
+                      ],
+                      "coreConcepts": [
+                        "Inverse trigonometric functions reverse the effect of trigonometric functions on restricted domains",
+                        "Principal value ranges are chosen to make trigonometric functions one-to-one and hence invertible",
+                        "Graphs of inverse trig functions are reflections of the original functions in y = x over restricted domains",
+                        "Solving equations with inverse trigonometric functions requires attention to principal values and general solutions",
+                        "Compositions like sin(tan\u207b\u00b9x) require interpreting the geometric meaning of the inverse"
+                      ],
+                      "commonMisconceptions": [
+                        "Assuming inverse trigonometric functions undo trigonometric functions for all angles without restriction",
+                        "Mixing up degrees and radians when interpreting principal values",
+                        "Confusing sin\u207b\u00b9x with 1/sin x instead of arcsin x",
+                        "Failing to distinguish between general solutions and principal values in equation solving",
+                        "Incorrectly reflecting graphs when sketching inverse functions"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.5"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.7",
+                        "MATAA_HL_3.10"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "State",
+                        "Sketch",
+                        "Find",
+                        "Solve"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the domain of y = sin x must be restricted to define an inverse function y = sin\u207b\u00b9x.",
+                          "Describe how to obtain the graph of y = tan\u207b\u00b9x from the graph of y = tan x."
+                        ],
+                        "examStyle": [
+                          "State the domain and range of the function y = cos\u207b\u00b9x. [2 marks]",
+                          "Solve the equation sin(2x) = \u221d for x \u2208 [0, 2\u03c0] given that x = sin\u207b\u00b9k for some constant k, clearly indicating how you use inverse functions. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.10",
+                      "number": "3.10",
+                      "title": "Further trigonometric identities and equations (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Further identities, including sum-to-product and product-to-sum forms, and more advanced trigonometric equations involving multiple angles and combinations of functions.",
+                      "syllabusGuidance": "Problems may require using known identities in creative ways, including substitution and algebraic manipulation. Solutions can involve both analytic methods and graphing technology for verification.",
+                      "keywords": [
+                        "sum-to-product",
+                        "product-to-sum",
+                        "multiple angle equation",
+                        "advanced trigonometric equation",
+                        "substitution",
+                        "identity manipulation"
+                      ],
+                      "coreConcepts": [
+                        "Advanced trigonometric identities extend the ability to transform and simplify complex expressions",
+                        "Multiple angle equations can often be converted to equations in a single trigonometric function",
+                        "Choice of substitution plays a key role in solving complicated trig equations",
+                        "Graphical insight supports and checks algebraic solutions to trigonometric equations",
+                        "Understanding structure in expressions guides the selection of appropriate identities"
+                      ],
+                      "commonMisconceptions": [
+                        "Trying to memorize too many identities without understanding how to derive or apply them",
+                        "Randomly applying identities that do not simplify the expression",
+                        "Overlooking restrictions on the domain when dividing by trigonometric expressions",
+                        "Failing to check solutions lost or introduced during algebraic manipulation",
+                        "Relying only on technology without explaining the underlying reasoning"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.6",
+                        "MATAA_HL_3.7"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.6",
+                        "MATAA_HL_3.7"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-10",
+                      "commandTerms": [
+                        "Show that",
+                        "Prove",
+                        "Solve",
+                        "Hence"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how sum-to-product identities can be helpful in integrating certain trigonometric expressions in calculus.",
+                          "Describe a situation in which rewriting a trigonometric equation using a substitution simplifies its solution."
+                        ],
+                        "examStyle": [
+                          "Show that cos x + cos 3x = 2 cos 2x cos x and hence solve the equation cos x + cos 3x = 1 for 0 \u2264 x < 2\u03c0. [8 marks]",
+                          "Solve the equation 2 sin 2x = 1 + cos 2x for x \u2208 [0, 2\u03c0]. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.11",
+                      "number": "3.11",
+                      "title": "Vectors in two and three dimensions",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Vectors in two and three dimensions, including representation, magnitude and direction, addition, subtraction and scalar multiplication. Position vectors and displacement.",
+                      "syllabusGuidance": "Vectors may be represented in component form or as directed line segments. Problems include geometric interpretation and applications to displacement and velocity.",
+                      "keywords": [
+                        "vector",
+                        "component form",
+                        "magnitude",
+                        "direction",
+                        "position vector",
+                        "displacement",
+                        "scalar multiple",
+                        "resultant"
+                      ],
+                      "coreConcepts": [
+                        "Vectors represent quantities with magnitude and direction in two or three dimensions",
+                        "Vector addition and scalar multiplication obey geometric and algebraic rules",
+                        "Position vectors locate points relative to an origin in space",
+                        "Displacement vectors represent change in position independently of path taken",
+                        "Vector representations unify geometric, physical and algebraic views of motion"
+                      ],
+                      "commonMisconceptions": [
+                        "Treating vectors as ordinary numbers without direction",
+                        "Adding magnitudes instead of components when combining vectors",
+                        "Confusing displacement with distance travelled",
+                        "Ignoring signs when interpreting components in coordinate systems",
+                        "Mixing up position vectors and displacement vectors between points"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_1.1",
+                        "MATAA_HL_3.3"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.12",
+                        "MATAA_HL_3.13"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "Write down",
+                        "Calculate",
+                        "Find",
+                        "Determine"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the difference between a position vector and a displacement vector.",
+                          "Describe how to find the magnitude and direction of the sum of two vectors given in component form."
+                        ],
+                        "examStyle": [
+                          "Given the points A(1, 2, \u22121) and B(4, \u22120, 3), find the vector AB and its magnitude. [4 marks]",
+                          "A particle moves from O(0, 0, 0) to P(3, 4, \u22121) and then to Q(5, 1, 2). Find the displacement vector OQ and its magnitude. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.12",
+                      "number": "3.12",
+                      "title": "Scalar product and angle between vectors (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Scalar (dot) product of vectors in two and three dimensions. Use to find the angle between vectors and to determine orthogonality.",
+                      "syllabusGuidance": "Students should use both component and geometric forms of the scalar product and be able to apply these to problems in geometry and physics, such as work done by a force.",
+                      "keywords": [
+                        "scalar product",
+                        "dot product",
+                        "angle between vectors",
+                        "orthogonal vectors",
+                        "perpendicular",
+                        "work done",
+                        "projection"
+                      ],
+                      "coreConcepts": [
+                        "The scalar product combines two vectors to produce a real number encoding angle and magnitude information",
+                        "Orthogonal vectors have zero scalar product",
+                        "The scalar product can be expressed using components or magnitudes and the cosine of the angle between vectors",
+                        "Angles between vectors in space generalize familiar planar angle concepts",
+                        "Physical quantities such as work can be modeled using the scalar product"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing the scalar product with vector multiplication that yields another vector",
+                        "Incorrectly computing the scalar product by multiplying magnitudes only",
+                        "Assuming vectors are orthogonal only if their magnitudes are equal",
+                        "Using degrees when a formula is derived assuming radian measure",
+                        "Misinterpreting negative scalar products as impossible rather than representing obtuse angles"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.11"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.13",
+                        "MATAA_HL_3.14"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-8",
+                      "commandTerms": [
+                        "Calculate",
+                        "Determine",
+                        "Show that",
+                        "Hence"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain what information about two vectors is captured by their scalar product.",
+                          "Describe how you can use the scalar product to test whether two vectors are perpendicular."
+                        ],
+                        "examStyle": [
+                          "Given vectors a = (2, \u22121, 3) and b = (1, 4, 2), find a \u00b7 b and the angle between a and b, giving your answer to the nearest degree. [6 marks]",
+                          "A constant force F = (5, \u22122, 1) acts on a particle which moves through a displacement d = (3, 4, 0). Calculate the work done by the force. [4 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.13",
+                      "number": "3.13",
+                      "title": "Vector equations of lines",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Vector equation of a line in two and three dimensions. Parametric representation, points of intersection and relationships between lines (parallel, intersecting, skew).",
+                      "syllabusGuidance": "Students should write lines in the form r = a + \u03bbb and convert between vector and parametric forms. Problems include determining if lines intersect, are parallel or skew, and finding points of intersection when they exist.",
+                      "keywords": [
+                        "vector equation",
+                        "line",
+                        "direction vector",
+                        "parametric form",
+                        "intersection",
+                        "parallel lines",
+                        "skew lines"
+                      ],
+                      "coreConcepts": [
+                        "Lines in space can be represented parametrically using a point and a direction vector",
+                        "Vector and parametric equations offer flexible methods for solving geometrical problems",
+                        "Relationships between lines can be studied using direction vectors and positions",
+                        "Intersections are found by equating vector expressions and solving for parameters",
+                        "Parallel and skew lines can be distinguished using direction vectors and relative positions"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing the parameter with a coordinate variable",
+                        "Assuming lines that are not parallel must intersect in three-dimensional space",
+                        "Failing to check all components when solving for intersection points",
+                        "Misinterpreting equal direction vectors as implying the same line rather than parallel lines",
+                        "Separating vector equations into incorrect parametric component equations"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.11",
+                        "MATAA_HL_3.12"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.14",
+                        "MATAA_HL_3.15"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-10",
+                      "commandTerms": [
+                        "Find",
+                        "Determine",
+                        "Show that",
+                        "Hence"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how a vector equation of a line encodes both a point on the line and its direction.",
+                          "Describe how to determine whether two lines in three-dimensional space intersect, are parallel or are skew."
+                        ],
+                        "examStyle": [
+                          "A line l passes through the point A(2, \u22121, 3) and has direction vector d = (1, 4, \u22122). Write down the vector and parametric equations of l. [4 marks]",
+                          "Lines l\u2081 and l\u2082 have vector equations r = (1, 2, \u22121) + \u03bb(2, 1, 3) and r = (5, 0, 2) + \u03bc(1, \u22121, 4). Determine whether the lines intersect, and if so, find their point of intersection. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.14",
+                      "number": "3.14",
+                      "title": "Vector product and area (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Vector (cross) product of vectors in three dimensions and its use in finding the area of parallelograms and triangles and determining perpendicular vectors.",
+                      "syllabusGuidance": "Students should compute cross products using components and understand that the result is a vector perpendicular to the original pair. Applications include finding areas and normals to planes.",
+                      "keywords": [
+                        "vector product",
+                        "cross product",
+                        "perpendicular vector",
+                        "area of parallelogram",
+                        "area of triangle",
+                        "normal vector"
+                      ],
+                      "coreConcepts": [
+                        "The vector product of two non-parallel vectors in space is orthogonal to both",
+                        "The magnitude of the cross product equals the area of the parallelogram formed by the vectors",
+                        "The cross product encodes both magnitude and direction information relevant to area and orientation",
+                        "Normal vectors to planes can be obtained using cross products of direction vectors",
+                        "Geometric and algebraic interpretations of the cross product are linked through determinants"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing the cross product with the scalar product",
+                        "Forgetting that the cross product is not commutative (a \u00d7 b \u2260 b \u00d7 a)",
+                        "Incorrectly computing the sign of components when using determinant methods",
+                        "Assuming the zero vector cannot arise as a cross product",
+                        "Mixing up area of a parallelogram and area of a triangle in applications"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.11",
+                        "MATAA_HL_3.12"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.15",
+                        "MATAA_HL_3.17"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-9",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Show that",
+                        "Hence"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the cross product of two parallel vectors is the zero vector.",
+                          "Describe how the vector product can be used to find the area of a triangle in three-dimensional space."
+                        ],
+                        "examStyle": [
+                          "Given vectors a = (1, 2, 3) and b = (2, \u22121, 4), calculate a \u00d7 b and find the area of the parallelogram with sides a and b. [6 marks]",
+                          "Points A(1, 0, 2), B(3, 4, 1) and C(2, \u22121, 5) define a triangle. Use vectors to find the area of triangle ABC. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.15",
+                      "number": "3.15",
+                      "title": "Lines and planes in three dimensions (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Vector and Cartesian equations of planes. Relationships between lines and planes, including intersection, parallelism and the angle between them.",
+                      "syllabusGuidance": "Students should work with equations of planes in the forms r = a + \u03bbb + \u03bcm and n \u00b7 (r \u2212 a) = 0 and convert between vector and Cartesian forms. Problems include finding intersections of lines and planes and distances from points to planes.",
+                      "keywords": [
+                        "plane",
+                        "normal vector",
+                        "vector equation of plane",
+                        "Cartesian equation of plane",
+                        "intersection",
+                        "angle between line and plane",
+                        "angle between planes",
+                        "distance from point to plane"
+                      ],
+                      "coreConcepts": [
+                        "Planes in space can be represented using normal vectors and point-normal forms",
+                        "Relationships between lines and planes extend two-dimensional geometry to three dimensions",
+                        "Angles between lines and planes or between planes can be computed using scalar products",
+                        "Systems of equations arising from vector and Cartesian forms can be solved to find intersections",
+                        "Distance from a point to a plane has a geometric interpretation in terms of projection"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing the direction vector of a line with the normal vector of a plane",
+                        "Assuming a line is parallel to a plane whenever their equations share some coefficients",
+                        "Incorrectly computing distances by using non-normal directions",
+                        "Failing to check if a point lies in a plane when given its equation",
+                        "Misinterpreting the angle between planes as the angle between their normals"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.11",
+                        "MATAA_HL_3.12",
+                        "MATAA_HL_3.14"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.13",
+                        "MATAA_HL_3.16"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "6-12",
+                      "commandTerms": [
+                        "Find",
+                        "Determine",
+                        "Show that",
+                        "Hence"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how a normal vector defines a plane and how different normal vectors can define the same plane.",
+                          "Describe how to find the angle between two planes given their Cartesian equations."
+                        ],
+                        "examStyle": [
+                          "A plane \u03c0 has equation 2x \u2212 y + 3z = 5. Find a normal vector to \u03c0 and a point that lies on \u03c0, and write a vector equation for the plane. [5 marks]",
+                          "A line l has vector equation r = (1, 2, 0) + \u03bb(2, \u22121, 1) and a plane \u03c0 has equation x + y + z = 4. Determine whether l is parallel to \u03c0, lies in \u03c0 or intersects \u03c0, and if it intersects, find the point of intersection. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_3.16",
+                      "number": "3.16",
+                      "title": "Further vector geometry (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "3",
+                      "syllabusContent": "Applications of vectors to more advanced geometric problems, including shortest distances between skew lines, and geometric loci in three dimensions.",
+                      "syllabusGuidance": "Problems may combine scalar and vector products, parametric equations and plane geometry. Emphasis is on setting up equations using vector methods and interpreting solutions geometrically.",
+                      "keywords": [
+                        "skew lines",
+                        "shortest distance",
+                        "vector geometry",
+                        "locus",
+                        "3D geometry",
+                        "parametric representation"
+                      ],
+                      "coreConcepts": [
+                        "Vector methods provide powerful tools for solving complex geometric problems in three dimensions",
+                        "The shortest distance between skew lines can be found using vector products and projections",
+                        "Geometric loci can often be described succinctly using vector and parametric equations",
+                        "Combining vector equations of lines and planes yields rich geometric information",
+                        "Interpreting algebraic results geometrically deepens understanding of spatial relationships"
+                      ],
+                      "commonMisconceptions": [
+                        "Assuming skew lines must intersect in three dimensions",
+                        "Using incorrect direction vectors when finding shortest distances",
+                        "Treating loci in three dimensions as if they were restricted to a plane",
+                        "Relying only on diagrams without verifying algebraic relationships",
+                        "Confusing the roles of parameters in describing different loci"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_3.13",
+                        "MATAA_HL_3.14",
+                        "MATAA_HL_3.15"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_3.11",
+                        "MATAA_HL_3.12"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-11",
+                      "commandTerms": [
+                        "Find",
+                        "Determine",
+                        "Show that",
+                        "Hence"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain what is meant by skew lines and how vectors can be used to find the shortest distance between them.",
+                          "Describe how a locus in three-dimensional space can be represented using a vector equation."
+                        ],
+                        "examStyle": [
+                          "Lines l\u2081 and l\u2082 have vector equations r = (1, 2, 3) + \u03bb(1, \u22121, 2) and r = (4, 0, 1) + \u03bc(2, 1, \u22121). Show that the lines are skew and find the shortest distance between them. [11 marks]",
+                          "Describe the locus of points P(x, y, z) that satisfy the vector equation r = (1, 0, 2) + \u03bb(0, 1, 1) + \u03bc(1, 1, 0), and explain its geometric meaning. [6 marks]"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "MATAA_HL_4",
+                  "number": "4",
+                  "title": "Statistics and probability",
+                  "subjectCode": "MATAA_HL",
+                  "syllabusDescription": "This topic develops skills in descriptive statistics, probability models, discrete and continuous random variables, and statistical inference, with applications to data analysis, decision-making and uncertainty quantification.",
+                  "teachingHours": 55,
+                  "subtopics": [
+                    {
+                      "id": "MATAA_HL_4.1",
+                      "number": "4.1",
+                      "title": "Presentation of data",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Presentation of data in tabular and graphical forms including frequency histograms, box plots, cumulative frequency graphs, and stem-and-leaf diagrams. Use of technology.",
+                      "syllabusGuidance": "Students should construct and interpret graphical displays, recognize appropriate representations for different data types, and discuss advantages and limitations of each method. Emphasis on reading and interpreting information from graphs.",
+                      "keywords": [
+                        "frequency histogram",
+                        "box plot",
+                        "cumulative frequency graph",
+                        "stem-and-leaf diagram",
+                        "bar chart",
+                        "pie chart",
+                        "outlier",
+                        "quartiles",
+                        "median",
+                        "interquartile range"
+                      ],
+                      "coreConcepts": [
+                        "Graphical representations reveal patterns, trends and outliers in data distributions",
+                        "Choice of graph depends on data type, purpose and intended audience",
+                        "Box plots summarize five-number statistics and facilitate comparisons between distributions",
+                        "Cumulative frequency graphs enable estimation of medians, quartiles and probabilities",
+                        "Stem-and-leaf plots preserve original data while showing distribution shape"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing bar charts (categorical data) with histograms (continuous data)",
+                        "Incorrectly calculating quartiles from box plots or cumulative frequency graphs",
+                        "Ignoring scale and axis labeling when interpreting graphical data",
+                        "Assuming outliers are always errors rather than potentially significant observations",
+                        "Misreading cumulative frequency values as ordinary frequencies"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_1.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.2",
+                        "MATAA_HL_4.3"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "Draw",
+                        "Sketch",
+                        "Describe",
+                        "Interpret"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why a histogram is appropriate for continuous data while a bar chart suits categorical data.",
+                          "Describe how a box plot summarizes the key features of a data distribution."
+                        ],
+                        "examStyle": [
+                          "The following data shows the times (in minutes) taken by 20 students to complete a test: 45, 52, 48, 55, 62, 47, 51, 58, 60, 49, 53, 57, 61, 46, 50, 59, 54, 63, 56, 44. Draw a stem-and-leaf diagram for this data. [3 marks]",
+                          "A box plot shows the following statistics for test scores: min=42, Q1=58, median=65, Q3=78, max=92. Describe the distribution and identify any outliers if the upper fence is 91. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.2",
+                      "number": "4.2",
+                      "title": "Measures of central tendency and spread",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Mean, median, mode, midrange, range, interquartile range and standard deviation for discrete and continuous data. Use of technology for calculations and interpretations.",
+                      "syllabusGuidance": "Students should understand the effects of outliers and skewness on measures of central tendency and spread, and select appropriate statistics for different data types and purposes. Emphasis on interpretation in context.",
+                      "keywords": [
+                        "mean",
+                        "median",
+                        "mode",
+                        "midrange",
+                        "range",
+                        "interquartile range",
+                        "standard deviation",
+                        "variance",
+                        "skewness",
+                        "outlier"
+                      ],
+                      "coreConcepts": [
+                        "Different measures of central tendency are sensitive to different aspects of data distributions",
+                        "Measures of spread quantify the variability and dispersion within datasets",
+                        "Standard deviation measures typical deviation from the mean and is used in probability",
+                        "Outliers affect mean and standard deviation more than median and interquartile range",
+                        "Context determines which summary statistics are most appropriate and interpretable"
+                      ],
+                      "commonMisconceptions": [
+                        "Using mean for skewed data where median is more representative",
+                        "Calculating standard deviation incorrectly by squaring deviations before averaging",
+                        "Confusing population standard deviation with sample standard deviation",
+                        "Assuming larger standard deviation always means 'worse' or more variable quality",
+                        "Ignoring units when interpreting measures of spread"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_1.1",
+                        "MATAA_HL_1.2"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.1",
+                        "MATAA_HL_4.4"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-8",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Compare",
+                        "Interpret"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the median is preferred over the mean for describing the center of a highly skewed distribution.",
+                          "Describe the effect of an outlier on the interquartile range compared to the range."
+                        ],
+                        "examStyle": [
+                          "The heights (in cm) of 10 students are: 162, 168, 170, 165, 172, 169, 175, 164, 171, 180. Calculate the mean, median and standard deviation of these heights. [7 marks]",
+                          "Compare the suitability of mean and median for summarizing exam scores that include a few very high marks. [4 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.3",
+                      "number": "4.3",
+                      "title": "Linear correlation and correlation coefficient",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Scatter diagrams and linear correlation. Pearson's product-moment correlation coefficient r. Interpretation of correlation coefficients. Use of technology.",
+                      "syllabusGuidance": "Students should understand correlation as a measure of linear association strength and direction, distinguish between correlation and causation, and recognize limitations with non-linear relationships or outliers. Interpretation should consider context.",
+                      "keywords": [
+                        "scatter diagram",
+                        "linear correlation",
+                        "Pearson's r",
+                        "correlation coefficient",
+                        "positive correlation",
+                        "negative correlation",
+                        "no correlation",
+                        "outlier effect"
+                      ],
+                      "coreConcepts": [
+                        "Correlation measures the strength and direction of linear relationships between two variables",
+                        "Pearson's r ranges from \u22121 (perfect negative) to +1 (perfect positive), with 0 indicating no linear association",
+                        "Scatter diagrams visualize patterns that correlation coefficients quantify",
+                        "Correlation does not imply causation; confounding variables may explain associations",
+                        "Outliers and non-linear relationships can distort correlation coefficients"
+                      ],
+                      "commonMisconceptions": [
+                        "Assuming r = 0 means no relationship exists (could be non-linear)",
+                        "Confusing correlation with causation",
+                        "Thinking higher absolute r always means better prediction regardless of context",
+                        "Incorrectly calculating r by hand or misinterpreting its significance",
+                        "Applying correlation to qualitative or ordinal data inappropriately"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.2"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.4",
+                        "MATAA_HL_4.5"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-8",
+                      "commandTerms": [
+                        "Calculate",
+                        "Interpret",
+                        "Comment on",
+                        "Explain"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the difference between correlation and causation using an example.",
+                          "Describe how an outlier can affect the value of Pearson's correlation coefficient."
+                        ],
+                        "examStyle": [
+                          "The scatter diagram shows the relationship between hours studied and test scores for 12 students. Calculate Pearson's correlation coefficient r and comment on its significance. [5 marks]",
+                          "Given r = 0.87 between height and weight, explain what this tells us and what it does not. [4 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.4",
+                      "number": "4.4",
+                      "title": "Regression and least squares line",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Line of best fit (regression line) and its equation y = mx + c. Use for prediction and interpolation. Residuals and their interpretation. Use of technology.",
+                      "syllabusGuidance": "Students should understand the least squares method as minimizing sum of squared residuals, distinguish interpolation from extrapolation, and discuss limitations of linear models.",
+                      "keywords": [
+                        "line of best fit",
+                        "regression line",
+                        "least squares",
+                        "slope m",
+                        "intercept c",
+                        "prediction",
+                        "interpolation",
+                        "extrapolation",
+                        "residual"
+                      ],
+                      "coreConcepts": [
+                        "The regression line minimizes the sum of squared vertical distances from data points",
+                        "Linear models enable prediction and interpolation within the range of data",
+                        "Extrapolation beyond data range increases uncertainty and unreliability",
+                        "Residuals measure model fit and help assess assumptions of linearity",
+                        "Correlation strength influences the reliability of predictions from regression"
+                      ],
+                      "commonMisconceptions": [
+                        "Using regression for causation rather than association",
+                        "Extrapolating far beyond data range without justification",
+                        "Confusing the regression line of y on x with x on y",
+                        "Ignoring residuals when evaluating model adequacy",
+                        "Assuming perfect fit when r is close to 1 without checking residuals"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.3"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.5",
+                        "MATAA_HL_4.6"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-9",
+                      "commandTerms": [
+                        "Find",
+                        "Calculate",
+                        "Use",
+                        "Interpret"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the least squares regression line passes through the point (\u00afx, \u00afy).",
+                          "Describe the dangers of extrapolation when using a regression line."
+                        ],
+                        "examStyle": [
+                          "The regression line for time (x hours) and distance (y km) is y = 55.2x + 12. Find the predicted distance after 3.5 hours and comment on the reliability. [5 marks]",
+                          "Calculate the equation of the regression line for the following data: x: 1,2,3,4,5; y: 3,5,4,7,8. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.5",
+                      "number": "4.5",
+                      "title": "Probability",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Sample space, events, probability of events. Rules of probability: addition and multiplication, mutually exclusive events, independent events, conditional probability.",
+                      "syllabusGuidance": "Students should use tree diagrams, Venn diagrams and tables for complex probability problems, distinguish dependent from independent events, and calculate conditional probabilities.",
+                      "keywords": [
+                        "sample space",
+                        "event",
+                        "probability",
+                        "independent events",
+                        "mutually exclusive",
+                        "conditional probability",
+                        "Venn diagram",
+                        "tree diagram"
+                      ],
+                      "coreConcepts": [
+                        "Probability quantifies uncertainty and likelihood of events in sample spaces",
+                        "Addition rule applies to unions, multiplication to intersections of events",
+                        "Independent events have constant conditional probabilities",
+                        "Conditional probability P(A|B) = P(A \u2229 B)/P(B) updates beliefs with new information",
+                        "Visual tools like trees and Venn diagrams clarify complex probability structures"
+                      ],
+                      "commonMisconceptions": [
+                        "Assuming independence when events are actually dependent",
+                        "Adding probabilities when multiplication is required, or vice versa",
+                        "Confusing P(A|B) with P(B|A)",
+                        "Double-counting overlaps when using addition rule without subtraction",
+                        "Ignoring the requirement P(B) > 0 in conditional probability"
+                      ],
+                      "prerequisites": [],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.6",
+                        "MATAA_HL_4.8"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-9",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Show that",
+                        "Given"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the difference between independent events and mutually exclusive events.",
+                          "Describe how a tree diagram helps visualize conditional probabilities."
+                        ],
+                        "examStyle": [
+                          "A bag contains 4 red and 6 blue balls. Two balls are drawn without replacement. Find P(second is red | first is blue). [4 marks]",
+                          "Events A and B are independent with P(A) = 0.3, P(B) = 0.4. Find P(A \u222a B). [3 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.6",
+                      "number": "4.6",
+                      "title": "Discrete random variables and expectation",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Discrete random variables, probability mass function, expectation (mean), variance. Use of discrete probability distributions including binomial distribution.",
+                      "syllabusGuidance": "Students should work with probability tables, calculate expected values and variances, and apply binomial distribution to appropriate contexts with n trials and success probability p.",
+                      "keywords": [
+                        "discrete random variable",
+                        "probability mass function",
+                        "expected value",
+                        "variance",
+                        "binomial distribution",
+                        "Bernoulli trial",
+                        "n",
+                        "p"
+                      ],
+                      "coreConcepts": [
+                        "Discrete random variables take countable values with associated probabilities summing to 1",
+                        "Expected value E(X) gives long-run average value of repeated trials",
+                        "Variance Var(X) = E(X\u00b2) \u2212 [E(X)]\u00b2 measures spread around the mean",
+                        "Binomial distribution models fixed number of independent Bernoulli trials",
+                        "Parameters np and np(1\u2212p) give mean and variance of binomial random variables"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing expected value with most likely outcome",
+                        "Incorrectly calculating variance using average squared deviations instead of E(X\u00b2) \u2212 \u03bc\u00b2",
+                        "Applying binomial distribution when trials are dependent or success probability changes",
+                        "Thinking variance is always positive without considering degenerate cases",
+                        "Misinterpreting probability mass function as cumulative distribution"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.5"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.7",
+                        "MATAA_HL_4.9"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-10",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Determine",
+                        "Show that"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the expected value of a discrete random variable is a weighted average of its possible values.",
+                          "Describe the conditions required for a situation to be modeled by a binomial distribution."
+                        ],
+                        "examStyle": [
+                          "A discrete random variable X has probability distribution: P(X=1)=0.2, P(X=2)=0.5, P(X=3)=0.3. Find E(X) and Var(X). [6 marks]",
+                          "In 10 independent trials with success probability 0.4, find the mean and variance of the number of successes. [3 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.7",
+                      "number": "4.7",
+                      "title": "Bivariate discrete random variables (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Joint, marginal, conditional probability distributions for bivariate discrete random variables. Independence, expectation and covariance.",
+                      "syllabusGuidance": "Students should work with joint probability tables, compute marginal and conditional distributions, and understand covariance as E(XY) \u2212 E(X)E(Y), linking to correlation.",
+                      "keywords": [
+                        "bivariate random variable",
+                        "joint probability",
+                        "marginal distribution",
+                        "conditional distribution",
+                        "covariance",
+                        "independence"
+                      ],
+                      "coreConcepts": [
+                        "Joint distributions describe probabilities for pairs of discrete random variables",
+                        "Marginal distributions are obtained by summing joint probabilities over one variable",
+                        "Independence holds when joint = product of marginals",
+                        "Covariance measures linear association between variables; zero for uncorrelated pairs",
+                        "Correlation coefficient is standardized covariance"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing joint probability P(X=x,Y=y) with conditional P(X=x|Y=y)",
+                        "Summing over the wrong index when finding marginal distributions",
+                        "Assuming zero covariance implies independence (true for bivariate normal but not generally)",
+                        "Incorrectly normalizing conditional distributions",
+                        "Thinking covariance has the same scale as variance"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.6"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.8",
+                        "MATAA_HL_4.9"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-10",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Show that",
+                        "Verify"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how to obtain the marginal distribution of X from a joint distribution table.",
+                          "Describe the relationship between covariance, correlation and independence."
+                        ],
+                        "examStyle": [
+                          "The joint distribution of X and Y is given by the table... Find the marginal distribution of X, E(X), and Cov(X,Y). [8 marks]",
+                          "Show that X and Y are independent given their joint probabilities. [4 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.8",
+                      "number": "4.8",
+                      "title": "Continuous random variables and distributions",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Continuous random variables, probability density functions (pdfs), cumulative distribution functions (cdfs). Expectation, median and variance. Uniform distribution.",
+                      "syllabusGuidance": "Students should understand pdfs integrate to 1 over their domain, use cdfs for probabilities, and calculate expectations using \u222b x f(x) dx. Uniform distribution on [a,b] has pdf 1/(b\u2212a).",
+                      "keywords": [
+                        "continuous random variable",
+                        "probability density function",
+                        "cumulative distribution function",
+                        "uniform distribution",
+                        "median",
+                        "expectation"
+                      ],
+                      "coreConcepts": [
+                        "Continuous random variables take uncountable values with pdfs describing density",
+                        "Probabilities are areas under pdf curves; cdf F(x) = P(X \u2264 x)",
+                        "Expected value for continuous variables uses integral weighted by pdf",
+                        "Uniform distribution models equal likelihood across an interval",
+                        "Median satisfies F(median) = 0.5"
+                      ],
+                      "commonMisconceptions": [
+                        "Thinking pdf f(x) gives probability at x (actually density)",
+                        "Confusing pdf with cdf or probability mass function",
+                        "Incorrectly integrating over wrong limits for expectations",
+                        "Assuming uniform distribution applies to discrete equal intervals",
+                        "Forgetting pdf must be non-negative and integrate to 1"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.6",
+                        "MATAA_HL_2.6"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.9",
+                        "MATAA_HL_4.10"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-11",
+                      "commandTerms": [
+                        "Find",
+                        "Calculate",
+                        "Show that",
+                        "Verify"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why the probability at a single point is zero for a continuous random variable.",
+                          "Describe how to find the median from a continuous cumulative distribution function."
+                        ],
+                        "examStyle": [
+                          "X ~ Uniform[0,4]. Find the pdf f(x), E(X), and P(1 < X < 3). [6 marks]",
+                          "Verify that f(x) = 2x for 0 \u2264 x \u2264 1 is a valid pdf and find Var(X). [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.9",
+                      "number": "4.9",
+                      "title": "The normal distribution",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "The normal distribution N(\u03bc, \u03c3\u00b2), standard normal distribution N(0,1). Use of tables, calculator or software. Standardization and z-scores.",
+                      "syllabusGuidance": "Students should standardize to z-scores, use tables or technology for probabilities, and interpret areas under the curve. Applications to real data and quality control emphasized.",
+                      "keywords": [
+                        "normal distribution",
+                        "standard normal",
+                        "z-score",
+                        "standardization",
+                        "68-95-99.7 rule",
+                        "empirical rule"
+                      ],
+                      "coreConcepts": [
+                        "Normal distribution models symmetric bell-shaped data common in nature",
+                        "Standard normal allows universal tables via z = (x \u2212 \u03bc)/\u03c3",
+                        "Probabilities correspond to areas under the density curve",
+                        "68-95-99.7 rule gives approximate coverage for 1, 2, 3 standard deviations",
+                        "Central Limit Theorem justifies normality for sample means"
+                      ],
+                      "commonMisconceptions": [
+                        "Thinking normal distribution is the only possible continuous distribution",
+                        "Incorrectly standardizing by using \u03c3 instead of \u03c3",
+                        "Reading z-table values as cumulative from right tail instead of left",
+                        "Applying normal approximation without checking np and n(1\u2212p) \u2265 5",
+                        "Confusing population parameters with sample statistics"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.8"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.10",
+                        "MATAA_HL_4.11"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-10",
+                      "commandTerms": [
+                        "Calculate",
+                        "Find",
+                        "Determine",
+                        "Given"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the role of standardization in using normal distribution tables.",
+                          "Describe when the normal distribution provides a good model for real data."
+                        ],
+                        "examStyle": [
+                          "IQ scores are N(100,15\u00b2). Find P(85 < IQ < 115) and the 90th percentile. [6 marks]",
+                          "Standardize X = 72 where X ~ N(65, 4\u00b2) and find P(X > 72) using a table. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.10",
+                      "number": "4.10",
+                      "title": "Further probability distributions (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Poisson distribution as approximation to binomial and model for counts. Expectations and variances. Normal approximation to binomial and Poisson distributions.",
+                      "syllabusGuidance": "Students should know Poisson(\u03bb) has P(X=k) = e^{-\u03bb} \u03bb^k / k!, E(X)=\u03bb, Var(X)=\u03bb. Use continuity correction for normal approximations.",
+                      "keywords": [
+                        "Poisson distribution",
+                        "normal approximation",
+                        "continuity correction",
+                        "rare events",
+                        "count data"
+                      ],
+                      "coreConcepts": [
+                        "Poisson models rare events or counts in fixed intervals",
+                        "Poisson approximates binomial when n large, p small, \u03bb = np fixed",
+                        "Normal approximates binomial/Poisson when mean large (\u226510)",
+                        "Continuity correction improves discrete-to-continuous approximations",
+                        "Matching mean and variance guides distribution selection"
+                      ],
+                      "commonMisconceptions": [
+                        "Using Poisson when events are not independent or rate varies",
+                        "Forgetting continuity correction in normal approximations",
+                        "Confusing Poisson parameter \u03bb with binomial p",
+                        "Applying approximations without checking conditions",
+                        "Miscalculating Poisson probabilities without factorials or exponentials"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.6",
+                        "MATAA_HL_4.9"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.11",
+                        "MATAA_HL_4.12"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-11",
+                      "commandTerms": [
+                        "Calculate",
+                        "Approximate",
+                        "Find",
+                        "Verify"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the conditions under which Poisson approximates binomial.",
+                          "Describe the continuity correction and when it is used."
+                        ],
+                        "examStyle": [
+                          "Typos occur at Poisson rate \u03bb=2 per page. Find P(exactly 3 typos) and P(at most 2). [6 marks]",
+                          "Approximate Bin(50,0.06) using normal with continuity correction to find P(X \u2264 4). [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.11",
+                      "number": "4.11",
+                      "title": "Expected value and variance of discrete random variables",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Properties of expectation and variance: linearity of expectation, variance of sum of independent random variables. Applications to binomial, Poisson and sums.",
+                      "syllabusGuidance": "Students should prove and use E(aX+bY+c) = aE(X)+bE(Y)+c and Var(aX+b) = a\u00b2Var(X) for independent X,Y. Extend to distribution parameters.",
+                      "keywords": [
+                        "linearity of expectation",
+                        "variance of sum",
+                        "independent random variables",
+                        "properties"
+                      ],
+                      "coreConcepts": [
+                        "Expectation is linear regardless of dependence between variables",
+                        "Variance of independent sum is sum of variances",
+                        "These properties derive sums of random variables and distribution parameters",
+                        "Simplifies calculations for linear combinations in probability models",
+                        "Key for understanding Central Limit Theorem behavior"
+                      ],
+                      "commonMisconceptions": [
+                        "Thinking Var(X+Y) = Var(X) + Var(Y) always (requires independence)",
+                        "Incorrectly applying linearity when constants are mishandled",
+                        "Confusing properties for dependent vs independent cases",
+                        "Misapplying to non-linear functions of random variables",
+                        "Forgetting Var(constant) = 0"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.6"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_4.12",
+                        "MATAA_HL_4.7"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-8",
+                      "commandTerms": [
+                        "Show that",
+                        "Calculate",
+                        "Find",
+                        "Verify"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why E(X+Y) = E(X) + E(Y) even if X and Y are dependent.",
+                          "Describe how to find Var(X + Y) when X and Y are independent."
+                        ],
+                        "examStyle": [
+                          "If X ~ Bin(10,0.3) and Y ~ Bin(5,0.3) independent, find E(X+Y) and Var(X+Y). [4 marks]",
+                          "Prove that Var(aX + b) = a\u00b2 Var(X). [4 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_4.12",
+                      "number": "4.12",
+                      "title": "Hypothesis testing (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "4",
+                      "syllabusContent": "Hypothesis testing for means and proportions using normal, binomial and Poisson distributions. Significance levels, p-values, Type I and Type II errors.",
+                      "syllabusGuidance": "Students should set up null and alternative hypotheses, calculate test statistics and p-values, interpret results in context, and discuss errors and power.",
+                      "keywords": [
+                        "null hypothesis",
+                        "alternative hypothesis",
+                        "significance level",
+                        "p-value",
+                        "Type I error",
+                        "Type II error",
+                        "test statistic",
+                        "critical region"
+                      ],
+                      "coreConcepts": [
+                        "Hypothesis testing assesses evidence against a null hypothesis using sample data",
+                        "p-value is probability of more extreme results assuming null true",
+                        "Small p-value (less than \u03b1) rejects null in favor of alternative",
+                        "Type I error rejects true null; Type II fails to reject false null",
+                        "Power = 1 \u2212 Type II error probability measures test sensitivity"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing p-value with P(H_0 true)",
+                        "Rejecting null when p > \u03b1",
+                        "Thinking small sample always gives unreliable test",
+                        "Ignoring direction of alternative hypothesis (one- vs two-tailed)",
+                        "Misinterpreting 'fail to reject' as 'accept null'"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_4.9",
+                        "MATAA_HL_4.10"
+                      ],
+                      "relatedSubtopics": [],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "6-12",
+                      "commandTerms": [
+                        "Test",
+                        "Calculate",
+                        "Interpret",
+                        "State"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 6,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the difference between Type I and Type II errors.",
+                          "Describe what a p-value represents and how it is used in decision making."
+                        ],
+                        "examStyle": [
+                          "Test whether the mean weight \u03bc = 65 kg at 5% significance given \u00afx=67.2, s=4.1, n=25. [8 marks]",
+                          "A coin may be biased. Test H_0: p=0.5 vs H_1: p>0.5 given 28 heads in 50 tosses. Find p-value. [7 marks]"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "MATAA_HL_5",
+                  "number": "5",
+                  "title": "Calculus",
+                  "subjectCode": "MATAA_HL",
+                  "syllabusDescription": "This topic develops fundamental concepts of limits, differentiation and integration, with applications to rates of change, optimization, kinematics, areas and volumes.",
+                  "teachingHours": 96,
+                  "subtopics": [
+                    {
+                      "id": "MATAA_HL_5.1",
+                      "number": "5.1",
+                      "title": "Limits and convergence",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Informal treatment of limits, including limits at infinity. One-sided limits. Limit notation and interpretation. Convergence of sequences.",
+                      "syllabusGuidance": "Students should use tables, graphs and algebraic manipulation to investigate limits. Emphasis on understanding \u03b5-\u03b4 informally through technology and examples. Infinite limits and limits at infinity introduced.",
+                      "keywords": [
+                        "limit",
+                        "one-sided limit",
+                        "limit at infinity",
+                        "convergence",
+                        "sequence",
+                        "\u03b5-\u03b4"
+                      ],
+                      "coreConcepts": [
+                        "Limits describe function behavior as x approaches a value, independent of f(a)",
+                        "One-sided limits capture behavior from left and right; both must agree for two-sided limit",
+                        "Limits at infinity model asymptotic behavior; horizontal asymptotes",
+                        "Sequences converge if terms approach a limit as n \u2192 \u221e",
+                        "Technology reveals limit behavior when algebraic methods fail"
+                      ],
+                      "commonMisconceptions": [
+                        "Substituting x = a directly into f(x) when limit does not exist or is discontinuous",
+                        "Confusing limit as x \u2192 a with f(a)",
+                        "Assuming one-sided limits always agree",
+                        "Thinking lim x\u2192\u221e f(x) = 0 always for rational functions",
+                        "Misinterpreting non-convergent sequences as having undefined limits"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_2.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.2",
+                        "MATAA_HL_5.3"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "2-6",
+                      "commandTerms": [
+                        "Find",
+                        "Evaluate",
+                        "Determine",
+                        "State"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why lim_{x\u2192a} f(x) can exist even if f(a) is undefined.",
+                          "Describe the difference between left-hand and right-hand limits."
+                        ],
+                        "examStyle": [
+                          "Evaluate lim_{x\u21920} (sin x)/x and explain its significance. [3 marks]",
+                          "Find lim_{x\u2192\u221e} (2x^2 + 3)/(x^2 - 1). [2 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.2",
+                      "number": "5.2",
+                      "title": "Derivatives",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Derivative as rate of change and tangent slope. Limit definition of derivative. Derivatives of polynomial, rational, trigonometric, exponential and logarithmic functions.",
+                      "syllabusGuidance": "Students should derive basic rules from first principles where appropriate, know standard derivatives, and use product, quotient and chain rules. Notation f'(x), f''(x), dy/dx.",
+                      "keywords": [
+                        "derivative",
+                        "rate of change",
+                        "gradient function",
+                        "first principles",
+                        "chain rule",
+                        "product rule",
+                        "quotient rule"
+                      ],
+                      "coreConcepts": [
+                        "Derivative f'(a) = lim_{h\u21920} [f(a+h) - f(a)]/h gives instantaneous rate of change",
+                        "Geometrically, derivative is slope of tangent line to curve",
+                        "Differentiation rules enable computation for composite functions",
+                        "Higher derivatives describe concavity and acceleration",
+                        "Chain rule handles composition: d/dx [f(g(x))] = f'(g(x)) g'(x)"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing average rate of change (secant) with instantaneous (tangent)",
+                        "Incorrect chain rule application (forgetting inner derivative)",
+                        "Misapplying product/quotient rules",
+                        "Thinking derivative of sum is sum of derivatives only (actually true, but confusing)",
+                        "Forgetting product rule for powers: d/dx [x^n] = n x^{n-1}"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.3",
+                        "MATAA_HL_5.4"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-8",
+                      "commandTerms": [
+                        "Find",
+                        "Differentiate",
+                        "Calculate"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the geometric significance of the derivative function.",
+                          "Describe how the chain rule is derived from the limit definition."
+                        ],
+                        "examStyle": [
+                          "Find dy/dx for y = sin(3x^2) using the chain rule. [3 marks]",
+                          "Differentiate f(x) = (2x + 1)/(x^2 - 3) from first principles. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.3",
+                      "number": "5.3",
+                      "title": "Applications of differentiation",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Tangents and normals. Increasing and decreasing functions. Stationary points. Optimization problems. Kinematic problems (velocity, acceleration).",
+                      "syllabusGuidance": "Students should use first and second derivative tests for maxima/minima/inflection, solve practical optimization, and interpret s(t), v(t)=s'(t), a(t)=v'(t)=s''(t).",
+                      "keywords": [
+                        "tangent",
+                        "normal",
+                        "stationary point",
+                        "maximum",
+                        "minimum",
+                        "increasing",
+                        "decreasing",
+                        "first derivative test",
+                        "second derivative test",
+                        "optimization"
+                      ],
+                      "coreConcepts": [
+                        "f'(x) > 0 implies increasing; f'(x) < 0 decreasing on interval",
+                        "Stationary points where f'(x)=0 or undefined; classify using first/second derivatives",
+                        "Optimization: critical points, endpoints; second derivative confirms nature",
+                        "Kinematics: position s(t), velocity v(t)=ds/dt, acceleration a(t)=dv/dt",
+                        "Normal perpendicular to tangent: slope = -1/(dy/dx)"
+                      ],
+                      "commonMisconceptions": [
+                        "f'(x)>0 everywhere implies global maximum (check endpoints)",
+                        "Confusing local max/min with global",
+                        "Second derivative test inconclusive when f''(c)=0",
+                        "Forgetting units in kinematic problems",
+                        "Assuming stationary point always extremum (could be inflection)"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.2"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.4",
+                        "MATAA_HL_5.6"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-12",
+                      "commandTerms": [
+                        "Find",
+                        "Determine",
+                        "Calculate",
+                        "Show"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 6,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how the first and second derivative tests distinguish between maxima and minima.",
+                          "Describe the relationship between position, velocity and acceleration functions."
+                        ],
+                        "examStyle": [
+                          "Find stationary points of f(x) = x^3 - 3x^2 + 2 and determine their nature. [6 marks]",
+                          "A box with square base and no lid has surface area 24 m\u00b2. Find maximum volume. [8 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.4",
+                      "number": "5.4",
+                      "title": "Higher derivatives and concavity",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Concave up/down, points of inflection. Interpretation of f''(x). Higher derivatives f'''(x), f^{(4)}(x).",
+                      "syllabusGuidance": "f''(x) > 0 concave up (holds water), f''(x) < 0 concave down. Inflection where f'' changes sign. Applications to curve sketching.",
+                      "keywords": [
+                        "second derivative",
+                        "concave up",
+                        "concave down",
+                        "point of inflection",
+                        "curve sketch"
+                      ],
+                      "coreConcepts": [
+                        "Second derivative f''(x) measures concavity: positive convex up, negative convex down",
+                        "Inflection points where concavity changes (f'' changes sign)",
+                        "Higher derivatives describe higher-order behavior and rates",
+                        "Sign chart of f'' determines intervals of concavity",
+                        "Concavity aids curve sketching with f, f', f'' information"
+                      ],
+                      "commonMisconceptions": [
+                        "Confusing concave up with local minimum",
+                        "f''(c)=0 implies inflection (must change sign)",
+                        "Ignoring concavity in curve sketches",
+                        "Misinterpreting higher derivatives geometrically",
+                        "Assuming f'' > 0 always means increasing (no, f' determines monotonicity)"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.3"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.5",
+                        "MATAA_HL_2.9"
+                      ],
+                      "paperTypes": [
+                        "paper1"
+                      ],
+                      "typicalMarks": "3-7",
+                      "commandTerms": [
+                        "Determine",
+                        "Find",
+                        "Sketch"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the geometric meaning of a point of inflection.",
+                          "Describe how f''(x) determines the concavity of a graph."
+                        ],
+                        "examStyle": [
+                          "Find intervals of concavity and inflection points for f(x) = x^4 - 4x^3. [5 marks]",
+                          "Sketch y = e^{-x} sin x using derivatives up to third order. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.5",
+                      "number": "5.5",
+                      "title": "Implicit differentiation",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Implicit differentiation of equations not expressible as y = f(x). Related rates of change. Tangents to implicit curves.",
+                      "syllabusGuidance": "Differentiate both sides w.r.t. x treating y as function of x: dy/dx terms. Applications to geometry, optimization, related rates.",
+                      "keywords": [
+                        "implicit differentiation",
+                        "related rates",
+                        "dy/dx",
+                        "constraint"
+                      ],
+                      "coreConcepts": [
+                        "Implicit functions define y implicitly as function of x; differentiate both sides",
+                        "dy/dx obtained by chain rule on y terms",
+                        "Related rates: differentiate constraint equations w.r.t. time",
+                        "Combines with substitution for optimization under constraints",
+                        "Essential for curves like ellipses, circles not solved for y"
+                      ],
+                      "commonMisconceptions": [
+                        "Forgetting chain rule dy/dx on y terms",
+                        "Differentiating constants as variables",
+                        "Solving for dy/dx incorrectly after differentiation",
+                        "Ignoring units/time in related rates",
+                        "Assuming explicit form always possible"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.2"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.3",
+                        "MATAA_HL_5.6"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-8",
+                      "commandTerms": [
+                        "Find",
+                        "Differentiate",
+                        "Calculate"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 3,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why implicit differentiation is needed for equations like x^2 + y^2 = 1.",
+                          "Describe how to set up a related rates problem."
+                        ],
+                        "examStyle": [
+                          "Find dy/dx for x^2 + xy + y^2 = 4. [4 marks]",
+                          "A ladder 10m long leans against a wall. Base moves away at 2 m/s when 6m from wall. Find rate wall distance changes. [7 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.6",
+                      "number": "5.6",
+                      "title": "Differential equations",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "First-order separable differential equations. Direction fields. Euler method for numerical solution. Geometric and algebraic interpretation.",
+                      "syllabusGuidance": "Solve dy/dx = f(x)g(y) by separation. Sketch slope fields. Euler's method: iterative approximation y_{n+1} = y_n + h f(x_n, y_n).",
+                      "keywords": [
+                        "differential equation",
+                        "separable",
+                        "direction field",
+                        "slope field",
+                        "Euler method",
+                        "numerical solution"
+                      ],
+                      "coreConcepts": [
+                        "Differential equation relates function to derivatives modeling rates",
+                        "Separable: write dy/g(y) = f(x) dx, integrate both sides",
+                        "Direction fields visualize solutions through slopes at points",
+                        "Euler method approximates solutions via tangent line steps",
+                        "Exact solutions when separable; numerical otherwise"
+                      ],
+                      "commonMisconceptions": [
+                        "Forgetting +C after integration",
+                        "Incorrect separation (mixing x,y terms)",
+                        "Thinking Euler always accurate (step size matters)",
+                        "Confusing particular solution with general",
+                        "Ignoring initial conditions until end"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.2",
+                        "MATAA_HL_3.8"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.7",
+                        "MATAA_HL_5.8"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-10",
+                      "commandTerms": [
+                        "Solve",
+                        "Sketch",
+                        "Approximate"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how a direction field helps understand qualitative solution behavior.",
+                          "Describe the Euler method and its geometric interpretation."
+                        ],
+                        "examStyle": [
+                          "Solve dy/dx = xy, y(0)=1. [4 marks]",
+                          "Use Euler's method with 3 steps h=0.2 to approximate y(0.6) for dy/dx = x + y, y(0)=1. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.7",
+                      "number": "5.7",
+                      "title": "Antidifferentiation",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Antiderivative (indefinite integral). Integration rules mirroring differentiation. Integration by substitution.",
+                      "syllabusGuidance": "Reverse chain/product/quotient rules. \u222b f'(x)/f(x) dx = ln|f(x)| + C. Definite integrals later.",
+                      "keywords": [
+                        "antiderivative",
+                        "indefinite integral",
+                        "integration by substitution",
+                        "reverse chain rule"
+                      ],
+                      "coreConcepts": [
+                        "Antiderivative F satisfies F' = f; indefinite integral \u222b f(x) dx = F(x) + C",
+                        "Integration by substitution reverses chain rule: let u = g(x), du = g'(x) dx",
+                        "Fundamental theorem links differentiation and integration",
+                        "Constants of integration account for derivative family",
+                        "Standard forms: \u222b x^n dx = x^{n+1}/(n+1) + C (n \u2260 -1)"
+                      ],
+                      "commonMisconceptions": [
+                        "Forgetting +C in indefinite integrals",
+                        "Wrong substitution limits in definite integrals",
+                        "Thinking \u222b 1/x dx = ln x (absolute value needed)",
+                        "Confusing du with dx in substitution",
+                        "Integration by parts confused with substitution"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.2"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.8",
+                        "MATAA_HL_5.9"
+                      ],
+                      "paperTypes": [
+                        "paper1"
+                      ],
+                      "typicalMarks": "2-6",
+                      "commandTerms": [
+                        "Find",
+                        "Integrate"
+                      ],
+                      "bloomLevel": 2,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why indefinite integrals include +C.",
+                          "Describe integration by substitution geometrically."
+                        ],
+                        "examStyle": [
+                          "Find \u222b (3x^2 + 2x - 1) dx. [2 marks]",
+                          "\u222b x e^{x^2} dx by substitution. [3 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.8",
+                      "number": "5.8",
+                      "title": "Definite integration",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Definite integral as limit of Riemann sums and area under curve. Fundamental theorem of calculus. Areas between curves.",
+                      "syllabusGuidance": "\u222b_a^b f(x) dx = F(b) - F(a). Net signed area; absolute area requires splitting. Trapezoidal rule approximation.",
+                      "keywords": [
+                        "definite integral",
+                        "Riemann sum",
+                        "fundamental theorem",
+                        "net area",
+                        "area between curves"
+                      ],
+                      "coreConcepts": [
+                        "Definite integral \u222b_a^b f(x) dx = lim \u2211 f(x_i) \u0394x (Riemann sum)",
+                        "Fundamental theorem: if F' = f continuous, \u222b_a^b f = F(b) - F(a)",
+                        "Positive f gives area above x-axis; negative below (net signed)",
+                        "Area between curves: \u222b |f - g| or split where they cross",
+                        "Trapezoidal rule approximates integral via trapezoid areas"
+                      ],
+                      "commonMisconceptions": [
+                        "Omitting absolute value for areas below x-axis",
+                        "Wrong order b - a vs a - b",
+                        "Confusing Riemann sum partitions",
+                        "Thinking FTC applies to discontinuous f",
+                        "Incorrect limits after substitution"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.7",
+                        "MATAA_HL_5.1"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.9",
+                        "MATAA_HL_5.10"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "3-9",
+                      "commandTerms": [
+                        "Evaluate",
+                        "Find",
+                        "Calculate"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the fundamental theorem of calculus.",
+                          "Describe how to find the area between two curves."
+                        ],
+                        "examStyle": [
+                          "Evaluate \u222b_0^{\u03C0/2} sin x dx. [2 marks]",
+                          "Find area between y = x^2 and y = 2x. [5 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.9",
+                      "number": "5.9",
+                      "title": "Applications of integration",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Volumes of revolution. Kinematic applications. Average value. Approximation methods (trapezoidal, midpoint rules).",
+                      "syllabusGuidance": "Disk/washer/shell methods for volumes. Average = (1/(b-a)) \u222b_a^b f(x) dx. Numerical integration rules with error estimates.",
+                      "keywords": [
+                        "volume of revolution",
+                        "disk method",
+                        "washer method",
+                        "average value",
+                        "trapezoidal rule",
+                        "Simpson's rule"
+                      ],
+                      "coreConcepts": [
+                        "Volumes by revolution: \u03c0 \u222b [R(x)]^2 dx (disks), washers similar",
+                        "Average value theorem: average = integral / length",
+                        "Trapezoidal rule: (h/2)(f(a)+2\u2211 f + f(b))",
+                        "Kinematics: distance = \u222b v(t) dt, v = \u222b a(t) dt",
+                        "Numerical methods approximate when antiderivative unknown"
+                      ],
+                      "commonMisconceptions": [
+                        "Wrong \u03c0 factor or squaring in volumes",
+                        "Confusing radius with height in washers",
+                        "Average as arithmetic mean vs integral mean",
+                        "Trapezoidal error underestimated",
+                        "Forgetting \u03c0 in volume of revolution"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.8"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.10",
+                        "MATAA_HL_5.3"
+                      ],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "4-12",
+                      "commandTerms": [
+                        "Find",
+                        "Calculate",
+                        "Approximate"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 6,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain the disk method for volume of revolution.",
+                          "Describe how the trapezoidal rule approximates integrals."
+                        ],
+                        "examStyle": [
+                          "Find volume revolving y=\u221ax from 0 to 4 about x-axis. [5 marks]",
+                          "Approximate \u222b_0^1 e^{x^2} dx using trapezoidal rule n=4. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.10",
+                      "number": "5.10",
+                      "title": "Integration by parts",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Integration by parts \u222b u dv = uv - \u222b v du. Reduction formulae. Recursive applications.",
+                      "syllabusGuidance": "Choose u decreasing derivatives, dv easy integral. LIATE order guide. Reduction for sin^n x, etc.",
+                      "keywords": [
+                        "integration by parts",
+                        "uv - \u222b v du",
+                        "reduction formula",
+                        "LIATE"
+                      ],
+                      "coreConcepts": [
+                        "Parts formula from product rule: d(uv) = u dv + v du",
+                        "Repeated application or substitution solves products like x e^x",
+                        "Reduction formulae lower powers: I_n = ... in terms of I_{n-2}",
+                        "Tabular method for multiple integrations",
+                        "Choose u to simplify after differentiation"
+                      ],
+                      "commonMisconceptions": [
+                        "Wrong u/dv choice leading to more complex integral",
+                        "Sign errors in uv - \u222b v du",
+                        "Forgetting boundaries in definite parts",
+                        "Infinite loop without reduction",
+                        "Confusing with substitution"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.7"
+                      ],
+                      "relatedSubtopics": [
+                        "MATAA_HL_5.11"
+                      ],
+                      "paperTypes": [
+                        "paper1"
+                      ],
+                      "typicalMarks": "3-8",
+                      "commandTerms": [
+                        "Integrate",
+                        "Find",
+                        "Derive"
+                      ],
+                      "bloomLevel": 3,
+                      "teachingHours": 4,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how integration by parts derives from the product rule.",
+                          "Describe strategy for choosing u and dv."
+                        ],
+                        "examStyle": [
+                          "\u222b x sin x dx by parts. [4 marks]",
+                          "Derive reduction formula for \u222b sin^n x dx. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.11",
+                      "number": "5.11",
+                      "title": "Series expansions",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Maclaurin series for basic functions. Taylor series around other points. Binomial expansion for (1+x)^n. Remainder estimation.",
+                      "syllabusGuidance": "Series for sin x, cos x, e^x, ln(1+x), (1+x)^n. Alternating series estimation. Lagrange remainder.",
+                      "keywords": [
+                        "Maclaurin series",
+                        "Taylor series",
+                        "binomial expansion",
+                        "remainder",
+                        "convergence"
+                      ],
+                      "coreConcepts": [
+                        "Taylor/Maclaurin approximate functions by polynomials matching derivatives at point",
+                        "f(x) \u2248 \u2211 [f^{(n)}(a)/n!] (x-a)^n",
+                        "Binomial (1+x)^r = 1 + r x + r(r-1)/2! x^2 + ... |x| < 1",
+                        "Remainder bounds convergence and accuracy",
+                        "Series enable approximation, analysis near singularities"
+                      ],
+                      "commonMisconceptions": [
+                        "Wrong general term factorial denominators",
+                        "Infinite radius of convergence always",
+                        "Confusing Taylor around a with Maclaurin (a=0)",
+                        "Binomial only integers (works rationals)",
+                        "Ignoring remainder for accuracy"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.2",
+                        "MATAA_HL_1.3"
+                      ],
+                      "relatedSubtopics": [],
+                      "paperTypes": [
+                        "paper1"
+                      ],
+                      "typicalMarks": "4-10",
+                      "commandTerms": [
+                        "Expand",
+                        "Find",
+                        "Approximate"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 5,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain why Taylor series approximate smooth functions well near expansion point.",
+                          "Describe binomial expansion for non-integer exponents."
+                        ],
+                        "examStyle": [
+                          "Find Maclaurin series for e^x up to x^3 term. [3 marks]",
+                          "Expand (1+x)^{-1/2} to 4 terms; approximate (1.02)^{-1/2}. [6 marks]"
+                        ]
+                      }
+                    },
+                    {
+                      "id": "MATAA_HL_5.12",
+                      "number": "5.12",
+                      "title": "Differential equations (further) (HL)",
+                      "subjectCode": "MATAA_HL",
+                      "topicNumber": "5",
+                      "syllabusContent": "Homogeneous first-order linear DEs. Integrating factor method. Second-order linear DEs with constant coefficients (basic solutions).",
+                      "syllabusGuidance": "dy/dx + P(x)y = Q(x): multiplying factor e^{\u222b P dx}. Characteristic equation for y'' + a y' + b y = 0.",
+                      "keywords": [
+                        "linear DE",
+                        "integrating factor",
+                        "homogeneous",
+                        "characteristic equation",
+                        "second-order"
+                      ],
+                      "coreConcepts": [
+                        "Linear first-order: standard form dy/dx + P y = Q; integrating factor \u03bc = e^{\u222b P dx}",
+                        "Homogeneous linear second-order: solutions e^{rt} from r^2 + a r + b = 0",
+                        "Distinct real, repeated, complex roots give different forms",
+                        "General solution: linear combination of fundamental solutions",
+                        "Initial conditions determine constants"
+                      ],
+                      "commonMisconceptions": [
+                        "Wrong integrating factor (forget dx or sign)",
+                        "Confusing homogeneous DE with homogeneous solution",
+                        "Characteristic roots wrong quadratic formula",
+                        "Complex roots forgetting sin/cos",
+                        "Particular solution neglected"
+                      ],
+                      "prerequisites": [
+                        "MATAA_HL_5.6"
+                      ],
+                      "relatedSubtopics": [],
+                      "paperTypes": [
+                        "paper1",
+                        "paper2"
+                      ],
+                      "typicalMarks": "5-12",
+                      "commandTerms": [
+                        "Solve",
+                        "Find",
+                        "Determine"
+                      ],
+                      "bloomLevel": 4,
+                      "teachingHours": 6,
+                      "questionExamples": {
+                        "conceptual": [
+                          "Explain how the integrating factor makes linear first-order DE exact.",
+                          "Describe solution forms for different characteristic roots."
+                        ],
+                        "examStyle": [
+                          "Solve dy/dx + 2y = e^{-x}, y(0)=1 using integrating factor. [6 marks]",
+                          "Solve y'' - 3y' + 2y = 0. [5 marks]"
+                        ]
+                      }
+                    },
+                      {
+                        "id": "MATAA_HL_5.13",
+                        "number": "5.13",
+                        "title": "Kinematic problems",
+                        "subjectCode": "MATAA_HL",
+                        "topicNumber": "5",
+                        "syllabusContent": "Applications of differentiation and integration to motion in one and two dimensions. Velocity as derivative of displacement, acceleration as second derivative.",
+                        "syllabusGuidance": "Variable acceleration problems using v = ds/dt, a = dv/dt = v dv/ds. Areas under v-t graphs give displacement. Kinematic equations for constant acceleration revisited via calculus.",
+                        "keywords": [
+                          "kinematics",
+                          "displacement",
+                          "velocity",
+                          "acceleration",
+                          "v-t graph",
+                          "a-t graph",
+                          "s-t graph"
+                        ],
+                        "coreConcepts": [
+                          "Calculus formalizes kinematics: v(t) = s'(t), a(t) = v'(t) = s''(t)",
+                          "Displacement = \u222b v(t) dt, v(t) = \u222b a(t) dt + v_0",
+                          "Areas under v-t: positive above t-axis (forward), negative backward",
+                          "Chain rule a = v dv/ds for problems with a(s)",
+                          "Solves variable acceleration beyond constant a cases"
+                        ],
+                        "commonMisconceptions": [
+                          "Confusing signs: positive v forward regardless of direction change",
+                          "Areas under a-t give velocity change, not displacement",
+                          "Using constant acceleration formulas inappropriately",
+                          "dv/ds vs ds/dt confusion",
+                          "Ignoring initial conditions in integration"
+                        ],
+                        "prerequisites": [
+                          "MATAA_HL_5.3",
+                          "MATAA_HL_5.8"
+                        ],
+                        "relatedSubtopics": [
+                          "MATAA_HL_5.3",
+                          "MATAA_HL_5.9"
+                        ],
+                        "paperTypes": [
+                          "paper1",
+                          "paper2"
+                        ],
+                        "typicalMarks": "5-10",
+                        "commandTerms": [
+                          "Find",
+                          "Calculate",
+                          "Determine"
+                        ],
+                        "bloomLevel": 3,
+                        "teachingHours": 4,
+                        "questionExamples": {
+                          "conceptual": [
+                            "Explain how the area under a velocity-time graph represents displacement.",
+                            "Describe the relationship a = v dv/ds geometrically."
+                          ],
+                          "examStyle": [
+                            "Particle motion: v(t) = 3t^2 - 6t + 2 m/s. Find displacement s(3) if s(0)=0. [5 marks]",
+                            "Acceleration a = 4/v where v in m/s. If v=2 when s=0, find v when s=8. [7 marks]"
+                          ]
+                        }
+                      },
+                      {
+                        "id": "MATAA_HL_5.14",
+                        "number": "5.14",
+                        "title": "Optimization in context",
+                        "subjectCode": "MATAA_HL",
+                        "topicNumber": "5",
+                        "syllabusContent": "Related rates of change. Optimization problems in applied contexts including maximum/minimum volumes, costs, profits.",
+                        "syllabusGuidance": "Implicit differentiation for related rates (ladders, expanding circles, etc.). Practical optimization with realistic constraints and multiple variables reduced via substitution.",
+                        "keywords": [
+                          "related rates",
+                          "optimization",
+                          "maximum volume",
+                          "minimum cost",
+                          "profit maximization"
+                        ],
+                        "coreConcepts": [
+                            "Related rates: differentiate constraint w.r.t. time, solve system",
+                            "Optimization: express single variable, derivative =0, second derivative test",
+                            "Real constraints: domain restrictions, physical feasibility",
+                            "Economic: marginal cost = dC/dq, profit \u03c0 = R - C maximized when MR = MC",
+                            "Multiple critical points require comparison"
+                          ],
+                          "commonMisconceptions": [
+                            "Wrong variable differentiated in related rates",
+                            "Ignoring time derivatives for rates",
+                            "Optimizing without domain (endpoints matter)",
+                            "Absolute vs relative extrema confusion",
+                            "Linear approximation near optimum"
+                          ],
+                          "prerequisites": [
+                            "MATAA_HL_5.3",
+                            "MATAA_HL_5.5"
+                          ],
+                          "relatedSubtopics": [
+                            "MATAA_HL_5.2",
+                            "MATAA_HL_5.4"
+                          ],
+                          "paperTypes": [
+                            "paper1",
+                            "paper2"
+                          ],
+                          "typicalMarks": "6-12",
+                          "commandTerms": [
+                            "Find",
+                            "Determine",
+                            "Calculate",
+                            "When"
+                          ],
+                          "bloomLevel": 3,
+                          "teachingHours": 5,
+                          "questionExamples": {
+                            "conceptual": [
+                              "Explain how to set up a related rates problem involving changing dimensions.",
+                              "Describe the process for maximizing profit given revenue and cost functions."
+                            ],
+                            "examStyle": [
+                              "Circular pool radius increases 0.2 m/min. Find rate surface area increases when r=5m. [6 marks]",
+                              "Manufacturer: C(q)=q^2/100 + 5000, R(q)=10q. Find q maximizing profit. [8 marks]"
+                            ]
+                          }
+                        }
+                    ]
                 }
             ]
         }

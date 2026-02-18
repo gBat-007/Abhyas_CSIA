@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 26.0, *)
 struct TopicSelectionView: View {
     @EnvironmentObject var viewModel: CheckInFlowViewModel
     

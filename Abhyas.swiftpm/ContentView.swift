@@ -56,8 +56,12 @@ struct ContentView: View {
         }
         .sheet(isPresented: $showCheckIn) {
             NavigationStack {
-                CheckInFlowView()
-                    .environmentObject(appVM)
+                if #available(iOS 26.0, *) {
+                    CheckInFlowView()
+                        .environmentObject(appVM)
+                } else {
+                    Text("Please update to iOS 26.0 to use this app.")
+                }
             }
             .presentationDetents([.large])  // Full screen
             .presentationDragIndicator(.hidden)  // Hide drag indicator

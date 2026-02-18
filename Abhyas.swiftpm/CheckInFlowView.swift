@@ -1,5 +1,6 @@
 import SwiftUI
 
+@available(iOS 26.0, *)
 struct CheckInFlowView: View {
     @EnvironmentObject var appVM: AppViewModel
     @Environment(\.dismiss) var dismiss
@@ -38,63 +39,62 @@ struct CheckInFlowView: View {
                         .environmentObject(viewModel)
                 }
             } else if viewModel.currentStep == .gapAnalysis {
-                if let subtopic = viewModel.currentSubtopic,
-                   let analysis = viewModel.gapAnalysisMap[subtopic.id] {
-                    NavigationStack {
-                        GapAnalysisResultView(
-                            subtopic: subtopic,
-                            analysis: analysis,
-                            onContinue: {
-                                viewModel.advanceFromGapAnalysis()
-                            }
-                        )
-                    }
-                } else {
-                    LoadingAnalysisView(currentText: "Loading analysis...")
+                if let subtopic = viewModel.currentSubtopic {
+                    GapAnalysisContainerView(
+                        subtopic: subtopic,
+                        gapViewModel: GapDetectionViewModel(),
+                        userResponses: [viewModel.userExplanation],
+                        followUpQAs: viewModel.followUpQAsMap[subtopic.id] ?? [],
+                        onContinue: {
+                            viewModel.advanceFromGapAnalysis()
+                        }
+                    )
                 }
             } else if viewModel.currentStep == .complete {
-                CompletionView()
-                    .environmentObject(viewModel)
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                            dismiss()
+                    CompletionView()
+                        .environmentObject(viewModel)
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                                dismiss()
+                            }
                         }
+                }
+            }
+                .onAppear {
+                    if let firstSubject = appVM.userProfile?.subjects.first {
+                        viewModel.selectedSubject = firstSubject
                     }
-            }
-        }
-        .onAppear {
-            if let firstSubject = appVM.userProfile?.subjects.first {
-                viewModel.selectedSubject = firstSubject
-            }
+                }
         }
     }
-}
-
-struct CompletionView: View {
-    @EnvironmentObject var viewModel: CheckInFlowViewModel
-    @Environment(\.dismiss) var dismiss
     
-    var body: some View {
-        VStack(spacing: 30) {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 80))
-                .foregroundColor(.green)
-            
-            Text("Check-In Complete!")
-                .font(.title)
-                .fontWeight(.bold)
-            
-            Text("Great work! Your understanding has been recorded.")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-                .multilineTextAlignment(.center)
-            
-            Button("Done") {
-                dismiss()
+    @available(iOS 26.0, *)
+    struct CompletionView: View {
+        @EnvironmentObject var viewModel: CheckInFlowViewModel
+        @Environment(\.dismiss) var dismiss
+        
+        var body: some View {
+            VStack(spacing: 30) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 80))
+                    .foregroundColor(.green)
+                
+                Text("Check-In Complete!")
+                    .font(.title)
+                    .fontWeight(.bold)
+                
+                Text("Great work! Your understanding has been recorded.")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .multilineTextAlignment(.center)
+                
+                Button("Done") {
+                    dismiss()
+                }
+                .buttonStyle(.borderedProminent)
             }
-            .buttonStyle(.borderedProminent)
+            .padding()
+            .navigationBarBackButtonHidden()
         }
-        .padding()
-        .navigationBarBackButtonHidden()
     }
-}
+

@@ -3,6 +3,7 @@ import SwiftUI
 import Vision
 import VisionKit
 
+@available(iOS 26.0, *)
 @MainActor
 class CheckInFlowViewModel: ObservableObject {
     @Published var currentStep: CheckInStep = .input
