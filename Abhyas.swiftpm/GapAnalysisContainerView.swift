@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 
 @available(iOS 26.0, *)
@@ -8,7 +6,9 @@ struct GapAnalysisContainerView: View {
     let gapViewModel: GapDetectionViewModel
     let userResponses: [String]
     let followUpQAs: [FollowUpQA]
-    let onContinue: () -> Void
+    let testedConcepts: [String]
+    let testedMisconceptions: [String]
+    let onContinue: (GapAnalysisResult) -> Void
     
     @State private var analysisResult: GapAnalysisResult?
     
@@ -21,15 +21,13 @@ struct GapAnalysisContainerView: View {
                     GapAnalysisResultView(
                         subtopic: subtopic,
                         analysis: result,
-                        onContinue: onContinue
+                        onContinue: { onContinue(result) }
                     )
                 } else {
-                    // Fallback - should not happen
-                    Text("Analysis complete")
-                        .foregroundStyle(.secondary)
+                    LoadingAnalysisView(currentText: "Starting analysis...")
                 }
             }
-            .navigationTitle("Analysis")
+            .navigationTitle("Understanding Analysis")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -40,6 +38,7 @@ struct GapAnalysisContainerView: View {
                         Text(subtopic.title)
                             .font(.headline)
                             .foregroundStyle(.secondary)
+                            .lineLimit(1)
                     }
                 }
             }
@@ -48,7 +47,9 @@ struct GapAnalysisContainerView: View {
             analysisResult = await gapViewModel.detectConceptualGaps(
                 subtopic: subtopic,
                 userResponses: userResponses,
-                followUpQAs: followUpQAs
+                followUpQAs: followUpQAs,
+                testedConcepts: testedConcepts,
+                testedMisconceptions: testedMisconceptions
             )
         }
     }

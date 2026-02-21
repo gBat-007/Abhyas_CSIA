@@ -2,20 +2,35 @@ import SwiftUI
 import VisionKit
 import Vision
 
+func toUserReadableName(subjectCode: String) -> String {
+    if subjectCode == "MATAA_HL" {
+        return "Math AA"
+    } else if subjectCode == "PHYSHL" {
+        return "Physics"
+    } else if subjectCode == "CSHL" {
+        return "Computer Science"
+    }
+    
+    return subjectCode
+}
+
 @available(iOS 26.0, *)
 struct InputView: View {
     @EnvironmentObject var viewModel: CheckInFlowViewModel
     @EnvironmentObject var appVM: AppViewModel
     @Environment(\.dismiss) var dismiss
     @FocusState private var isTextFieldFocused: Bool
-    
-    var body: some View {
+        private var isAnalyzeDisabled: Bool {
+        let trimmed = viewModel.userExplanation.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.count < 10 || viewModel.isProcessing
+    }
+        var body: some View {
         VStack(spacing: 20) {
             // ✅ SUBJECT PICKER (from user's selected subjects)
             if let subjects = appVM.userProfile?.subjects, subjects.count > 1 {
                 Menu {
                     ForEach(subjects, id: \.self) { subject in
-                        Button(subject) {
+                        Button(toUserReadableName(subjectCode: subject)) {
                             viewModel.selectedSubject = subject
                         }
                     }
@@ -24,7 +39,7 @@ struct InputView: View {
                         Text("Subject: ")
                             .font(.caption)
                             .foregroundColor(.secondary)
-                        Text(viewModel.selectedSubject ?? "Select")
+                        Text(toUserReadableName(subjectCode: viewModel.selectedSubject ?? "Select"))
                             .font(.caption)
                             .foregroundColor(.blue)
                         Image(systemName: "chevron.down")
@@ -38,7 +53,7 @@ struct InputView: View {
                 Text("Subject: ")
                     .font(.caption)
                     .foregroundColor(.secondary)
-                + Text(viewModel.selectedSubject ?? "")
+                + Text(toUserReadableName(subjectCode: viewModel.selectedSubject ?? "Select") ?? "")
                     .font(.caption)
                     .foregroundColor(.blue)
             }
@@ -92,6 +107,13 @@ struct InputView: View {
             
             // Analyze Button
             Button(action: {
+                let trimmed = viewModel.userExplanation.trimmingCharacters(in: .whitespacesAndNewlines)
+                if trimmed.count < 10 {
+                    // Too short - show feedback
+                    return
+                }
+                // Dismiss keyboard before processing
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 viewModel.analyzeInput()
             }) {
                 if viewModel.isProcessing {
@@ -106,15 +128,15 @@ struct InputView: View {
             .frame(height: 50)
             .background(
                 Capsule()
-                    .fill(viewModel.userExplanation.isEmpty ? Color.gray : Color.blue)
+                    .fill(isAnalyzeDisabled ? Color.gray : Color.blue)
             )
             .foregroundColor(.white)
             .padding(.horizontal)
-            .disabled(viewModel.userExplanation.isEmpty || viewModel.isProcessing)
+            .disabled(isAnalyzeDisabled)
             
             Spacer()
         }
-        .navigationTitle("Daily Check-In")
+        .navigationTitle("New Shard")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -135,19 +157,21 @@ struct InputView: View {
 @available(iOS 26.0, *)
 struct PhotoCaptureView: View {
     @EnvironmentObject var viewModel: CheckInFlowViewModel
-    @State private var showCamera = false
+    @State private var showCameraPicker = false
+    @State private var showPhotoLibraryPicker = false
     @State private var isProcessing = false
     @State private var errorMessage: String?
     
     var body: some View {
         if #available(iOS 17.0, *) {
-            VStack(spacing: 20) {
+            VStack(spacing: 16) {
                 if let image = viewModel.capturedImage {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
                         .cornerRadius(12)
-                        .padding()
+                        .padding(.horizontal)
+                        .padding(.top, 8)
                     
                     if isProcessing {
                         ProgressView("Extracting text...")
@@ -165,24 +189,37 @@ struct PhotoCaptureView: View {
                             .font(.system(size: 50))
                             .foregroundColor(.blue)
                         
-                        Text("Take a photo of your notes")
+                        Text("Add a photo of your notes")
                             .font(.headline)
                         
                         Text("Math symbols will be extracted automatically")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
+                    .padding(.top, 8)
                 }
                 
-                Button(action: {
-                    showCamera = true
-                }) {
-                    Label(viewModel.capturedImage == nil ? "Take Photo" : "Retake", systemImage: "camera")
+                HStack(spacing: 12) {
+                    Button {
+                        showCameraPicker = true
+                    } label: {
+                        Label(viewModel.capturedImage == nil ? "Take Photo" : "Retake", systemImage: "camera")
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Button {
+                        showPhotoLibraryPicker = true
+                    } label: {
+                        Label("Choose Photo", systemImage: "photo.on.rectangle")
+                    }
+                    .buttonStyle(.bordered)
                 }
-                .buttonStyle(.bordered)
             }
-            .sheet(isPresented: $showCamera) {
+            .sheet(isPresented: $showCameraPicker) {
                 ImagePicker(image: $viewModel.capturedImage, sourceType: .camera)
+            }
+            .sheet(isPresented: $showPhotoLibraryPicker) {
+                PhotoLibraryPicker(image: $viewModel.capturedImage)
             }
             .onChange(of: viewModel.capturedImage) { _, newImage in
                 if let image = newImage {
@@ -250,7 +287,7 @@ struct PhotoCaptureView: View {
     }
 }
 
-// MARK: - UIImagePickerController Wrapper
+// MARK: - UIImagePickerController Wrapper (Camera)
 struct ImagePicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     var sourceType: UIImagePickerController.SourceType
@@ -285,6 +322,65 @@ struct ImagePicker: UIViewControllerRepresentable {
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             parent.dismiss()
+        }
+    }
+}
+
+// MARK: - PHPicker Wrapper (Photo Library)
+import PhotosUI
+
+struct PhotoLibraryPicker: UIViewControllerRepresentable {
+    @Binding var image: UIImage?
+    @Environment(\.dismiss) private var dismiss
+    
+    func makeUIViewController(context: Context) -> PHPickerViewController {
+        var config = PHPickerConfiguration(photoLibrary: .shared())
+        config.selectionLimit = 1
+        config.filter = .images
+        
+        let picker = PHPickerViewController(configuration: config)
+        picker.delegate = context.coordinator
+        return picker
+    }
+    
+    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) {}
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
+    
+    final class Coordinator: NSObject, PHPickerViewControllerDelegate {
+        let parent: PhotoLibraryPicker
+        
+        init(_ parent: PhotoLibraryPicker) {
+            self.parent = parent
+        }
+        
+        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            defer { parent.dismiss() }
+            guard let provider = results.first?.itemProvider else { return }
+            
+            // Prefer UIImage directly if available
+            if provider.canLoadObject(ofClass: UIImage.self) {
+                provider.loadObject(ofClass: UIImage.self) { object, _ in
+                    if let uiImage = object as? UIImage {
+                        DispatchQueue.main.async {
+                            self.parent.image = uiImage
+                        }
+                    }
+                }
+                return
+            }
+            
+            // Fallback: load data representation of an image
+            let typeIdentifiers = ["public.image"]
+            provider.loadDataRepresentation(forTypeIdentifier: typeIdentifiers[0]) { data, _ in
+                if let data, let uiImage = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.parent.image = uiImage
+                    }
+                }
+            }
         }
     }
 }

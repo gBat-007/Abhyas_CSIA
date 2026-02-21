@@ -59,6 +59,10 @@ class SyllabusManager {
         return subjects.first { $0.code == code }
     }
     
+    func getAllSubjects() -> [Subject] {
+        return subjects
+    }
+    
     func getAllSubtopics(for subjectCode: String) -> [Subtopic] {
         guard let subject = getSubject(code: subjectCode) else { return [] }
         return subject.topics.flatMap { $0.subtopics }

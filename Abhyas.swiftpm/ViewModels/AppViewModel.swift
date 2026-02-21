@@ -44,6 +44,12 @@ class AppViewModel: ObservableObject {
         checkInSessions.append(session)
         saveData()
     }
+
+    // Public helper to add a completed session and persist
+    func addSession(_ session: CheckInSession) {
+        checkInSessions.append(session)
+        saveData()
+    }
     
     private func saveData() {
         let appData = AppData(

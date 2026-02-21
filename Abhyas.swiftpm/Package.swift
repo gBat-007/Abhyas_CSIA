@@ -8,20 +8,20 @@ import PackageDescription
 import AppleProductTypes
 
 let package = Package(
-    name: "Abhyas",
+    name: "IB Shards",
     platforms: [
         .iOS("16.0")
     ],
     products: [
         .iOSApplication(
-            name: "Abhyas",
+            name: "IB Shards",
             targets: ["AppModule"],
             bundleIdentifier: "com.swifteers.Abhyas",
             teamIdentifier: "2H6VB94KW9",
             displayVersion: "1.0",
             bundleVersion: "1",
-            appIcon: .placeholder(icon: .magicWand),
-            accentColor: .presetColor(.cyan),
+            appIcon: .asset("AppIcon"),
+            accentColor: .asset("AccentColor"),
             supportedDeviceFamilies: [
                 .pad,
                 .phone
@@ -35,7 +35,8 @@ let package = Package(
             capabilities: [
                 .camera(purposeString: "We need camera access to capture your notes for text extraction."),
                 .microphone(purposeString: "We need access to your microphone to record your explanation."),
-                .speechRecognition(purposeString: "We will use speech recognition to transcribe your explanation.")
+                .speechRecognition(purposeString: "We will use speech recognition to transcribe your explanation."),
+                .photoLibrary(purposeString: "We will use the photos you upload from your photo library in order for your daily shard explanation.")
             ],
             appCategory: .education
         )

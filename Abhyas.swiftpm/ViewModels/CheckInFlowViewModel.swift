@@ -22,7 +22,17 @@ class CheckInFlowViewModel: ObservableObject {
     @Published var followUpQAsMap: [String: [FollowUpQA]] = [:]
     @Published var gapAnalysisMap: [String: GapAnalysisResult] = [:]
     
+    // New: track what was tested per subtopic
+    @Published var testedConceptsMap: [String: [String]] = [:]
+    @Published var testedMisconceptionsMap: [String: [String]] = [:]
+    
     private let dataManager = DataManager()
+    // Attached application view-model (set by the hosting view)
+    private var appViewModel: AppViewModel?
+
+    func setAppViewModel(_ vm: AppViewModel) {
+        self.appViewModel = vm
+    }
     
     var currentSubtopic: Subtopic? {
         guard currentSubtopicIndex < selectedSubtopics.count else { return nil }
@@ -62,25 +72,19 @@ class CheckInFlowViewModel: ObservableObject {
         currentStep = .followUp
     }
     
-    func advanceFromFollowUp(with followUpQAs: [FollowUpQA]) async {
+    // Updated: capture what was tested and move to gap analysis
+    func advanceFromFollowUp(with followUpQAs: [FollowUpQA], testedConcepts: [String], testedMisconceptions: [String]) async {
         guard let subtopic = currentSubtopic else { return }
         
         followUpQAsMap[subtopic.id] = followUpQAs
-        
-        let gapViewModel = GapDetectionViewModel()
-        
-        var userResponses: [String] = [userExplanation]
-        userResponses.append(contentsOf: followUpQAs.map { $0.userResponse })
-        
-        let analysis = await gapViewModel.detectConceptualGaps(
-            subtopic: subtopic,
-            userResponses: userResponses,
-            followUpQAs: followUpQAs
-        )
-        
-        gapAnalysisMap[subtopic.id] = analysis
+        testedConceptsMap[subtopic.id] = testedConcepts
+        testedMisconceptionsMap[subtopic.id] = testedMisconceptions
         
         currentStep = .gapAnalysis
+    }
+    
+    func storeGapAnalysis(_ result: GapAnalysisResult, for subtopicID: String) {
+        gapAnalysisMap[subtopicID] = result
     }
     
     func advanceFromGapAnalysis() {
@@ -94,21 +98,13 @@ class CheckInFlowViewModel: ObservableObject {
     }
     
     private func saveCheckInData() {
-        // Load existing user data (or default)
-        let loaded: AppData
-        do {
-            loaded = try dataManager.loadUserData()
-        } catch {
-            loaded = AppData()
-        }
-        var appData = loaded
-        
-        guard let profile = appData.userProfile else { return }
-        
+        // Build session from the attached AppViewModel's profile
+        guard let appVM = appViewModel, let profile = appVM.userProfile else { return }
+
         var session = CheckInSession(userProfileID: profile.id)
         session.isCompleted = true
         session.subjectsCount = 1
-        
+
         var subjectCheckIn = SubjectCheckIn(
             sessionID: session.id,
             subject: selectedSubject ?? "",
@@ -148,14 +144,8 @@ class CheckInFlowViewModel: ObservableObject {
         subjectCheckIn.averageUnderstandingScore = subtopicCheckIns.isEmpty ? 0 : totalScore / Float(subtopicCheckIns.count)
         
         session.subjectCheckIns = [subjectCheckIn]
-        appData.checkInSessions.append(session)
-        
-        do {
-            try dataManager.saveUserData(appData)
-        } catch {
-            // Handle save error appropriately in your app (log or surface to user)
-            print("Failed to save user data: \(error)")
-        }
+        // Append to in-memory AppViewModel and persist
+        appViewModel?.addSession(session)
     }
     
     func goBack() {
@@ -185,6 +175,8 @@ class CheckInFlowViewModel: ObservableObject {
         currentSubtopicIndex = 0
         followUpQAsMap = [:]
         gapAnalysisMap = [:]
+        testedConceptsMap = [:]
+        testedMisconceptionsMap = [:]
     }
 }
 

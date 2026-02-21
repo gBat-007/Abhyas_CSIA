@@ -3,11 +3,12 @@ import SwiftUI
 struct FollowUpQuestionsView: View {
     let subtopic: Subtopic
     let userExplanation: String
-    let onComplete: ([FollowUpQA]) -> Void
+    // Updated to return tested concepts/misconceptions as well
+    let onComplete: ([FollowUpQA], [String], [String]) -> Void
     let onSkip: () -> Void
     
     @State private var viewModel = FollowUpQuestionsViewModel()
-    @State private var showQuestionCard = false  // ✅ ADD HERE
+    @State private var showQuestionCard = false
     @State private var currentQuestionIndex = 0
     @State private var answers: [String] = []
     
@@ -19,237 +20,235 @@ struct FollowUpQuestionsView: View {
     }
     
     var body: some View {
-            NavigationStack {
-                VStack(spacing: 32) {
-                    headerView
-                    contentView
-                    actionButtons
-                }
-                .task(id: [viewModel.questions.count, currentQuestionIndex]) {
-                    syncAnswersArray()
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { onSkip() } } }
-                .onAppear {
-                    // ONLY generate FIRST question automatically
-                    if viewModel.questions.isEmpty {
-                        answers = [""]  // Pre-allocate first answer
-                        Task {
-                            await viewModel.generateNextQuestion(
-                                for: subtopic,
-                                userExplanation: userExplanation,
-                                previousAnswers: answers
-                            ) {
-                                showQuestionCard = true
-                                currentQuestionIndex = viewModel.questions.count - 1
-                            }
+        NavigationStack {
+            VStack(spacing: 32) {
+                headerView
+                contentView
+                actionButtons
+            }
+            .task(id: [viewModel.questions.count, currentQuestionIndex]) {
+                syncAnswersArray()
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { onSkip() } } }
+            .onAppear {
+                // ONLY generate FIRST question automatically
+                if viewModel.questions.isEmpty {
+                    answers = [""]  // Pre-allocate first answer
+                    Task {
+                        await viewModel.generateNextQuestion(
+                            for: subtopic,
+                            userExplanation: userExplanation,
+                            previousAnswers: answers
+                        ) {
+                            showQuestionCard = true
+                            currentQuestionIndex = viewModel.questions.count - 1
+                            syncAnswersArray() // ensure binding is ready for the new index
                         }
                     }
                 }
             }
-            .onChange(of: viewModel.questions.count) { _ in
-                let neededCount = max(viewModel.questions.count, 1)
-                while answers.count < neededCount {
-                    answers.append("")
-                }
-            }
         }
-        
-        // MARK: - Subviews
-        private var headerView: some View {
-            VStack(spacing: 8) {
-                HStack {
-                    Text("\(subtopic.number) - \(subtopic.title)")
-                        .font(.headline)
-                        .foregroundStyle(.secondary)
-                    Spacer()
-                    Text("\(progressText)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                .padding(.horizontal)
-            }
-        }
-        
-        private var contentView: some View {
-            ScrollView {
-                VStack(spacing: 24) {
-                    explanationDisclosure
-                    Divider()
-                    mainQuestionView
-                }
-            }
-        }
-        
-        private var actionButtons: some View {
-            VStack(spacing: 12) {
-                nextButton
-                skipButton
-            }
-            .padding(.horizontal)
-        }
-        
-        // MARK: - Helpers (computed properties)
-        private var progressText: String {
-            "\(min(currentQuestionIndex + 1, max(viewModel.questions.count, 1)))/3"
-        }
-        
-        private var isCurrentQuestionAnswered: Bool {
-            guard answers.indices.contains(currentQuestionIndex) else { return false }
-            return !answers[currentQuestionIndex].trimmingCharacters(in: .whitespaces).isEmpty
-        }
-
-        
-        private var currentQuestion: String? {
-            let safeIndex = min(currentQuestionIndex, viewModel.questions.count - 1)
-            guard safeIndex >= 0 && safeIndex < viewModel.questions.count else { return nil }
-            return viewModel.questions[safeIndex]
-        }
-
-
-
-
-        
-        // MARK: - View Builders
-        private var explanationDisclosure: some View {
-            DisclosureGroup("Your explanation") {
-                Text(userExplanation)
-                    .padding()
-                    .background(Color(.systemGray6))
-                    .cornerRadius(8)
-            }
-            .padding(.horizontal)
-        }
-        
-        
-
-        @ViewBuilder
-        private var mainQuestionView: some View {
-            if viewModel.isGeneratingCurrentQuestion {
-                generatingQuestionView.padding(.horizontal)
-            } else if let question = currentQuestion {
-                // ✅ AUTO-SYNC before binding
-                let safeBinding = Binding<String>(
-                    get: { answers.indices.contains(currentQuestionIndex) ? answers[currentQuestionIndex] : "" },
-                    set: {
-                        syncAnswersArray()
-                        if answers.indices.contains(currentQuestionIndex) {
-                            answers[currentQuestionIndex] = $0
-                        }
-                    }
-                )
-                QuestionCard(
-                    number: currentQuestionIndex + 1,
-                    question: question,
-                    answer: safeBinding
-                )
-                .padding(.horizontal)
-            } else {
-                Text("Ready to start").foregroundStyle(.secondary).padding(.horizontal)
-            }
-        }
-
-
-
-        
-        private var generatingQuestionView: some View {
-            VStack {
-                Text("Generating question...").font(.subheadline).foregroundStyle(.secondary)
-                Text(viewModel.currentGeneratingQuestion)
-                    .font(.body).italic().foregroundStyle(.secondary)
-                    .padding()
-                    .background(Color(.systemGray5))
-                    .cornerRadius(8)
-            }
-        }
-        
-        private var nextButtonLabel: String {
-            if viewModel.questions.count < viewModel.maxQuestionsToGenerate {
-                "Next Question (\(viewModel.questions.count + 1)/3)"
-            } else {
-                "Finish"
-            }
-        }
-
-        private var nextButton: some View {
-            Button(nextButtonLabel) {  // ✅ Dynamic label
-                nextQuestionAction()
-            }
-            .buttonStyle(.borderedProminent)
-            .disabled(disabledNext)
-        }
-
-
-        private var disabledNext: Bool {
-            viewModel.isGeneratingCurrentQuestion ||
-            answers.indices.contains(currentQuestionIndex) == false ||
-            answers[currentQuestionIndex].trimmingCharacters(in: .whitespaces).isEmpty  // ✅ Enable when NOT empty
-        }
-
-
-        
-        private var skipButton: some View {
-            Button("Skip to End") { onSkip() }
-                .buttonStyle(.bordered)
-                .foregroundStyle(.secondary)
-        }
-        
-        // MARK: - Actions
-            
-        private func nextQuestionAction() {
-            ensureAnswerSlotExists()
-            
-            Task {
-                if currentQuestionIndex + 1 < viewModel.questions.count {
-                    // ✅ Just advance existing
-                    currentQuestionIndex += 1
-                    print("📱 Advanced to index \(currentQuestionIndex)")
-                } else if viewModel.questions.count < viewModel.maxQuestionsToGenerate {
-                    // ✅ Generate NEW + advance
-                    showQuestionCard = false  // Reset UI
-                    await viewModel.generateNextQuestion(
-                        for: subtopic,
-                        userExplanation: userExplanation,
-                        previousAnswers: answers
-                    ) {
-                        currentQuestionIndex = viewModel.questions.count - 1  // ✅ ADVANCE HERE
-                        print("📱 Generated Q\(viewModel.questions.count) → index \(currentQuestionIndex)")
-                    }
-                } else {
-                    // ✅ Finish: build FollowUpQA array and pass back
-                    let followUps: [FollowUpQA] = buildFollowUpQAs()
-                    onComplete(followUps)
-                }
-            }
-        }
-
-        private func buildFollowUpQAs() -> [FollowUpQA] {
-            let concept = subtopic.coreConcepts.first ?? ""
-            let topicCheckInID = UUID() // Placeholder until persisted session exists
-            let count = min(viewModel.questions.count, answers.count)
-            return (0..<count).map { idx in
-                FollowUpQA(
-                    topicCheckInID: topicCheckInID,
-                    questionNumber: idx + 1,
-                    question: viewModel.questions[idx],
-                    userResponse: answers[idx],
-                    conceptTested: concept
-                )
-            }
-        }
-
-        private func ensureAnswerSlotExists() {
-            let safeIndex = min(currentQuestionIndex, 100)  // Sanity cap
-            while answers.count <= safeIndex {
+        .onChange(of: viewModel.questions.count) { _ in
+            let neededCount = max(viewModel.questions.count, 1)
+            while answers.count < neededCount {
                 answers.append("")
             }
         }
-
-
+    }
+    
+    // MARK: - Subviews
+    private var headerView: some View {
+        VStack(spacing: 8) {
+            HStack {
+                Text("\(subtopic.number) - \(subtopic.title)")
+                    .font(.headline)
+                    .foregroundStyle(.secondary)
+                Spacer()
+                Text("\(progressText)")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.horizontal)
+        }
+    }
+    
+    private var contentView: some View {
+        ScrollView {
+            VStack(spacing: 24) {
+                explanationDisclosure
+                Divider()
+                mainQuestionView
+            }
+        }
+    }
+    
+    private var actionButtons: some View {
+        VStack(spacing: 12) {
+            nextButton
+            skipButton
+        }
+        .padding(.horizontal)
+    }
+    
+    // MARK: - Helpers (computed properties)
+    private var progressText: String {
+        "\(min(currentQuestionIndex + 1, max(viewModel.questions.count, 1)))/3"
+    }
+    
+    private var isCurrentQuestionAnswered: Bool {
+        guard answers.indices.contains(currentQuestionIndex) else { return false }
+        return !answers[currentQuestionIndex].trimmingCharacters(in: .whitespaces).isEmpty
+    }
+    
+    private var currentQuestion: String? {
+        let safeIndex = min(currentQuestionIndex, viewModel.questions.count - 1)
+        guard safeIndex >= 0 && safeIndex < viewModel.questions.count else { return nil }
+        return viewModel.questions[safeIndex]
+    }
+    
+    // MARK: - View Builders
+    private var explanationDisclosure: some View {
+        DisclosureGroup("Your explanation") {
+            Text(userExplanation)
+                .padding()
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+        }
+        .padding(.horizontal)
+    }
+    
+    @ViewBuilder
+    private var mainQuestionView: some View {
+        if viewModel.isGeneratingCurrentQuestion {
+            generatingQuestionView.padding(.horizontal)
+        } else if let question = currentQuestion {
+            // Auto-sync before binding
+            let safeBinding = Binding<String>(
+                get: { answers.indices.contains(currentQuestionIndex) ? answers[currentQuestionIndex] : "" },
+                set: {
+                    syncAnswersArray()
+                    if answers.indices.contains(currentQuestionIndex) {
+                        answers[currentQuestionIndex] = $0
+                    }
+                }
+            )
+            // Key strictly by index so advancing always refreshes the view
+            QuestionCard(
+                number: currentQuestionIndex + 1,
+                question: question,
+                answer: safeBinding
+            )
+            .id(currentQuestionIndex)
+            .padding(.horizontal)
+        } else {
+            Text("Ready to start").foregroundStyle(.secondary).padding(.horizontal)
+        }
+    }
+    
+    private var generatingQuestionView: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Generating question...")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            Text(viewModel.currentGeneratingQuestion)
+                .font(.body)
+                .italic()
+                .foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+                .lineLimit(nil)
+                .padding()
+                .background(Color(.systemGray5))
+                .cornerRadius(8)
+        }
+    }
+    
+    private var nextButtonLabel: String {
+        if viewModel.questions.count < viewModel.maxQuestionsToGenerate {
+            "Next Question (\(viewModel.questions.count + 1)/3)"
+        } else {
+            "Finish"
+        }
+    }
+    
+    private var nextButton: some View {
+        Button(nextButtonLabel) {
+            nextQuestionAction()
+        }
+        .buttonStyle(.borderedProminent)
+        .disabled(disabledNext)
+    }
+    
+    private var disabledNext: Bool {
+        viewModel.isGeneratingCurrentQuestion ||
+        answers.indices.contains(currentQuestionIndex) == false ||
+        answers[currentQuestionIndex].trimmingCharacters(in: .whitespaces).isEmpty
+    }
+    
+    private var skipButton: some View {
+        Button("Skip to End") { onSkip() }
+            .buttonStyle(.bordered)
+            .foregroundStyle(.secondary)
+    }
+    
+    // MARK: - Actions
+    private func nextQuestionAction() {
+        ensureAnswerSlotExists()
+        // Dismiss keyboard before advancing
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        
+        Task {
+            if currentQuestionIndex + 1 < viewModel.questions.count {
+                // Advance to next existing question
+                currentQuestionIndex += 1
+                syncAnswersArray() // ensure binding is ready for the new index
+                print("📱 Advanced to index \(currentQuestionIndex)")
+            } else if viewModel.questions.count < viewModel.maxQuestionsToGenerate {
+                // Generate new question then advance
+                showQuestionCard = false
+                await viewModel.generateNextQuestion(
+                    for: subtopic,
+                    userExplanation: userExplanation,
+                    previousAnswers: answers
+                ) {
+                    currentQuestionIndex = viewModel.questions.count - 1
+                    syncAnswersArray() // ensure binding is ready for the new index
+                    print("📱 Generated Q\(viewModel.questions.count) → index \(currentQuestionIndex)")
+                }
+            } else {
+                // Finish: build FollowUpQA array and pass back, including tested items
+                let followUps: [FollowUpQA] = buildFollowUpQAs()
+                onComplete(followUps, viewModel.testedConcepts, viewModel.testedMisconceptions)
+            }
+        }
+    }
+    
+    private func buildFollowUpQAs() -> [FollowUpQA] {
+        // Note: You currently don’t have per-question concept mapping stored.
+        // We keep your existing approach (first core concept) to avoid breaking downstream logic.
+        let concept = subtopic.coreConcepts.first ?? ""
+        let topicCheckInID = UUID() // Placeholder until persisted session exists
+        let count = min(viewModel.questions.count, answers.count)
+        return (0..<count).map { idx in
+            FollowUpQA(
+                topicCheckInID: topicCheckInID,
+                questionNumber: idx + 1,
+                question: viewModel.questions[idx],
+                userResponse: answers[idx],
+                conceptTested: concept
+            )
+        }
+    }
+    
+    private func ensureAnswerSlotExists() {
+        let safeIndex = min(currentQuestionIndex, 100)
+        while answers.count <= safeIndex {
+            answers.append("")
+        }
+    }
 }
 
-
-// FIXED QuestionCard with .id refresh
+// FIXED QuestionCard with .id refresh (kept as-is)
 struct QuestionCard: View {
     let number: Int
     let question: String
@@ -268,7 +267,7 @@ struct QuestionCard: View {
                     .foregroundStyle(.blue)
                     .frame(width: 24, alignment: .leading)
                 
-                Text(question)
+                MathSupportedText(question)
                     .font(.body)
                     .fixedSize(horizontal: false, vertical: true)
             }
@@ -298,14 +297,6 @@ struct QuestionCard: View {
                                 RoundedRectangle(cornerRadius: 8)
                                     .stroke(isFocused ? Color.accentColor : Color.accentColor.opacity(0.5), lineWidth: 2)
                             )
-                        
-//                        Button(action: toggleRecording) {
-//                            Image(systemName: isRecording ? "stop.circle.fill" : "mic.circle.fill")
-//                                .font(.system(size: 28))
-//                                .foregroundStyle(isRecording ? .red : .blue)
-//                        }
-//                        .buttonStyle(.plain)
-//                        .disabled(isTranscribing)  // ✅ Prevent spam
                     }
                 }
             }
@@ -314,37 +305,6 @@ struct QuestionCard: View {
         .background(Color(.systemBackground))
         .cornerRadius(12)
         .shadow(color: .black.opacity(0.05), radius: 8, x: 0, y: 2)
-//        .id(question + answer)  // ✅ REFRESH ON NEW QUESTION/ANSWER
-    }
-    
-    
-    private func toggleRecording() {
-        if isRecording {
-            stopRecording()
-        } else {
-            startRecording()
-        }
-    }
-    
-    private func startRecording() {
-        isRecording = true
-        // TODO: Start your existing audio recording
-        // When done recording:
-        // isRecording = false
-        // isTranscribing = true
-        // transcribeRecording()
-    }
-    
-    private func stopRecording() {
-        isRecording = false
-        // TODO: Stop recording, start transcription
-    }
-    
-    private func transcribeRecording() {
-        // TODO: Use your existing Whisper/local transcription
-        // When complete:
-        // isTranscribing = false
-        // answer = transcribedText
     }
 }
 
@@ -371,49 +331,3 @@ struct RecordingIndicator: View {
         }
     }
 }
-
-
-// MARK: - Loading Placeholder
-struct QuestionPlaceholder: View {
-    @State private var isAnimating = false
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 12) {
-                Circle()
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(width: 24, height: 24)
-                
-                RoundedRectangle(cornerRadius: 4)
-                    .fill(Color.gray.opacity(0.3))
-                    .frame(height: 20)
-            }
-            
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.gray.opacity(0.2))
-                .frame(height: 100)
-        }
-        .padding()
-        .background(Color(.systemBackground))
-        .cornerRadius(12)
-        .opacity(isAnimating ? 0.5 : 1.0)
-        .animation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true), value: isAnimating)
-        .onAppear {
-            isAnimating = true
-        }
-    }
-}
-
-// MARK: - Utilities
-private extension Array where Element == String {
-    func padOrTrim(to newCount: Int) -> [String] {
-        guard newCount >= 0 else { return [] }
-        if count == newCount { return self }
-        if count > newCount {
-            return Array(self.prefix(newCount))
-        } else {
-            return self + Array(repeating: "", count: newCount - count)
-        }
-    }
-}
-

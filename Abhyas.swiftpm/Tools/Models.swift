@@ -40,15 +40,14 @@ struct Subtopic: Codable, Identifiable {
     let commandTerms: [String]
     let bloomLevel: Int
     let teachingHours: Int?
-    let questionExamples: QuestionExamples?  // ✅ ADDED
+    let questionExamples: QuestionExamples
 }
 
-struct QuestionExamples: Codable {  // ✅ ADDED
+struct QuestionExamples: Codable {
     let conceptual: [String]
     let examStyle: [String]
 }
 
-// MARK: - User Data Entities
 struct UserProfile: Codable, Identifiable {
     let id: UUID
     var subjects: [String]
@@ -107,10 +106,10 @@ struct SubtopicCheckIn: Codable, Identifiable {
     let wasConfirmed: Bool
     let confidenceScore: Float
     let understandingScore: Float
-    var conceptualGaps: [String]?  // ✅ CHANGED to var
-    var understoodConcepts: [String]  // ✅ CHANGED to var
-    var flaggedMisconceptions: [String]?  // ✅ CHANGED to var
-    var missingPrerequisites: [String]?  // ✅ CHANGED to var
+    var conceptualGaps: [String]?
+    var understoodConcepts: [String]
+    var flaggedMisconceptions: [String]?
+    var missingPrerequisites: [String]?
     let completedAt: Date
     
     init(subjectCheckInID: UUID, subtopicID: String, wasConfirmed: Bool,
