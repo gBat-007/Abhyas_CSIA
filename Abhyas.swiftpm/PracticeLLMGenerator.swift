@@ -61,8 +61,7 @@ struct PracticeLLMGenerator {
             mode: mode,
             count: count
         )
-
-        // ✅ CORRECT FOUNDATION MODELS STRUCTURED CALL
+        
         let structuredResponse = try await session.respond(
             to: prompt,
             generating: GeneratedQuestionResponse.self
