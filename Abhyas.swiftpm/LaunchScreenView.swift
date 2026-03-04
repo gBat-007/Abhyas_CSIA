@@ -5,7 +5,7 @@ struct LaunchScreenView: View {
     
     var body: some View {
         ZStack {
-            // Gradient background with 2C6E91, 2F6D4F, 6A4C93
+            // Gradient background with the three main colors of the app (purple, green, blue) (consistent color scheme)
             LinearGradient(
                 gradient: Gradient(stops: [
                     .init(color: Color(red: 0.173, green: 0.431, blue: 0.569), location: 0),
