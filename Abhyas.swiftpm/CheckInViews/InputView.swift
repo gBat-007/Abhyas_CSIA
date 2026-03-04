@@ -231,7 +231,6 @@ struct PhotoCaptureView: View {
         }
     }
     
-    // MARK: - VisionKit Text Extraction
     private func extractTextFromImage(_ image: UIImage) {
         guard let cgImage = image.cgImage else {
             errorMessage = "Failed to process image"
@@ -242,6 +241,7 @@ struct PhotoCaptureView: View {
         errorMessage = nil
         
         let requestHandler = VNImageRequestHandler(cgImage: cgImage, options: [:])
+        //Asynchronous request to VisionKit API
         let request = VNRecognizeTextRequest { request, error in
             DispatchQueue.main.async {
                 isProcessing = false
@@ -256,7 +256,7 @@ struct PhotoCaptureView: View {
                     return
                 }
                 
-                // Extract all recognized text
+                // Extract all recognized text as strings for further usage
                 let recognizedStrings = observations.compactMap { observation in
                     observation.topCandidates(1).first?.string
                 }
@@ -308,12 +308,13 @@ struct ImagePicker: UIViewControllerRepresentable {
     
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let parent: ImagePicker
-        
+        //Using UIImagePickerController to handle SwiftUI's ImagePicker
         init(_ parent: ImagePicker) {
             self.parent = parent
         }
         
         func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            //Safely retrieving the captured image as a UIImage
             if let uiImage = info[.originalImage] as? UIImage {
                 parent.image = uiImage
             }
@@ -326,14 +327,15 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 }
 
-// MARK: - PHPicker Wrapper (Photo Library)
+// Library required for displaying photo library.
 import PhotosUI
 
 struct PhotoLibraryPicker: UIViewControllerRepresentable {
     @Binding var image: UIImage?
     @Environment(\.dismiss) private var dismiss
-    
+    //The below functions allow for UIKit View Controllers to be used in a SwiftUI app.
     func makeUIViewController(context: Context) -> PHPickerViewController {
+        //This configuration ensures a clear user experience, with only selecting 1 image allowed.
         var config = PHPickerConfiguration(photoLibrary: .shared())
         config.selectionLimit = 1
         config.filter = .images
