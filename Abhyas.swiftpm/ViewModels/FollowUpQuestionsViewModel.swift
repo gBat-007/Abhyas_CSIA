@@ -149,7 +149,9 @@ class FollowUpQuestionsViewModel {
         case concept(String)
         case misconception(String)
     }
-    
+
+    //These ensure that after the first question, 
+    //following questions either go deeper into the concept or pivot to different concepts.
     private enum Strategy {
         case deepen
         case pivot
@@ -166,11 +168,16 @@ class FollowUpQuestionsViewModel {
         
         let untestedConcepts = allConcepts.filter { !testedConcepts.contains($0) }
         let untestedMisconceptions = allMisconceptions.filter { !testedMisconceptions.contains($0) }
-        
+
+        //When pivoting, it is vital untested concepts and misconceptions are prioritized
+        //if possible, such that it holistically gauges user understanding.
+
         if preferNewConcept, let nextConcept = untestedConcepts.first {
             return .concept(nextConcept)
         }
-        
+
+        //The if let conditional checks that an untested misconception exists
+        //; else it defaults to returning any concept
         if let nextMisconception = untestedMisconceptions.first {
             return .misconception(nextMisconception)
         }
