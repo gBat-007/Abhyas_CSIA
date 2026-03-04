@@ -161,7 +161,7 @@ class GapDetectionViewModel: ObservableObject {
         
         let lines = aiResponse.components(separatedBy: .newlines)
         var conceptIndex = 0
-        
+        //Parsing the model's evaluation into clear, quantitative data
         for line in lines {
             let trimmed = line.trimmingCharacters(in: .whitespaces)
             
@@ -207,15 +207,13 @@ class GapDetectionViewModel: ObservableObject {
                 }
             }
         }
-        
+
         let total = max(clearCount + partialCount + incorrectCount + noneCount, 1)
-        
+
+        //Ratio of understood concepts, partial ones, and incorrect ones for weightedScore 
         let weightedScore =
-            (Double(clearCount) * 1.0 +
-             Double(partialCount) * 0.5 +
-             Double(incorrectCount) * 0.0 +
-             Double(noneCount) * 0.0)
-            / Double(total)
+            (Double(clearCount) * 1.0 + Double(partialCount) * 0.5 + Double(incorrectCount) * 0.0 +
+             Double(noneCount) * 0.0) / Double(total)
         
         let score = Float(weightedScore * 100)
         
