@@ -20,7 +20,7 @@ struct LaunchScreenView: View {
             VStack(spacing: 0) {
                 Spacer()
                 
-                // App Logo
+                // App logo pulsing animation on the launch screen while the app loads
                 Image("AppIconCircle")
                     .resizable()
                     .scaledToFit()
