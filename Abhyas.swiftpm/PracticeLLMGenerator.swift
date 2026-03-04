@@ -3,6 +3,7 @@ import FoundationModels
 
 // MARK: - Structured Output
 
+//@Generable means the model is forced to output JSON automatically in the structure's format
 @available(iOS 26.0, *)
 @Generable
 struct GeneratedQuestionResponse {
