@@ -16,11 +16,13 @@ class SyllabusManager {
     ])
     
     private init() {}
-    
+
+    //By editing SyllabusRoot to store an array of type [Curriculum], such that Curriculum is a struct containing 
+    //an array of type [Subject], would allow syllabus loading code and further to be easily modified accordingly.
     struct SyllabusRoot: Codable {
         let subjects: [Subject]
     }
-
+    
     func loadSyllabus() async throws {
         guard let url = Bundle.main.url(forResource: "IBDPSyllabus", withExtension: "json") else {
             throw NSError(domain: "Syllabus", code: 404, userInfo: [NSLocalizedDescriptionKey: "IBDPSyllabus.json not found"])
@@ -33,8 +35,8 @@ class SyllabusManager {
         
         buildSubtopicIndex()
         
-        print("✅ Loaded \(subjects.count) subjects")
-        print("✅ Indexed \(subtopicIndex.count) subtopics")
+        print("Loaded \(subjects.count) subjects")
+        print("Indexed \(subtopicIndex.count) subtopics")
     }
 
     
