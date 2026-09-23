@@ -1,0 +1,2 @@
+An iOS Swift application based on FoundationModels that is targeted towards auto-generating IB practice questions based on syllabus specifications.
+Though initially named Abhyas, it was later redesigned into Shards, a metaphor for the pieces of daily revision that make up one's complete understanding, and is meant to be a lightweight daily review mechanism, as IB students often have many projects leaving them little time for traditional review.
